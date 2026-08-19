@@ -261,21 +261,3 @@
   .site-header:not(.site-header--compact) .brand__wordmark small{font-size:.55rem;letter-spacing:.2em}
   .site-header:not(.site-header--compact) .brand__location{font-size:.42rem}
 }
-
-/* Prickly pear blooms grow from the hero word without changing its layout */
-.hero-grow{position:relative;display:inline-block;isolation:isolate}
-.hero-grow:after{content:'';position:absolute;z-index:-1;left:.02em;right:.01em;bottom:-.075em;height:.14em;border-bottom:2px solid rgba(89,98,71,.72);border-radius:0 0 55% 45%;transform:scaleX(0);transform-origin:left center;animation:hero-stem-grow .72s cubic-bezier(.2,.75,.2,1) 1.05s forwards}
-.hero-bloom{position:absolute;z-index:2;overflow:visible;opacity:0;transform:translateY(8px) scale(.15) rotate(-9deg);transform-origin:50% 100%;filter:drop-shadow(0 3px 4px rgba(69,49,35,.14));animation:hero-bloom-rise .72s cubic-bezier(.2,.8,.2,1.15) forwards}
-.hero-bloom--first{width:.3em;height:.35em;left:25%;top:-.22em;animation-delay:1.46s}
-.hero-bloom--second{width:.24em;height:.29em;right:-.02em;top:.05em;animation-delay:1.72s}
-.hero-bloom__stem{fill:none;stroke:var(--olive);stroke-width:3;stroke-linecap:round}
-.hero-bloom__petals{fill:#c95f78;transform-box:fill-box;transform-origin:center;transform:scale(.25);animation:hero-petals-open .58s cubic-bezier(.2,.8,.2,1.2) forwards}
-.hero-bloom--first .hero-bloom__petals{animation-delay:1.68s}
-.hero-bloom--second .hero-bloom__petals{fill:#b94c69;animation-delay:1.94s}
-.hero-bloom__center{fill:#edbf56}
-.hero-bloom__heart{fill:#7d6c37}
-@keyframes hero-stem-grow{to{transform:scaleX(1)}}
-@keyframes hero-bloom-rise{65%{opacity:1;transform:translateY(-2px) scale(1.06) rotate(2deg)}to{opacity:1;transform:none}}
-@keyframes hero-petals-open{to{transform:scale(1)}}
-@media(max-width:620px){.hero-bloom--first{width:.27em;height:.32em;top:-.18em}.hero-bloom--second{width:.21em;height:.26em;right:-.01em}}
-@media(prefers-reduced-motion:reduce){.hero-grow:after{transform:scaleX(1)}.hero-bloom{opacity:1;transform:none}.hero-bloom__petals{transform:scale(1)}}
