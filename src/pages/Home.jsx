@@ -1,7 +1,9 @@
-import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, MessageCircle, ClipboardCheck, Stethoscope, Lightbulb } from 'lucide-react';
+import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
+import { PatientLedJourney } from '../components/PatientLedJourney';
+import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 export default function Home(){
   const reduceMotion = useReducedMotion();
@@ -26,6 +28,7 @@ export default function Home(){
         transition={{ duration: reduceMotion ? 0.2 : 0.75, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="editorial-hero__veil"/>
+      <PricklyPearBloom className="editorial-hero__bloom" />
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Direct Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
@@ -49,11 +52,7 @@ export default function Home(){
           <h2>A clearer path through care.</h2>
           <p className="large-copy">Patient-led care means Jennifer starts with what matters to you, then adds clinical context so you can make informed choices and leave with a practical plan.</p>
         </div>
-        <div className="patient-journey" aria-label="What patient-led care looks like">
-          <article><span className="patient-journey__number">01</span><MessageCircle/><h3>You bring the full story.</h3><p>Share your questions, symptoms, priorities, and what you want from the visit.</p></article>
-          <article><span className="patient-journey__number">02</span><Lightbulb/><h3>Jennifer makes it clear.</h3><p>She listens closely, explains the options, and helps you understand the tradeoffs.</p></article>
-          <article><span className="patient-journey__number">03</span><ClipboardCheck/><h3>You help choose what comes next.</h3><p>Leave with shared decisions, clear next steps, and a plan that works in real life.</p></article>
-        </div>
+        <PatientLedJourney />
       </div>
     </div></section>
 
