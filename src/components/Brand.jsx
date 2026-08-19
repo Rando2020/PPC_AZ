@@ -10,7 +10,7 @@ export function Brand({ light = false }) {
 
 export function Portrait() {
   return <div className="portrait-wrap">
-    <img className="portrait" src={`${import.meta.env.BASE_URL}images/provider-portrait.png`} alt="Jennifer Mae Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
+    <img className="portrait" src={`${import.meta.env.BASE_URL}images/provider-portrait.png`} alt="Jennifer Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
     <div className="portrait-placeholder" hidden aria-label="Provider photography placeholder">
       <Flower2 size={50}/><span>Provider portrait</span><small>Photography unavailable</small>
     </div>
