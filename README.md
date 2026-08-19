@@ -13,7 +13,7 @@ Create a production build with `npm run build`.
 
 ## Live website
 
-Pushes to `main` deploy automatically through GitHub Pages at `https://rando2020.github.io/PPC_AZ/`.
+Pushes to `main` deploy automatically through GitHub Pages at `https://pricklypearcareaz.org/`.
 
 ## Content and assets
 
