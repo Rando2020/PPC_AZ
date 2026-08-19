@@ -18,6 +18,7 @@ Deep research identified a mismatch between the intended Prickly Pear Care brand
 - Updated homepage hierarchy to introduce DPC immediately and keep Jennifer as the trust anchor.
 - Added Motion for React as the default motion runtime.
 - Added global `MotionConfig reducedMotion="user"` behavior.
+- Added a CSS `prefers-reduced-motion` fallback for the site's legacy reveal and hover transforms.
 - Added subtle hero entrance/settle animation rather than broad page-wide animation.
 - Added repository governance files: `APPROVED_DESIGN_DECISIONS.md`, `BRAND_RULES.md`, `CONTENT_FACTS.md`, and `QA_CHECKLIST.md`.
 
@@ -37,10 +38,9 @@ Deep research identified a mismatch between the intended Prickly Pear Care brand
 
 1. Run local/CI install, lint, and build after dependency installation.
 2. Review the branch at phone, tablet, laptop, and large-desktop widths.
-3. Add CSS reduced-motion fallback for legacy reveal animations if not already present.
-4. Decide whether real-path routing will replace hash routing before SEO launch.
-5. Replace prototype email-based booking transport with an approved secure workflow before live patient scheduling.
-6. Have Jennifer approve final DPC membership facts and future-service wording.
+3. Decide whether real-path routing will replace hash routing before SEO launch.
+4. Replace prototype email-based booking transport with an approved secure workflow before live patient scheduling.
+5. Have Jennifer approve final DPC membership facts and future-service wording.
 
 ### Guardrail
 
