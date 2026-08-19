@@ -10,8 +10,14 @@ export const practice = {
   hours: ['Monday–Thursday · 8:00 AM–5:00 PM', 'Friday · By appointment'],
   provider: {
     name: 'Jennifer Carlile',
-    credentials: 'MSN, FNP-C · Founder, CEO & Family Nurse Practitioner',
-    bio: 'Jennifer Carlile (formerly Parve) is a certified Family Nurse Practitioner with more than 13 years of clinical experience. Her background includes primary care, preventive health, chronic-condition support, and care across adulthood. She believes excellent care begins with listening, clear explanations, and respect for each patient. Born in Kenya, Jennifer also joined Hope Without Borders on international medical mission trips, helping bring care to communities overseas.',
+    credentials: 'MSN, FNP-BC · Founder, CEO & Family Nurse Practitioner',
+    bio: [
+      'I’m Jennifer Carlile, FNP-BC, and I’ve been practicing as a Family Nurse Practitioner for over 13 years, with more than 9 years serving patients in the Marana and Northwest Tucson communities.',
+      'Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story. I believe there is something incredibly valuable about having a provider who takes the time to listen, knows your history, and is invested in your health for the long term. That belief is what inspired me to create Prickly Pear Primary Care PLLC.',
+      'My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system. My goal is for every patient to feel heard, valued, and confident in their care.',
+      'Outside of the office, I’m happily married and a proud mom to my daughter. I enjoy reading, crafting, spending time outdoors and trying new foods.',
+      'I’m excited to offer a more personal, accessible, relationship-centered approach to primary care to the community I’ve been proud to serve for so many years.',
+    ],
     portrait: '/images/provider-portrait.png',
     npi: '1609217256',
     license: 'Arizona AP5088',
