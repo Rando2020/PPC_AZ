@@ -11,7 +11,8 @@
   /* brand */
   --olive:#596247; --olive-dark:#3f4934; --olive-tint:#e9ecdf;
   --berry:#8f3555; --berry-dark:#71283f; --berry-tint:#f3ced9;
-  --gold:#c49a4a;
+  --gold:#d0af70;      /* on dark backgrounds only — 4.54:1 on --olive-dark */
+  --gold-ink:#8f7036;  /* on light backgrounds — 4.55:1 on --paper */
   --cream:#f7f1e6; --sand:#e7d9c4; --paper:#fffdf8;
   --charcoal:#2e302b; --muted:#5f6159; --line:#d9d4ca;
 
@@ -55,6 +56,7 @@ h1,h2{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-
 h1{font-size:var(--fs-h1);margin-bottom:var(--s5)}
 h2{font-size:var(--fs-h2);margin-bottom:var(--s5)}
 h3{font-size:var(--fs-h3);line-height:1.3;text-wrap:balance}
+.card h2,.resource-card h2,.steps h2{font-size:var(--fs-h3);line-height:1.3;margin-bottom:var(--s3)}
 p{text-wrap:pretty}
 
 /* Visible keyboard focus everywhere. Previously only inputs had this. */
@@ -66,6 +68,7 @@ p{text-wrap:pretty}
 .section{padding-block:var(--section-y)}
 .section--cream{background:var(--cream)}
 .section--olive{background:var(--olive-dark);color:var(--paper)}
+.section--olive .eyebrow,.care-paths .eyebrow,.dpc-band__list+*{color:var(--gold)}
 .centered{text-align:center}
 .centered .notice{text-align:left}
 .small{font-size:var(--fs-sm)}
@@ -119,7 +122,8 @@ blockquote{font:italic 1.45rem/1.5 var(--serif);border-left:3px solid var(--berr
 .brand--light{color:var(--cream)}
 .brand--light .brand__wordmark small{color:#d2d9c5}
 
-.nav{display:flex;align-items:center;gap:var(--s6);font-size:.83rem;font-weight:600}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2vw,2rem);font-size:.83rem;font-weight:600}
+.nav>a{white-space:nowrap}
 .nav>a:not(.button){padding-block:30px;border-bottom:2px solid transparent;
   transition:color var(--dur) var(--ease)}
 .nav>a:not(.button):hover{color:var(--berry)}
@@ -263,7 +267,7 @@ blockquote{font:italic 1.45rem/1.5 var(--serif);border-left:3px solid var(--berr
 .service-card p{color:var(--muted)}
 .service-card a{position:absolute;bottom:var(--s6)}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s8)}
-.three-col article>span{color:var(--gold);font:3rem var(--serif)}
+.three-col article>span{color:var(--gold);font:3rem var(--serif)}  /* .three-col only used inside .section--olive */
 .three-col p{color:#d7dbd1}
 .decision-panel,.prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);
   background:var(--paper);padding:var(--s8);margin-top:var(--s6)}
@@ -272,7 +276,7 @@ blockquote{font:italic 1.45rem/1.5 var(--serif);border-left:3px solid var(--berr
 .decision-panel svg,.check-list svg{color:var(--berry);flex:none}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s7)}
 .steps article{padding:var(--s7);border-top:1px solid var(--line);position:relative}
-.step-num{font:2rem var(--serif);color:var(--gold)}
+.step-num{font:2rem var(--serif);color:var(--gold-ink)}
 .steps svg{display:block;color:var(--berry);margin-block:var(--s6)}
 .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
 .resource-card{background:var(--paper);padding:var(--s7);border:1px solid var(--line)}
@@ -359,7 +363,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .footer{background:var(--charcoal);color:#e4e3de;padding:var(--s10) 0 var(--s6)}
 .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:var(--s9)}
 .footer-grid>div{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2)}
-.footer-grid h3{color:#fff;margin:0 0 var(--s2)}
+.footer-grid h2{color:#fff;margin:0 0 var(--s2);font:600 1rem var(--sans);letter-spacing:.02em}
 .footer-grid p{color:#c3c4be;max-width:34ch}
 .footer-grid a{display:flex;gap:var(--s1);align-items:center;font-size:var(--fs-sm);
   transition:color var(--dur) var(--ease)}
@@ -398,7 +402,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
     background:var(--paper);padding:var(--s6);flex-direction:column;align-items:stretch;
     gap:var(--s2);box-shadow:0 18px 30px rgba(0,0,0,.13)}
   .nav--open{display:flex}
-  .nav>a:not(.button){padding:var(--s3) 0;border:0}
+  .nav>a:not(.button){padding:var(--s3) 0;border:0;white-space:normal}
   .menu-button{display:block}
   .editorial-intro__copy,.editorial-intro__points{grid-template-columns:1fr;gap:var(--s4)}
   .card-grid,.resource-grid,.steps,.three-col{grid-template-columns:1fr}
@@ -436,6 +440,128 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
   .faq-list details p{padding-right:0}
   .founder-note blockquote{font-size:1.5rem}
 }
+
+/* ---------- 21. DPC MEMBERSHIP BAND ---------- */
+.dpc-band{background:var(--cream);padding-block:var(--section-y)}
+.dpc-band .eyebrow{color:var(--berry)}
+.dpc-band__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:start}
+.dpc-band h2{margin-bottom:var(--s5)}
+.dpc-band .large-copy{color:var(--olive-dark);font-size:1.35rem;margin-bottom:var(--s7)}
+.dpc-band__list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s4)}
+.dpc-band__list li{display:flex;gap:var(--s4);align-items:flex-start;
+  padding:var(--s5);border:1px solid var(--line);background:var(--paper)}
+.dpc-band__list svg{color:var(--berry);width:26px;flex:none;margin-top:2px}
+.dpc-band__list span{display:grid;gap:var(--s1);font-size:var(--fs-sm);color:var(--muted)}
+.dpc-band__list strong{font:1.15rem var(--serif);color:var(--charcoal)}
+.dpc-band__disclaimer{margin:var(--s8) 0 0;padding-top:var(--s5);border-top:1px solid var(--line);
+  font-size:var(--fs-xs);color:var(--muted);max-width:90ch;line-height:1.7}
+
+/* ---------- 22. MARANA LOCAL BAND ---------- */
+.marana-band{background:var(--paper);padding-block:var(--section-y);border-top:1px solid var(--line)}
+.marana-band__inner{display:grid;grid-template-columns:1.35fr .65fr;gap:var(--s9);align-items:start}
+.marana-band .eyebrow{display:inline-flex;align-items:center;gap:var(--s2)}
+.marana-band h2{font-size:clamp(2rem,3.4vw,3.2rem);max-width:16ch}
+.marana-band p{color:var(--muted);max-width:60ch;margin:0}
+.marana-band__areas{background:var(--cream);padding:var(--s6);border-top:3px solid var(--olive)}
+.marana-band__areas small{text-transform:uppercase;letter-spacing:.14em;font-size:.65rem;
+  color:var(--berry);font-weight:600}
+.marana-band__areas ul{list-style:none;margin:var(--s4) 0 var(--s5);padding:0;
+  display:flex;flex-wrap:wrap;gap:var(--s2)}
+.marana-band__areas li{font-size:var(--fs-sm);background:var(--paper);
+  border:1px solid var(--line);padding:5px 11px;color:var(--olive-dark)}
+
+@media(max-width:860px){
+  .dpc-band__grid,.marana-band__inner{grid-template-columns:1fr;gap:var(--s7)}
+  .dpc-band .large-copy{font-size:1.2rem}
+}
+
+/* ---------- 23. WAITLIST ---------- */
+.waitlist-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s7);align-items:start}
+.waitlist-interest{border:0;padding:0;margin:0;display:grid;gap:var(--s3)}
+.waitlist-interest .choice>span{display:block;padding:var(--s4) var(--s5)}
+.waitlist-interest .choice>span small{display:block;margin-top:2px;font-size:var(--fs-sm);
+  color:var(--muted);font-weight:400;line-height:1.5}
+.waitlist-grid .consent>span{padding:var(--s4)}
+.waitlist-interest legend{font-size:var(--fs-sm);font-weight:600;padding:0 0 var(--s3)}
+.waitlist-privacy{color:var(--muted);border-left:3px solid var(--olive);
+  padding:var(--s3) 0 var(--s3) var(--s4);margin:0;line-height:1.6}
+.waitlist-aside{background:var(--olive-dark);color:var(--paper);padding:var(--s7);position:sticky;top:calc(var(--header-h) + var(--s5))}
+.waitlist-aside h2{font-size:1.6rem;margin-bottom:var(--s5)}
+.waitlist-aside .check-list li{margin-block:var(--s5);color:#d5d8d0;font-size:var(--fs-sm)}
+.waitlist-aside .check-list svg{color:var(--gold)}
+.waitlist-aside__note{margin:var(--s7) 0 0;padding-top:var(--s5);border-top:1px solid #68715e;
+  color:#b6bcaf;font-size:var(--fs-xs);line-height:1.7}
+.notice--warn{background:var(--berry-tint);border-left-color:var(--berry)}
+.notice--warn>svg{color:var(--berry)}
+.notice--warn a{color:var(--berry-dark);font-weight:600;text-decoration:underline}
+@media(max-width:860px){
+  .waitlist-grid{grid-template-columns:1fr;gap:var(--s7)}
+  .waitlist-aside{position:static}
+}
+
+/* =========================================================================
+   24. MOTION LAYER
+   Rules:
+   - Content is fully visible with zero animation applied. Animation only
+     enhances; it never gates visibility. Crawlers and no-JS see everything.
+   - Scroll reveals use native CSS scroll-driven animation (animation-timeline)
+     behind @supports. No IntersectionObserver, no JS, no layout thrash.
+   - Everything is wrapped in prefers-reduced-motion: no-preference AND gated
+     on [data-motion="full"], so weak devices and OS settings both opt out.
+   - Transform + opacity only. No animating layout properties.
+   ========================================================================= */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- Hero entrance: one stagger on load, then never again ---- */
+  html[data-motion="full"] .editorial-hero__content > *{
+    animation: rise-in 620ms var(--ease) backwards}
+  html[data-motion="full"] .editorial-hero__content > :nth-child(1){animation-delay:60ms}
+  html[data-motion="full"] .editorial-hero__content > :nth-child(2){animation-delay:150ms}
+  html[data-motion="full"] .editorial-hero__content > :nth-child(3){animation-delay:240ms}
+  html[data-motion="full"] .editorial-hero__content > :nth-child(4){animation-delay:330ms}
+  html[data-motion="full"] .editorial-hero__image{
+    animation: settle 1100ms var(--ease) backwards; animation-delay:80ms}
+
+  @keyframes rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes settle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+
+  /* ---- Scroll-driven reveals ---- */
+  @supports (animation-timeline: view()) {
+    html[data-motion="full"] .reveal{
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 26%}
+    html[data-motion="full"] .reveal-group > *{
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 4% cover 30%}
+    /* Stagger within a group without JS */
+    html[data-motion="full"] .reveal-group > :nth-child(2){animation-range: entry 0% cover 32%}
+    html[data-motion="full"] .reveal-group > :nth-child(3){animation-range: entry -4% cover 34%}
+    html[data-motion="full"] .reveal-group > :nth-child(4){animation-range: entry -8% cover 36%}
+
+    @keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  }
+
+  /* ---- Micro-interactions ---- */
+  .button{transition:background var(--dur) var(--ease),transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease)}
+  .button:hover{box-shadow:0 6px 18px rgba(143,53,85,.22)}
+  .button:active{transform:translateY(0) scale(.985)}
+  .card,.dpc-band__list li,.marana-band__areas li{
+    transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease)}
+  .dpc-band__list li:hover{transform:translateX(3px);border-color:var(--berry)}
+  .choice > span{transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+  .editorial-link > svg,.button > svg{transition:transform var(--dur) var(--ease)}
+  .editorial-link:hover > svg,.button:hover > svg{transform:translateX(3px)}
+  .faq-list details[open] p{animation:rise-in 260ms var(--ease)}
+}
+
+/* Weak device or reduced-motion: transitions only, no entrance animation,
+   nothing that moves on scroll. */
+html[data-motion="minimal"] .reveal,
+html[data-motion="minimal"] .reveal-group > *{animation:none;opacity:1;transform:none}
 
 /* ---------- 20. MOTION PREFERENCES ---------- */
 @media(prefers-reduced-motion:reduce){
