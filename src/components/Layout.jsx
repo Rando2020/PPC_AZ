@@ -19,7 +19,7 @@ export function Footer() {
     <div><Brand light/><p>{practice.description}</p><p className="small">{practice.serviceArea}</p></div>
     <div><h3>Explore</h3><a href="#/provider">Meet your provider</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/faq">FAQ</a></div>
     <div><h3>Connect</h3>{practice.phoneHref?<a href={`tel:${practice.phoneHref}`}>{practice.phone}</a>:<span className="small">Phone coming soon</span>}<a href={`mailto:${practice.email}`}>{practice.email}</a><a href="#/contact">Contact us <ArrowRight size={14}/></a><div className="social"><a href="#/contact" aria-label="Social links coming soon"><AtSign/></a><a href="#/contact" aria-label="Send a message"><MessageCircle/></a></div></div>
-    <div><h3>Patient care</h3><a href="#/booking">Book a visit</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
+    <div><h3>Patient care</h3><a href="#/waitlist">Join the interest list</a><a href="#/booking">Book a visit</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
   </div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} Prickly Pear Care. All rights reserved.</span><span>Website forms are not for emergencies. Call 911.</span></div></footer>;
 }
 
