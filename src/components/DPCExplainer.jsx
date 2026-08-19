@@ -44,15 +44,12 @@ export function DPCExplainer() {
       </div>
 
       <div className="dpc-explainer__grid">
-        <div className="dpc-explainer__nav" role="tablist" aria-label="Direct Primary Care explainer">
+        <div className="dpc-explainer__nav" aria-label="Direct Primary Care explainer choices">
           {items.map((item) => (
             <button
               key={item.id}
               type="button"
-              role="tab"
-              aria-selected={activeId === item.id}
-              aria-controls={`dpc-panel-${item.id}`}
-              id={`dpc-tab-${item.id}`}
+              aria-pressed={activeId === item.id}
               className={activeId === item.id ? 'is-active' : ''}
               onClick={() => setActiveId(item.id)}
             >
@@ -63,13 +60,10 @@ export function DPCExplainer() {
           ))}
         </div>
 
-        <div className="dpc-explainer__stage">
+        <div className="dpc-explainer__stage" aria-live="polite">
           <AnimatePresence mode="wait" initial={false}>
             <motion.article
               key={active.id}
-              id={`dpc-panel-${active.id}`}
-              role="tabpanel"
-              aria-labelledby={`dpc-tab-${active.id}`}
               initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: reduceMotion ? 0 : -8 }}
