@@ -4,6 +4,7 @@ import { MotionConfig } from 'motion/react';
 import App from './App';
 import './styles.css';
 import './motion-accessibility.css';
+import './visual-moments.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
