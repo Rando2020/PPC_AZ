@@ -3,7 +3,7 @@ import { Menu, X, ArrowRight, AtSign, MessageCircle } from 'lucide-react';
 import { Brand } from './Brand';
 import { practice } from '../config/practice';
 
-const nav = [['Meet Your Provider','provider'],['About','about'],['Care & Services','services'],['New Patients','new-patients'],['Resources','resources']];
+const nav = [['Direct Primary Care','dpc'],['Meet Your Provider','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about'],['Resources','resources']];
 
 export function Header({ route }) {
   const [open,setOpen] = useState(false);
@@ -31,10 +31,10 @@ export function Header({ route }) {
 
 export function Footer() {
   return <footer className="footer"><div className="shell footer-grid">
-    <div className="footer-brand"><a className="footer-brand__name" href="#/">Prickly Pear Primary Care <span>PLLC</span></a><p>{practice.description}</p><p className="small">{practice.serviceArea}</p></div>
-    <div><h3>Explore</h3><a href="#/provider">Meet your provider</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/faq">FAQ</a></div>
+    <div className="footer-brand"><a className="footer-brand__name" href="#/">Prickly Pear Care</a><p>{practice.description}</p><p className="small">{practice.serviceArea}</p></div>
+    <div><h3>Explore</h3><a href="#/dpc">Direct Primary Care</a><a href="#/provider">Meet your provider</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/faq">FAQ</a></div>
     <div><h3>Connect</h3>{practice.phoneHref?<a href={`tel:${practice.phoneHref}`}>{practice.phone}</a>:<span className="small">Phone coming soon</span>}<a href={`mailto:${practice.email}`}>{practice.email}</a><a href="#/contact">Contact us <ArrowRight size={14}/></a><div className="social"><a href="#/contact" aria-label="Social links coming soon"><AtSign/></a><a href="#/contact" aria-label="Send a message"><MessageCircle/></a></div></div>
-    <div><h3>Patient care</h3><a href="#/waitlist">Join the interest list</a><a href="#/booking">Book a visit</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
+    <div><h3>Patient-led care</h3><a href="#/waitlist">Join the interest list</a><a href="#/booking">Request a visit</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
   </div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} {practice.legalName}. All rights reserved.</span><span>Website forms are not for emergencies. Call 911.</span></div></footer>;
 }
 
