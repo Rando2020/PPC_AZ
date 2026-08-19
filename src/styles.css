@@ -177,6 +177,29 @@
 [data-reveal="scene"]>img{transform:scale(1.045)}
 [data-reveal="scene"].is-visible>img{transform:scale(1)}
 
+[data-reveal="stagger"]:not(.care-pledge)>*{opacity:0;transform:translateY(16px);transition:opacity .52s var(--ease-gentle, ease),transform .52s var(--ease-gentle, ease)}
+[data-reveal="stagger"].is-visible:not(.care-pledge)>*{opacity:1;transform:none}
+[data-reveal="stagger"].is-visible:not(.care-pledge)>*:nth-child(2){transition-delay:.08s}
+[data-reveal="stagger"].is-visible:not(.care-pledge)>*:nth-child(3){transition-delay:.16s}
+[data-reveal="stagger"].is-visible:not(.care-pledge)>*:nth-child(4){transition-delay:.24s}
+[data-reveal="stagger"].is-visible:not(.care-pledge)>*:nth-child(n+5){transition-delay:.3s}
+[data-reveal="split"]:not(.founder-note):not(.local-story)>*{opacity:0;transform:translateX(22px);transition:opacity .68s var(--ease-gentle, ease),transform .68s var(--ease-gentle, ease)}
+[data-reveal="split"]:not(.founder-note):not(.local-story)>*:first-child{transform:translateX(-22px)}
+[data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*{opacity:1;transform:none}
+[data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*:nth-child(2){transition-delay:.1s}
+
+/* Image-filled Tortolita-inspired ridge between the patient journey and Marana */
+.marana-scene{
+  --marana-ridge:polygon(0 18%,7% 14%,14% 17%,22% 9%,30% 15%,38% 11%,47% 18%,56% 12%,64% 16%,72% 5%,80% 16%,88% 11%,94% 14%,100% 9%,100% 100%,0 100%);
+  min-height:520px;
+  margin-top:-92px;
+  padding-top:92px;
+  clip-path:var(--marana-ridge);
+}
+.marana-scene[data-reveal="scene"]{opacity:1;transform:none;clip-path:polygon(0 18%,7% 18%,14% 18%,22% 18%,30% 18%,38% 18%,47% 18%,56% 18%,64% 18%,72% 18%,80% 18%,88% 18%,94% 18%,100% 18%,100% 100%,0 100%);transition:clip-path 1s cubic-bezier(.2,.75,.2,1)}
+.marana-scene[data-reveal="scene"].is-visible{clip-path:var(--marana-ridge)}
+.marana-scene__content{padding-top:118px}
+
 .editorial-intro{position:relative;overflow:hidden}
 .editorial-intro:before{content:'';position:absolute;width:430px;height:430px;right:-220px;top:80px;border:1px solid rgba(155,63,93,.12);border-radius:50% 46% 52% 48%;box-shadow:0 0 0 38px rgba(89,98,71,.035),0 0 0 78px rgba(155,63,93,.025);pointer-events:none}
 .marana-scene:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:24px;background:var(--olive-dark);clip-path:polygon(0 74%,8% 52%,16% 68%,27% 35%,38% 66%,49% 29%,61% 62%,73% 39%,84% 70%,93% 48%,100% 65%,100% 100%,0 100%)}
@@ -200,4 +223,11 @@
   [data-reveal="split"] .founder-note__grid>*,[data-reveal="split"] .local-story__grid>*{transform:translateY(20px)}
   [data-reveal="split"].is-visible .founder-note__grid>*,[data-reveal="split"].is-visible .local-story__grid>*{transform:none}
   .footer-brand__name{font-size:2rem}
+  [data-reveal="split"]:not(.founder-note):not(.local-story)>*,[data-reveal="split"]:not(.founder-note):not(.local-story)>*:first-child{transform:translateY(18px)}
+  [data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*{transform:none}
+  .marana-scene{min-height:430px;margin-top:-58px;padding-top:58px;--marana-ridge:polygon(0 14%,12% 10%,24% 14%,38% 7%,52% 13%,67% 9%,80% 3%,91% 12%,100% 8%,100% 100%,0 100%)}
+  .marana-scene[data-reveal="scene"]{clip-path:polygon(0 14%,12% 14%,24% 14%,38% 14%,52% 14%,67% 14%,80% 14%,91% 14%,100% 14%,100% 100%,0 100%)}
+  .marana-scene__content{padding-top:92px}
 }
+
+@media(prefers-reduced-motion:reduce){.marana-scene[data-reveal="scene"]{clip-path:var(--marana-ridge)!important}}

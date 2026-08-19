@@ -41,6 +41,17 @@ export function Footer() {
 export function Layout({ route, children }) {
   useEffect(()=>{window.scrollTo(0,0)},[route]);
   useEffect(() => {
+    const splitSelectors = '.split, .contact-grid, .decision-panel, .prep-grid, .waitlist-layout, .provider-profile__content';
+    const staggerSelectors = '.card-grid, .steps, .resource-grid, .three-col, .faq-list, .waitlist-points';
+    document.querySelectorAll(splitSelectors).forEach(item => {
+      if (!item.hasAttribute('data-reveal')) item.setAttribute('data-reveal','split');
+    });
+    document.querySelectorAll(staggerSelectors).forEach(item => {
+      if (!item.hasAttribute('data-reveal')) item.setAttribute('data-reveal','stagger');
+    });
+    document.querySelectorAll('#main > .section > .shell, #main > .cta > .shell').forEach(item => {
+      if (!item.hasAttribute('data-reveal') && !item.querySelector('[data-reveal]')) item.setAttribute('data-reveal','up');
+    });
     const items = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window)) { items.forEach(item => item.classList.add('is-visible')); return; }
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
