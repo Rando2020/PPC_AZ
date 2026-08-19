@@ -1,10 +1,9 @@
 import { Flower2 } from 'lucide-react';
+import logo from '../../logo-full.webp';
 
 export function Brand({ light = false }) {
-  const logo = `${import.meta.env.BASE_URL}images/logo-original.png`;
-  return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Care home">
-    <span className="brand__mark brand__mark--original" style={{'--brand-logo': `url(${logo})`}} aria-hidden="true" />
-    <span className="brand__wordmark"><strong>Prickly Pear</strong><small>CARE</small></span>
+  return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Primary Care home">
+    <img className="brand__logo" src={logo} alt="Prickly Pear Primary Care, Marana, Arizona" />
   </a>;
 }
 
