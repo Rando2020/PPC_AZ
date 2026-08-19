@@ -1,4 +1,4 @@
-import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, MessageCircle, ClipboardCheck } from 'lucide-react';
+import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, MessageCircle, ClipboardCheck, Stethoscope, Lightbulb } from 'lucide-react';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
 
@@ -22,13 +22,16 @@ export default function Home(){return <>
   </div></section>
 
   <section className="section editorial-intro"><div className="shell editorial-intro__grid">
-    <div className="editorial-intro__kicker"><HeartHandshake/><span><small>Care built around the conversation</small>It starts with listening.</span></div>
+    <div className="editorial-intro__kicker"><Stethoscope/><span><small>Patient-led care in practice</small>Your voice shapes the plan.</span></div>
     <div className="editorial-intro__body">
-      <h2>Feel heard. Understand your options. Know what comes next.</h2>
-      <div className="editorial-intro__copy"><p className="large-copy">Prickly Pear Care is for longtime patients who trust Jennifer and for anyone looking for a nurse practitioner who takes time to listen.</p><p>You will have time to talk. Jennifer listens to what matters, explains your options, and works with you on a practical plan.</p></div>
-      <div className="editorial-intro__points">
-        <div><MessageCircle/><span><strong>Time to talk</strong>Bring your questions and concerns.</span></div>
-        <div><ClipboardCheck/><span><strong>A plan you understand</strong>Leave knowing what happens next.</span></div>
+      <div className="editorial-intro__header">
+        <h2>A clearer path through care.</h2>
+        <p className="large-copy">Patient-led care means Jennifer starts with what matters to you, then helps turn the conversation into informed choices and a practical plan.</p>
+      </div>
+      <div className="patient-journey" aria-label="What patient-led care looks like">
+        <article><span className="patient-journey__number">01</span><MessageCircle/><h3>You bring the full story.</h3><p>Share your questions, symptoms, priorities, and what you want from the visit.</p></article>
+        <article><span className="patient-journey__number">02</span><Lightbulb/><h3>Jennifer makes it clear.</h3><p>She listens closely, explains the options, and helps you understand the tradeoffs.</p></article>
+        <article><span className="patient-journey__number">03</span><ClipboardCheck/><h3>You decide what comes next.</h3><p>Leave with shared decisions, clear next steps, and a plan that works in real life.</p></article>
       </div>
     </div>
   </div></section>
@@ -55,7 +58,7 @@ export default function Home(){return <>
 
   <section className="local-story"><div className="shell local-story__grid">
     <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location and opening details are coming soon. Join the interest list for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/contact">Stay informed <ArrowRight size={14}/></a></div>
-    <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy"/><figcaption>The resilient beauty behind our name.</figcaption></figure>
+    <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy"/></figure>
   </div></section>
   <CTA title="Come as you are. Leave with a plan.">Begin with a visit request and let us help you find the right care pathway.</CTA>
 </>}
