@@ -45,3 +45,24 @@ Deep research identified a mismatch between the intended Prickly Pear Care brand
 ### Guardrail
 
 Do not replace **Patient-led care** with another primary philosophy phrase unless Jennifer explicitly changes the decision.
+
+## 2026-08-19 · Visual storytelling pass
+
+### Goal
+
+Add a small number of memorable interactions that reinforce the brand instead of decorating every section with motion.
+
+### Changes
+
+- Added a custom animated prickly pear bloom motif to the homepage hero using Motion for React.
+- Replaced the static patient-led care cards with a scroll-revealed journey rail: story, clarity, shared next step.
+- Added an interactive DPC explainer with three accessible tabs: membership terms, continuity, and care boundaries.
+- Kept all new interactions compatible with the global reduced-motion setting.
+- Added a dedicated `visual-moments.css` layer so these effects stay isolated from the legacy stylesheet.
+
+### Guardrails
+
+- The bloom is decorative only and must never compete with Jennifer, the headline, or the primary CTA.
+- The patient-led journey must keep **Patient-led care** language intact.
+- The DPC explainer must not invent pricing, membership inclusions, access guarantees, response times, or insurance behavior.
+- Do not add more animation libraries unless a specific interaction cannot be built cleanly with the current Motion runtime.
