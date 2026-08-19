@@ -237,3 +237,27 @@
 }
 
 @media(prefers-reduced-motion:reduce){.marana-scene[data-reveal="scene"]{clip-path:var(--marana-ridge)!important}}
+
+/* Larger legal-name lockup while keeping the sticky state compact */
+.site-header:not(.site-header--compact){height:96px}
+.site-header:not(.site-header--compact) .brand{gap:14px}
+.site-header:not(.site-header--compact) .brand__logo{width:70px;height:70px}
+.site-header:not(.site-header--compact) .brand__wordmark{gap:4px!important}
+.site-header:not(.site-header--compact) .brand__wordmark strong{font-size:1.58rem}
+.site-header:not(.site-header--compact) .brand__wordmark small{font-size:.67rem;letter-spacing:.25em}
+.site-header:not(.site-header--compact) .brand__location{font-size:.5rem}
+.brand__pllc{display:inline!important;color:var(--olive-dark);font-size:.84em;font-weight:700;letter-spacing:.14em}
+.brand--light .brand__pllc{color:#e5b8c6}
+
+@media(min-width:801px){.editorial-hero{height:min(730px,calc(100vh - 96px))}}
+@media(max-width:1120px) and (min-width:961px){.nav{gap:15px;font-size:.76rem}.nav .button--small{padding-left:13px;padding-right:13px}}
+@media(max-width:960px){.site-header:not(.site-header--compact) .nav{top:96px}}
+@media(max-width:620px){
+  .site-header:not(.site-header--compact){height:82px}
+  .site-header:not(.site-header--compact) .nav{top:82px}
+  .site-header:not(.site-header--compact) .brand{gap:10px}
+  .site-header:not(.site-header--compact) .brand__logo{width:56px;height:56px}
+  .site-header:not(.site-header--compact) .brand__wordmark strong{font-size:1.18rem}
+  .site-header:not(.site-header--compact) .brand__wordmark small{font-size:.55rem;letter-spacing:.2em}
+  .site-header:not(.site-header--compact) .brand__location{font-size:.42rem}
+}

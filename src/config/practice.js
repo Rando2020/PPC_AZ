@@ -1,5 +1,6 @@
 export const practice = {
   name: 'Prickly Pear Care',
+  legalName: 'Prickly Pear Primary Care PLLC',
   tagline: 'Care that grows with you.',
   description: 'Healthcare built on careful listening, clear answers, kindness, and strong clinical standards.',
   serviceArea: 'Proudly serving Marana, Tucson, and surrounding communities.',
