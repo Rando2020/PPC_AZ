@@ -33,6 +33,16 @@ export default function Home(){return <>
     </div>
   </div></section>
 
+  <section className="marana-scene" aria-labelledby="marana-scene-title">
+    <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy"/>
+    <div className="marana-scene__shade"/>
+    <div className="shell marana-scene__content">
+      <span className="eyebrow">Rooted in Marana</span>
+      <h2 id="marana-scene-title">Local care, shaped by the community.</h2>
+      <p>Jennifer has spent more than nine years caring for patients across Marana and Northwest Tucson.</p>
+    </div>
+  </section>
+
   <section className="care-paths"><div className="shell">
     <div className="care-paths__heading"><span className="eyebrow">A hybrid practice</span><h2>Care that fits the reason you are here.</h2><p>Insurance-based care will sit alongside focused cash-pay programs for weight management and hormone therapy. Final coverage and pricing details are coming soon.</p></div>
     <div className="care-paths__list">{serviceCategories.map((item,i)=><a href="#/services" className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
@@ -43,6 +53,9 @@ export default function Home(){return <>
     <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
   </div></section>
 
-  <section className="local-note"><div className="shell local-note__inner"><Sparkles/><p><span>{practice.serviceArea}</span>Practice location and opening details are coming soon.</p><a href="#/contact">Stay informed <ArrowRight size={14}/></a></div></section>
+  <section className="local-story"><div className="shell local-story__grid">
+    <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location and opening details are coming soon. Join the interest list for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/contact">Stay informed <ArrowRight size={14}/></a></div>
+    <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy"/><figcaption>The resilient beauty behind our name.</figcaption></figure>
+  </div></section>
   <CTA title="Come as you are. Leave with a plan.">Begin with a visit request and let us help you find the right care pathway.</CTA>
 </>}
