@@ -38,13 +38,17 @@ export default function Home(){return <>
   </div></section>
 
   <section className="marana-scene" aria-labelledby="marana-scene-title" data-reveal="scene">
-    <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy"/>
-    <div className="marana-scene__shade"/>
+    <div className="marana-scene__landscape">
+      <img className="marana-scene__image" src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy"/>
+      <div className="marana-scene__shade"/>
+    </div>
+    <img className="marana-scene__cactus" src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="" aria-hidden="true" loading="lazy"/>
     <div className="shell marana-scene__content">
       <span className="eyebrow">Rooted in Marana</span>
       <h2 id="marana-scene-title">Local care, shaped by the community.</h2>
       <p>Jennifer has spent more than nine years caring for patients across Marana and Northwest Tucson.</p>
     </div>
+    <div className="marana-scene__foreground" aria-hidden="true"/>
   </section>
 
   <section className="care-paths" data-reveal="up"><div className="shell">
