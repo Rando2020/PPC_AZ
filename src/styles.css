@@ -81,12 +81,11 @@
 .founder-note__photo{position:relative;margin:0;min-height:520px;overflow:hidden;border-radius:50% 50% 6px 6px;background:#d7c9b5}
 .founder-note__photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}
 .founder-note__photo figcaption{position:absolute;left:24px;right:24px;bottom:22px;padding:14px 18px;background:rgba(247,241,230,.92);color:var(--olive-dark);font:1.15rem var(--serif);text-align:center}
-.marana-scene{position:relative;min-height:430px;display:flex;align-items:flex-end;overflow:visible;background:transparent;color:var(--paper)}
-.marana-scene__landscape{position:absolute;inset:0;overflow:hidden;background:var(--olive-dark)}
-.marana-scene__image,.marana-scene__cactus{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:center 56%;transition:transform 1.2s ease}
-.marana-scene:hover .marana-scene__image,.marana-scene:hover .marana-scene__cactus{transform:scale(1.018)}
+.marana-scene{position:relative;min-height:430px;display:flex;align-items:flex-end;overflow:hidden;background:var(--olive-dark);color:var(--paper)}
+.marana-scene>img{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:center 56%;transition:transform 1.2s ease}
+.marana-scene:hover>img{transform:scale(1.018)}
 .marana-scene__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(39,42,32,.78) 0%,rgba(39,42,32,.48) 42%,rgba(39,42,32,.06) 72%),linear-gradient(0deg,rgba(39,42,32,.52),transparent 58%)}
-.marana-scene__content{position:relative;z-index:3;padding-top:80px;padding-bottom:72px}
+.marana-scene__content{position:relative;padding-top:80px;padding-bottom:72px}
 .marana-scene__content .eyebrow{color:#f2c6d3}
 .marana-scene__content h2{max-width:620px;margin-bottom:16px;font-size:clamp(2.8rem,4.7vw,5rem);text-shadow:0 2px 20px #1d2118aa}
 .marana-scene__content p{max-width:540px;margin:0;color:#f3eee6;font-size:1.08rem}
@@ -189,24 +188,21 @@
 [data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*{opacity:1;transform:none}
 [data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*:nth-child(2){transition-delay:.1s}
 
-/* A traced Marana skyline with a restrained saguaro break-out */
+/* Image-filled Tortolita-inspired ridge between the patient journey and Marana */
 .marana-scene{
-  --marana-ridge:polygon(0 16%,5% 15%,10% 16%,14% 14%,20% 16%,25% 13%,31% 16%,37% 14%,43% 16%,49% 14%,55% 16%,61% 14%,68% 16%,73% 14%,75.7% 12%,77% 6%,77.8% 11%,78.7% 7.5%,79.8% 13%,84% 15%,90% 13%,95% 15%,100% 13%,100% 100%,0 100%);
+  --marana-ridge:polygon(0 18%,7% 14%,14% 17%,22% 9%,30% 15%,38% 11%,47% 18%,56% 12%,64% 16%,72% 5%,80% 16%,88% 11%,94% 14%,100% 9%,100% 100%,0 100%);
   min-height:520px;
   margin-top:-92px;
   padding-top:92px;
+  clip-path:var(--marana-ridge);
 }
-.marana-scene__landscape{clip-path:var(--marana-ridge)}
-.marana-scene[data-reveal="scene"]{opacity:1;transform:none}
-.marana-scene[data-reveal="scene"] .marana-scene__landscape{clip-path:polygon(0 16%,5% 16%,10% 16%,14% 16%,20% 16%,25% 16%,31% 16%,37% 16%,43% 16%,49% 16%,55% 16%,61% 16%,68% 16%,73% 16%,75.7% 16%,77% 16%,77.8% 16%,78.7% 16%,79.8% 16%,84% 16%,90% 16%,95% 16%,100% 16%,100% 100%,0 100%);transition:clip-path 1s cubic-bezier(.2,.75,.2,1)}
-.marana-scene[data-reveal="scene"].is-visible .marana-scene__landscape{clip-path:var(--marana-ridge)}
-.marana-scene__cactus{z-index:2;pointer-events:none;filter:drop-shadow(0 -1px 0 rgba(247,241,230,.8));-webkit-mask:linear-gradient(#000 0 0) 9.1% 0/3.35% 18% no-repeat,radial-gradient(ellipse 1.68% 4.2% at 10.78% 1.6%,#000 96%,transparent 100%);mask:linear-gradient(#000 0 0) 9.1% 0/3.35% 18% no-repeat,radial-gradient(ellipse 1.68% 4.2% at 10.78% 1.6%,#000 96%,transparent 100%);opacity:0;transform:translateY(10px);transition:opacity .55s ease .45s,transform .85s cubic-bezier(.2,.75,.2,1) .35s}
-.marana-scene.is-visible .marana-scene__cactus{opacity:1;transform:none}
+.marana-scene[data-reveal="scene"]{opacity:1;transform:none;clip-path:polygon(0 18%,7% 18%,14% 18%,22% 18%,30% 18%,38% 18%,47% 18%,56% 18%,64% 18%,72% 18%,80% 18%,88% 18%,94% 18%,100% 18%,100% 100%,0 100%);transition:clip-path 1s cubic-bezier(.2,.75,.2,1)}
+.marana-scene[data-reveal="scene"].is-visible{clip-path:var(--marana-ridge)}
 .marana-scene__content{padding-top:118px}
 
 .editorial-intro{position:relative;overflow:hidden}
 .editorial-intro:before{content:'';position:absolute;width:430px;height:430px;right:-220px;top:80px;border:1px solid rgba(155,63,93,.12);border-radius:50% 46% 52% 48%;box-shadow:0 0 0 38px rgba(89,98,71,.035),0 0 0 78px rgba(155,63,93,.025);pointer-events:none}
-.marana-scene__foreground{position:absolute;z-index:4;left:0;right:0;bottom:-1px;height:38px;background:var(--olive-dark);clip-path:polygon(0 56%,6% 48%,12% 55%,18% 43%,25% 53%,32% 46%,39% 55%,47% 42%,55% 53%,62% 45%,70% 56%,77% 47%,84% 54%,91% 44%,100% 52%,100% 100%,0 100%);filter:drop-shadow(0 -2px 0 rgba(247,241,230,.22))}
+.marana-scene:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:24px;background:var(--olive-dark);clip-path:polygon(0 74%,8% 52%,16% 68%,27% 35%,38% 66%,49% 29%,61% 62%,73% 39%,84% 70%,93% 48%,100% 65%,100% 100%,0 100%)}
 .local-story__photo:after{content:'';position:absolute;inset:14px;border:1px solid rgba(255,253,248,.65);border-radius:4px 4px 48% 48%;pointer-events:none}
 
 .footer-grid{grid-template-columns:1.35fr repeat(3,1fr)}
@@ -229,10 +225,9 @@
   .footer-brand__name{font-size:2rem}
   [data-reveal="split"]:not(.founder-note):not(.local-story)>*,[data-reveal="split"]:not(.founder-note):not(.local-story)>*:first-child{transform:translateY(18px)}
   [data-reveal="split"].is-visible:not(.founder-note):not(.local-story)>*{transform:none}
-  .marana-scene{min-height:430px;margin-top:-58px;padding-top:58px;--marana-ridge:polygon(0 14%,9% 13%,17% 15%,26% 12%,36% 15%,46% 13%,57% 15%,67% 13%,74% 14%,77% 7%,78% 11%,79% 8%,81% 14%,90% 12%,100% 14%,100% 100%,0 100%)}
-  .marana-scene[data-reveal="scene"] .marana-scene__landscape{clip-path:polygon(0 15%,9% 15%,17% 15%,26% 15%,36% 15%,46% 15%,57% 15%,67% 15%,74% 15%,77% 15%,78% 15%,79% 15%,81% 15%,90% 15%,100% 15%,100% 100%,0 100%)}
+  .marana-scene{min-height:430px;margin-top:-58px;padding-top:58px;--marana-ridge:polygon(0 14%,12% 10%,24% 14%,38% 7%,52% 13%,67% 9%,80% 3%,91% 12%,100% 8%,100% 100%,0 100%)}
+  .marana-scene[data-reveal="scene"]{clip-path:polygon(0 14%,12% 14%,24% 14%,38% 14%,52% 14%,67% 14%,80% 14%,91% 14%,100% 14%,100% 100%,0 100%)}
   .marana-scene__content{padding-top:92px}
-  .marana-scene__cactus{display:none}
 }
 
-@media(prefers-reduced-motion:reduce){.marana-scene[data-reveal="scene"] .marana-scene__landscape{clip-path:var(--marana-ridge)!important}.marana-scene__cactus{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.marana-scene[data-reveal="scene"]{clip-path:var(--marana-ridge)!important}}
