@@ -19,6 +19,8 @@ Pushes to `main` deploy automatically through GitHub Pages at `https://pricklype
 
 - Update practice details, provider biography, FAQs, and care categories in `src/config/practice.js`.
 - The generated founder portrait is stored at `public/images/provider-portrait.png`; retain the original supplied portraits as the identity references for any future variants.
+- The dedicated seated homepage image is stored at `public/images/jennifer-hero.png` and is not reused on interior pages.
+- The supplied logo artwork is retained at `public/images/logo-original.png`; the interface crops the original mark and pairs it with live “Prickly Pear Care” text so the former “Primary Care” wording is not displayed.
 - Jennifer’s name, practice email, biography, and founder portrait are populated. The phone number and location remain launch placeholders.
 - Medical weight-loss care and hormone therapy are identified as cash-pay services. Insurance plans, other covered services, eligibility, and prices remain intentionally uncommitted.
 
