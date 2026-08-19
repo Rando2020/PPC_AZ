@@ -38,6 +38,8 @@ VITE_EHR_BOOKING_URL=https://approved-ehr.example/schedule
 
 Do not send protected health information to analytics, ordinary email, or an unapproved form service.
 
+The waitlist supports a HIPAA-enabled Jotform embed. See `docs/waitlist-activation.md` before enabling it. Until the repository variable is configured, the existing prepared-email workflow remains available so production does not fail silently.
+
 ## Before launch
 
 1. Replace all placeholders with approved practice information and photography.

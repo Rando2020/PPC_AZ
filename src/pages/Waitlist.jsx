@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BellRing, Check, LockKeyhole, MapPin, Send, Video } from 'lucide-react';
 import { PageHero } from '../components/Layout';
 import { Notice } from '../components/UI';
@@ -6,10 +6,39 @@ import { practice } from '../config/practice';
 
 const careModes = ['In-person care in Marana', 'Telehealth, when available', 'Either option works for me'];
 const timeframes = ['As soon as care is available', 'Within the first three months', 'I am exploring future options'];
+const consentVersion = 'waitlist-2026-08';
+const jotformId = (import.meta.env.VITE_JOTFORM_WAITLIST_FORM_ID || '').trim();
+
+function SecureWaitlistForm(){
+  useEffect(()=>{
+    const initialize=()=>window.jotformEmbedHandler?.(`#JotFormIFrame-${jotformId}`,'https://form.jotform.com/');
+    const existing=document.querySelector('script[data-jotform-embed]');
+    if(existing){initialize();return}
+    const script=document.createElement('script');
+    script.src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js';
+    script.async=true;
+    script.dataset.jotformEmbed='true';
+    script.onload=initialize;
+    document.body.appendChild(script);
+  },[]);
+
+  return <div className="waitlist-form waitlist-form--embedded">
+    <div className="secure-form-note"><LockKeyhole/><span><strong>Secure waitlist registration</strong>Your information is submitted directly to Prickly Pear Care’s protected form system.</span></div>
+    <iframe
+      id={`JotFormIFrame-${jotformId}`}
+      title="Prickly Pear Care patient interest registration"
+      src={`https://form.jotform.com/${jotformId}?embedded=true&source=pricklypearcareaz.org`}
+      loading="lazy"
+      scrolling="no"
+      allow="fullscreen"
+    />
+    <noscript><p>JavaScript is required for the secure waitlist form. Email <a href={`mailto:${practice.email}`}>{practice.email}</a> for assistance.</p></noscript>
+  </div>;
+}
 
 export default function Waitlist(){
   const [done,setDone]=useState(false);
-  const [data,setData]=useState({firstName:'',lastName:'',email:'',phone:'',zip:'',careMode:careModes[2],timeframe:timeframes[0],relationship:'New to Jennifer’s care',consent:false});
+  const [data,setData]=useState({firstName:'',lastName:'',email:'',phone:'',zip:'',careMode:careModes[2],timeframe:timeframes[0],consent:false});
   const update=e=>setData({...data,[e.target.name]:e.target.type==='checkbox'?e.target.checked:e.target.value});
 
   function submit(e){
@@ -24,7 +53,8 @@ export default function Waitlist(){
       `ZIP code: ${data.zip||'Not provided'}`,
       `Care preference: ${data.careMode}`,
       `Preferred timeframe: ${data.timeframe}`,
-      `Connection to Jennifer: ${data.relationship}`,
+      `Consent version: ${consentVersion}`,
+      `Prepared at: ${new Date().toISOString()}`,
       '',
       'I understand this is a non-binding expression of interest. It does not establish a provider-patient relationship, guarantee enrollment or an appointment, or provide medical advice. I agree to receive launch-related communications from Prickly Pear Care.'
     ].join('\n');
@@ -32,7 +62,7 @@ export default function Waitlist(){
     window.location.assign(`mailto:${practice.email}?subject=${encodeURIComponent(`Patient interest registration - ${name}`)}&body=${encodeURIComponent(body)}`);
   }
 
-  if(done)return <><PageHero eyebrow="Patient interest list" title="One final step.">Your email app should open with your registration ready to review.</PageHero><section className="section"><div className="shell narrow centered"><div className="success-mark"><Check/></div><h2>Send the email to complete your registration.</h2><p>Once sent, Prickly Pear Care can contact you with opening, availability, and telehealth updates. Joining the list does not guarantee enrollment or an appointment.</p><a className="button" href="#/">Return Home</a></div></section></>;
+  if(!jotformId&&done)return <><PageHero eyebrow="Patient interest list" title="One final step.">Your email app should open with your registration ready to review.</PageHero><section className="section"><div className="shell narrow centered"><div className="success-mark"><Check/></div><h2>Send the email to complete your registration.</h2><p>Once sent, Prickly Pear Care can contact you with opening, availability, and telehealth updates. Joining the list does not guarantee enrollment or an appointment.</p><a className="button" href="#/">Return Home</a></div></section></>;
 
   return <>
     <PageHero eyebrow="Patient interest list" title="Be among the first to know when care opens.">Share your interest in Prickly Pear Care’s Marana practice and future telehealth services. There is no commitment, and no appointment is created today.</PageHero>
@@ -48,7 +78,7 @@ export default function Waitlist(){
         </div>
       </div>
 
-      <form className="waitlist-form" onSubmit={submit}>
+      {jotformId?<SecureWaitlistForm/>:<form className="waitlist-form" onSubmit={submit}>
         <div><span className="eyebrow">Join the list</span><h2>Patient interest registration</h2><p>Fields marked required help Jennifer send the right launch information. Do not include medical details.</p></div>
         <div className="field-row"><label>First name<input required name="firstName" value={data.firstName} onChange={update} autoComplete="given-name"/></label><label>Last name<input required name="lastName" value={data.lastName} onChange={update} autoComplete="family-name"/></label></div>
         <label>Email<input required type="email" name="email" value={data.email} onChange={update} autoComplete="email"/></label>
@@ -56,13 +86,13 @@ export default function Waitlist(){
 
         <fieldset className="waitlist-fieldset"><legend>How would you prefer to receive care?</legend><div className="waitlist-options">{careModes.map(option=><label className="waitlist-option" key={option}><input type="radio" name="careMode" value={option} checked={data.careMode===option} onChange={update}/><span>{option}</span></label>)}</div></fieldset>
 
-        <div className="field-row"><label>When are you interested?<select name="timeframe" value={data.timeframe} onChange={update}>{timeframes.map(option=><option key={option}>{option}</option>)}</select></label><label>Have you seen Jennifer before?<select name="relationship" value={data.relationship} onChange={update}><option>New to Jennifer’s care</option><option>I am a former or current patient</option><option>I prefer not to say</option></select></label></div>
+        <label>When are you interested?<select name="timeframe" value={data.timeframe} onChange={update}>{timeframes.map(option=><option key={option}>{option}</option>)}</select></label>
 
         <label className="waitlist-consent"><input required type="checkbox" name="consent" checked={data.consent} onChange={update}/><span>I understand this is a non-binding expression of interest. It does not establish a provider-patient relationship, guarantee enrollment or an appointment, or provide medical advice. I agree to receive launch-related communications from Prickly Pear Care.</span></label>
         <Notice><LockKeyhole/> Do not enter symptoms, diagnoses, medications, or other medical information. For an emergency, call 911.</Notice>
-        <button className="button waitlist-submit" type="submit">Prepare My Registration <Send size={17}/></button>
+        <button className="button waitlist-submit" type="submit">Prepare Registration Email <Send size={17}/></button>
         <p className="waitlist-helper">Your email app will open with a prepared message. Review it and press Send to complete your registration.</p>
-      </form>
+      </form>}
     </div></section>
   </>;
 }
