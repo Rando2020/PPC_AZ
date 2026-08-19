@@ -2,13 +2,29 @@ import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Messa
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
 
+function PricklyPearBloom({ className='' }){
+  return <svg className={`hero-bloom ${className}`} viewBox="0 0 48 56" aria-hidden="true" focusable="false">
+    <path className="hero-bloom__stem" d="M24 55c0-12 1-20 0-29"/>
+    <g className="hero-bloom__petals">
+      <ellipse cx="24" cy="19" rx="7" ry="15"/>
+      <ellipse cx="24" cy="20" rx="7" ry="14" transform="rotate(58 24 20)"/>
+      <ellipse cx="24" cy="20" rx="7" ry="14" transform="rotate(116 24 20)"/>
+      <ellipse cx="24" cy="20" rx="7" ry="14" transform="rotate(174 24 20)"/>
+      <ellipse cx="24" cy="20" rx="7" ry="14" transform="rotate(232 24 20)"/>
+      <ellipse cx="24" cy="20" rx="7" ry="14" transform="rotate(290 24 20)"/>
+      <circle className="hero-bloom__center" cx="24" cy="20" r="6"/>
+      <circle className="hero-bloom__heart" cx="24" cy="20" r="2.4"/>
+    </g>
+  </svg>;
+}
+
 export default function Home(){return <>
   <section className="editorial-hero">
     <img className="editorial-hero__image" src={`${import.meta.env.BASE_URL}images/jennifer-hero.webp`} alt="Jennifer Carlile seated in a warm, welcoming care setting"/>
     <div className="editorial-hero__veil"/>
     <div className="shell editorial-hero__content">
       <span className="eyebrow">Jennifer Carlile · MSN, FNP-BC</span>
-      <h1>Care that<br/><em>grows with you.</em></h1>
+      <h1>Care that<br/><em><span className="hero-grow">grows<PricklyPearBloom className="hero-bloom--first"/><PricklyPearBloom className="hero-bloom--second"/></span> with you.</em></h1>
       <p>Jennifer makes room for your questions, listens closely, and explains the next step in plain language.</p>
       <div className="button-row"><a className="button" href="#/waitlist">Join the Waitlist <ArrowRight size={17}/></a><a className="editorial-link" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a></div>
       <p className="hero-launch-note"><span/> Opening soon in Marana, with telehealth interest welcomed.</p>
