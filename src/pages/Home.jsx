@@ -7,12 +7,12 @@ export default function Home(){return <>
     <img className="editorial-hero__image" src={`${import.meta.env.BASE_URL}images/jennifer-hero.webp`} alt="Jennifer Carlile seated in a warm, welcoming care setting"/>
     <div className="editorial-hero__veil"/>
     <div className="shell editorial-hero__content">
-      <span className="eyebrow">Jennifer Carlile · MSN, FNP-C</span>
+      <span className="eyebrow">Jennifer Carlile · MSN, FNP-BC</span>
       <h1>Care that<br/><em>grows with you.</em></h1>
       <p>Jennifer makes room for your questions, listens closely, and explains the next step in plain language.</p>
       <div className="button-row"><a className="button" href="#/booking">Book a Visit <ArrowRight size={17}/></a><a className="editorial-link" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a></div>
     </div>
-    <div className="hero-signature">Founder-led care in Southern Arizona</div>
+    <div className="hero-signature">Patient-led Care in Southern Arizona</div>
   </section>
 
   <section className="care-pledge"><div className="shell care-pledge__grid">
@@ -40,7 +40,7 @@ export default function Home(){return <>
 
   <section className="founder-note"><div className="shell founder-note__grid">
     <figure className="founder-note__photo"><img src={`${import.meta.env.BASE_URL}images/consultation-detail.webp`} alt="A nurse practitioner listening during a patient conversation"/><figcaption>Care is personal here.</figcaption></figure>
-    <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-C</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
+    <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
   </div></section>
 
   <section className="local-note"><div className="shell local-note__inner"><Sparkles/><p><span>{practice.serviceArea}</span>Practice location and opening details are coming soon.</p><a href="#/contact">Stay informed <ArrowRight size={14}/></a></div></section>
