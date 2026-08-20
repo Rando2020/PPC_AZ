@@ -45,6 +45,13 @@ export default function Home(){
       <div><Sprout/><span><strong>Practice excellently</strong>Evidence, clarity, and follow-through.</span></div>
     </div></section>
 
+    <section className="founder-proof" aria-label="Jennifer Carlile experience"><div className="shell founder-proof__grid">
+      <div><strong>13+ years</strong><span>practicing as a Family Nurse Practitioner</span></div>
+      <div><strong>9+ years</strong><span>serving Marana and Northwest Tucson</span></div>
+      <div><strong>FNP-BC</strong><span>founder-led care with Jennifer Carlile</span></div>
+      <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
+    </div></section>
+
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
       <div className="editorial-intro__kicker"><Stethoscope/><span><small>Patient-led care in practice</small>Your voice shapes the plan.</span></div>
       <div className="editorial-intro__body">
@@ -53,6 +60,7 @@ export default function Home(){
           <p className="large-copy">Patient-led care means Jennifer starts with what matters to you, then adds clinical context so you can make informed choices and leave with a practical plan.</p>
         </div>
         <PatientLedJourney />
+        <div className="journey-bridge"><div><span className="eyebrow">Ready for the next question?</span><h3>See how patient-led care fits into Direct Primary Care.</h3></div><a className="button button--ghost" href="#/dpc">How DPC works <ArrowRight size={16}/></a></div>
       </div>
     </div></section>
 
@@ -77,9 +85,9 @@ export default function Home(){
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
-      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, and opening information are coming soon. Join the interest list for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the interest list <ArrowRight size={14}/></a></div>
+      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
       <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy"/></figure>
     </div></section>
-    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Tell Jennifer what kind of care would serve you best and receive opening updates. There is no commitment.</CTA>
+    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening and DPC enrollment updates. There is no commitment.</CTA>
   </>;
 }
