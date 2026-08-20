@@ -66,3 +66,31 @@ Add a small number of memorable interactions that reinforce the brand instead of
 - The patient-led journey must keep **Patient-led care** language intact.
 - The DPC explainer must not invent pricing, membership inclusions, access guarantees, response times, or insurance behavior.
 - Do not add more animation libraries unless a specific interaction cannot be built cleanly with the current Motion runtime.
+
+## 2026-08-20 · Conversion and trust pass
+
+### Goal
+
+Turn the homepage, DPC page, and Waitlist into one coherent patient journey instead of a set of individually strong pages.
+
+### Changes
+
+- Added an early Jennifer trust strip with 13+ years as an FNP, 9+ years serving Marana and Northwest Tucson, and FNP-BC.
+- Added a bridge from the Patient-led care journey directly into the DPC explanation.
+- Added a careful "Why people consider DPC" comparison section that describes recognizable frustrations without attacking conventional primary care.
+- Added a Jennifer trust bridge inside the DPC page with the line: **DPC is the structure. Jennifer is the relationship.**
+- Standardized the primary prelaunch conversion action to **Join the Waitlist**.
+- Simplified the primary navigation and moved Resources out of the main navigation until there is enough published content to justify it.
+- Reduced required fallback Waitlist fields to name, email, and consent.
+- Moved phone, ZIP, care format, timing, and future-service interests into an explicitly optional planning section.
+- Added optional demand signals for DPC, general primary-care updates, future weight management, future hormone support, and other future services.
+- Improved the fallback post-registration state with next steps to Meet Jennifer or Understand DPC.
+- Updated FAQ wording so the site does not imply live scheduling is already open.
+- Added `docs/WEBSITE_EXPERIENCE_PRD.md` as the patient-facing product requirements and approval document for Jennifer.
+
+### Guardrails
+
+- A 10/10 experience is a release target, not a claim that the site has passed final QA.
+- The final secure Waitlist vendor may require its own field and confirmation-page updates to match this fallback experience.
+- Optional future-service interests must remain clearly labeled as planning signals, not service availability.
+- No pricing, access promises, telehealth promises, office facts, or membership inclusions may be invented to improve conversion.
