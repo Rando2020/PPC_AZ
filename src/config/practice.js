@@ -53,11 +53,11 @@ export const serviceCategories = [
 ];
 
 export const faqs = [
-  ['When will Prickly Pear Care open?', 'Launch timing is being finalized. Join the interest list or contact the practice to receive updates.'],
+  ['When will Prickly Pear Care open?', 'Launch timing is being finalized. Join the Waitlist to receive opening and DPC enrollment updates.'],
   ['What is Direct Primary Care?', 'Prickly Pear Care plans to launch with a Direct Primary Care membership model for primary care. Final membership pricing, included services, eligibility, and enrollment terms will be published before enrollment opens.'],
   ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance. Before enrollment opens, Prickly Pear Care will clearly explain what the membership includes and how outside services such as specialists, imaging, medications, labs, and insurance may fit into your overall care.'],
   ['What services will be offered?', 'Direct Primary Care is the launch focus. Weight management, hormone support, and other focused services are planned for future expansion, but should not be considered available until they are formally announced.'],
   ['Will telehealth be available?', 'Virtual care availability will be confirmed with the final service, membership, and licensing model.'],
-  ['Can I book online?', 'Yes. The site supports direct appointment requests now and is prepared to connect to a future EHR scheduling system.'],
+  ['Can I book online?', 'Live patient scheduling is not open yet. The website is being built to support website-based booking and a future EHR scheduling connection once the practice is ready to open appointments.'],
   ['Is this form for urgent medical needs?', 'No. Do not use website forms for emergencies or urgent symptoms. Call 911 for an emergency.'],
 ];

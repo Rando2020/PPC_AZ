@@ -1,5 +1,6 @@
 import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
+import providerPortrait from '../../provider-portrait.webp';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
 import { PatientLedJourney } from '../components/PatientLedJourney';
@@ -45,6 +46,13 @@ export default function Home(){
       <div><Sprout/><span><strong>Practice excellently</strong>Evidence, clarity, and follow-through.</span></div>
     </div></section>
 
+    <section className="founder-proof" aria-label="Jennifer Carlile experience"><div className="shell founder-proof__grid">
+      <div><strong>13+ years</strong><span>practicing as a Family Nurse Practitioner</span></div>
+      <div><strong>9+ years</strong><span>serving Marana and Northwest Tucson</span></div>
+      <div><strong>FNP-BC</strong><span>founder-led care with Jennifer Carlile</span></div>
+      <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
+    </div></section>
+
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
       <div className="editorial-intro__kicker"><Stethoscope/><span><small>Patient-led care in practice</small>Your voice shapes the plan.</span></div>
       <div className="editorial-intro__body">
@@ -53,11 +61,12 @@ export default function Home(){
           <p className="large-copy">Patient-led care means Jennifer starts with what matters to you, then adds clinical context so you can make informed choices and leave with a practical plan.</p>
         </div>
         <PatientLedJourney />
+        <div className="journey-bridge"><div><span className="eyebrow">Ready for the next question?</span><h3>See how patient-led care fits into Direct Primary Care.</h3></div><a className="button button--ghost" href="#/dpc">How DPC works <ArrowRight size={16}/></a></div>
       </div>
     </div></section>
 
     <section className="marana-scene" aria-labelledby="marana-scene-title" data-reveal="scene">
-      <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy"/>
+      <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy" decoding="async"/>
       <div className="marana-scene__shade"/>
       <div className="shell marana-scene__content">
         <span className="eyebrow">Rooted in Marana</span>
@@ -72,14 +81,14 @@ export default function Home(){
     </div></section>
 
     <section className="founder-note" data-reveal="split"><div className="shell founder-note__grid">
-      <figure className="founder-note__photo"><img src={`${import.meta.env.BASE_URL}images/consultation-detail.webp`} alt="A nurse practitioner listening during a patient conversation"/><figcaption>Care is personal here.</figcaption></figure>
+      <figure className="founder-note__photo"><img src={providerPortrait} alt="Jennifer Carlile, MSN, FNP-BC" loading="lazy" decoding="async"/><figcaption>Care is personal here.</figcaption></figure>
       <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
-      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, and opening information are coming soon. Join the interest list for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the interest list <ArrowRight size={14}/></a></div>
-      <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy"/></figure>
+      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
+      <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy" decoding="async"/></figure>
     </div></section>
-    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Tell Jennifer what kind of care would serve you best and receive opening updates. There is no commitment.</CTA>
+    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening and DPC enrollment updates. There is no commitment.</CTA>
   </>;
 }
