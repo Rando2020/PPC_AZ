@@ -10,7 +10,11 @@ export function Header({ route }) {
   const [scrolled,setScrolled] = useState(false);
   const [progress,setProgress] = useState(0);
 
-  useEffect(() => setOpen(false), [route]);
+  useEffect(() => {
+    const closeMenu = () => setOpen(false);
+    addEventListener('hashchange', closeMenu);
+    return () => removeEventListener('hashchange', closeMenu);
+  }, []);
 
   useEffect(() => {
     if (!open) return undefined;
