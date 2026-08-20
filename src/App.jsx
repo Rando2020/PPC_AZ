@@ -85,6 +85,25 @@ function upsertMeta(selector, attribute, value){
   if (element) element.setAttribute(attribute, value);
 }
 
+function pageForRoute(route){
+  switch(route){
+    case 'dpc': return <DPC/>;
+    case 'provider': return <Provider/>;
+    case 'about': return <About/>;
+    case 'services': return <Services/>;
+    case 'new-patients': return <NewPatients/>;
+    case 'booking': return <Booking/>;
+    case 'waitlist': return <Waitlist/>;
+    case 'contact': return <Contact/>;
+    case 'portal': return <Portal/>;
+    case 'resources': return <Resources/>;
+    case 'faq': return <FAQ/>;
+    case 'legal/privacy': return <Legal type="privacy"/>;
+    case 'legal/terms': return <Legal type="terms"/>;
+    default: return <Home/>;
+  }
+}
+
 export default function App(){
   const [route,setRoute]=useState(getRoute());
 
@@ -112,13 +131,8 @@ export default function App(){
     return()=>cancelAnimationFrame(frame);
   },[route,meta]);
 
-  let Page={home:Home,dpc:DPC,provider:Provider,about:About,services:Services,'new-patients':NewPatients,booking:Booking,waitlist:Waitlist,contact:Contact,portal:Portal,resources:Resources,faq:FAQ}[route];
-  if(route==='legal/privacy')Page=()=> <Legal type="privacy"/>;
-  if(route==='legal/terms')Page=()=> <Legal type="terms"/>;
-  if(!Page)Page=Home;
-
   return <>
     <div className="route-announcer" aria-live="polite" aria-atomic="true">{meta.announcement}</div>
-    <Layout route={route}><Page/></Layout>
+    <Layout route={route}>{pageForRoute(route)}</Layout>
   </>;
 }
