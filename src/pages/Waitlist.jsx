@@ -10,6 +10,11 @@ const interestOptions = ['Direct Primary Care', 'General primary care updates', 
 const consentVersion = 'waitlist-2026-08';
 const jotformId = (import.meta.env.VITE_JOTFORM_WAITLIST_FORM_ID || '').trim();
 
+function getWaitlistSource(){
+  try { return sessionStorage.getItem('ppc_waitlist_source') || 'direct'; }
+  catch { return 'direct'; }
+}
+
 function SecureWaitlistForm(){
   useEffect(()=>{
     const initialize=()=>window.jotformEmbedHandler?.(`#JotFormIFrame-${jotformId}`,'https://form.jotform.com/');
@@ -46,6 +51,7 @@ export default function Waitlist(){
   function submit(e){
     e.preventDefault();
     const name=`${data.firstName} ${data.lastName}`;
+    const source=getWaitlistSource();
     const body=[
       'Prickly Pear Care Waitlist registration',
       '',
@@ -56,6 +62,7 @@ export default function Waitlist(){
       `Care preference: ${data.careMode||'Not provided'}`,
       `Preferred timeframe: ${data.timeframe||'Not provided'}`,
       `Interested in updates about: ${data.interests.length?data.interests.join(', '):'Not provided'}`,
+      `Website source: ${source}`,
       `Consent version: ${consentVersion}`,
       `Prepared at: ${new Date().toISOString()}`,
       '',
