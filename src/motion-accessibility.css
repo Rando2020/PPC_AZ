@@ -1,0 +1,34 @@
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  [data-reveal],
+  [data-reveal] > *,
+  [data-reveal] .care-path,
+  [data-reveal] article {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .button:hover,
+  .card:hover,
+  .care-path:hover,
+  .editorial-link:hover,
+  .faq-list details[open] summary span {
+    transform: none !important;
+  }
+
+  .reading-progress {
+    transition: none !important;
+  }
+}
