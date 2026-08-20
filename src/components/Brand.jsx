@@ -3,7 +3,7 @@ import logo from '../../logo-mark.webp';
 
 export function Brand({ light = false }) {
   return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Care home">
-    <img className="brand__logo" src={logo} alt="" aria-hidden="true" />
+    <img className="brand__logo" src={logo} alt="" aria-hidden="true" decoding="async" />
     <span className="brand__wordmark">
       <strong>Prickly Pear</strong>
       <small>Care</small>
@@ -14,7 +14,7 @@ export function Brand({ light = false }) {
 
 export function Portrait() {
   return <div className="portrait-wrap">
-    <img className="portrait" src={`${import.meta.env.BASE_URL}images/provider-portrait.png`} alt="Jennifer Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
+    <img className="portrait" src={`${import.meta.env.BASE_URL}images/provider-portrait.png`} alt="Jennifer Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" loading="lazy" decoding="async" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
     <div className="portrait-placeholder" hidden aria-label="Provider photography placeholder">
       <Flower2 size={50}/><span>Provider portrait</span><small>Photography unavailable</small>
     </div>
