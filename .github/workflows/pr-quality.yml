@@ -28,8 +28,11 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies from lockfile
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify dependency tree
+        run: npm ls --depth=0
 
       - name: Lint
         run: npm run lint
