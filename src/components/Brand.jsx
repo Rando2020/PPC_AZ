@@ -1,5 +1,6 @@
 import { Flower2 } from 'lucide-react';
 import logo from '../../logo-mark.webp';
+import providerPortrait from '../../provider-portrait.webp';
 
 export function Brand({ light = false }) {
   return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Care home">
@@ -14,7 +15,7 @@ export function Brand({ light = false }) {
 
 export function Portrait() {
   return <div className="portrait-wrap">
-    <img className="portrait" src={`${import.meta.env.BASE_URL}images/provider-portrait.png`} alt="Jennifer Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" loading="lazy" decoding="async" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
+    <img className="portrait" src={providerPortrait} alt="Jennifer Carlile, Founder and Family Nurse Practitioner at Prickly Pear Care" loading="lazy" decoding="async" onError={(e) => { e.currentTarget.hidden = true; e.currentTarget.nextElementSibling.hidden = false; }}/>
     <div className="portrait-placeholder" hidden aria-label="Provider photography placeholder">
       <Flower2 size={50}/><span>Provider portrait</span><small>Photography unavailable</small>
     </div>
