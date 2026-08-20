@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   quality:
-    name: Lint and production build
+    name: Lint, build, security, and budget
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -34,8 +34,14 @@ jobs:
       - name: Verify dependency tree
         run: npm ls --depth=0
 
+      - name: Audit high-severity dependencies
+        run: npm audit --audit-level=high
+
       - name: Lint
         run: npm run lint
 
       - name: Production build
         run: npm run build
+
+      - name: Enforce build budgets
+        run: node scripts/check-build-budget.mjs
