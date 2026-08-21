@@ -33,6 +33,15 @@ const carePaths = [
   },
 ];
 
+const dpcHouseholdOptions = [
+  'Individual membership · 1 person',
+  'Household / family · 2 people',
+  'Household / family · 3 people',
+  'Household / family · 4 people',
+  'Household / family · 5+ people',
+  'I am not sure yet',
+];
+
 const interestOptions = ['Direct Primary Care', 'General primary care updates', 'Future weight management updates', 'Future hormone support updates', 'Other future services / not sure yet'];
 const consentVersion = 'waitlist-2026-08';
 const jotformId = (import.meta.env.VITE_JOTFORM_WAITLIST_FORM_ID || '').trim();
@@ -74,7 +83,7 @@ function DPCWaitlistFramework(){
         </div>
         <ol>
           <li><span>01</span><div><strong>Join the waitlist</strong><p>Share only the contact information needed for launch updates. No payment today.</p></div></li>
-          <li><span>02</span><div><strong>Review the exact membership</strong><p>See the monthly price, what is included, what is outside the membership, access expectations, and HSA information if the final structure qualifies.</p></div></li>
+          <li><span>02</span><div><strong>Review the exact membership</strong><p>See the monthly price, household options, what is included, what is outside the membership, access expectations, and HSA information if the final structure qualifies.</p></div></li>
           <li><span>03</span><div><strong>Choose and enroll securely</strong><p>When enrollment opens, decide whether DPC, insurance-based care, or a cash-pay service fits you best. Clinical onboarding happens after that choice.</p></div></li>
         </ol>
         <p className="waitlist-onramp__note"><CreditCard aria-hidden="true"/> Joining the waitlist does not create a membership, charge a card, establish a patient relationship, or reserve an appointment.</p>
@@ -112,8 +121,26 @@ function SecureWaitlistForm(){
 
 export default function Waitlist(){
   const [done,setDone]=useState(false);
-  const [data,setData]=useState({firstName:'',lastName:'',email:'',phone:'',zip:'',carePath:'',interests:[],hsaUpdates:false,consent:false});
-  const update=e=>setData({...data,[e.target.name]:e.target.type==='checkbox'?e.target.checked:e.target.value});
+  const [data,setData]=useState({
+    firstName:'',
+    lastName:'',
+    email:'',
+    phone:'',
+    zip:'',
+    carePath:'',
+    dpcHousehold:'',
+    interests:[],
+    hsaUpdates:false,
+    consent:false,
+  });
+
+  const update=e=>setData(current=>({...current,[e.target.name]:e.target.type==='checkbox'?e.target.checked:e.target.value}));
+  const updateCarePath=e=>setData(current=>({
+    ...current,
+    carePath:e.target.value,
+    dpcHousehold:e.target.value==='Direct Primary Care membership'?current.dpcHousehold:'',
+    hsaUpdates:e.target.value==='Direct Primary Care membership'?current.hsaUpdates:false,
+  }));
   const toggleInterest=option=>setData(current=>({...current,interests:current.interests.includes(option)?current.interests.filter(item=>item!==option):[...current.interests,option]}));
 
   function submit(e){
@@ -128,6 +155,7 @@ export default function Waitlist(){
       `Phone: ${data.phone||'Not provided'}`,
       `ZIP code: ${data.zip||'Not provided'}`,
       `Care path interest: ${data.carePath||'Not provided'}`,
+      `DPC household interest: ${data.carePath==='Direct Primary Care membership'?(data.dpcHousehold||'Not provided'):'Not applicable'}`,
       `Interested in HSA information if the final DPC structure qualifies: ${data.hsaUpdates?'Yes':'No / not selected'}`,
       `Interested in updates about: ${data.interests.length?data.interests.join(', '):'Not provided'}`,
       `Website source: ${source}`,
@@ -151,7 +179,7 @@ export default function Waitlist(){
         <h2>Stay close to what comes next.</h2>
         <p className="large-copy">Your name and email are enough to join. The goal is to make the final care options easy to compare before you decide what to enroll in.</p>
         <div className="waitlist-points">
-          <div><BellRing/><span><strong>Get the important details</strong>Hear when opening, DPC pricing and inclusions, insurance participation, or scheduling information is ready.</span></div>
+          <div><BellRing/><span><strong>Get the important details</strong>Hear when opening, DPC pricing and household options, insurance participation, or scheduling information is ready.</span></div>
           <div><MapPin/><span><strong>Help shape the launch</strong>Optional preferences can help Jennifer understand local demand without asking for medical information.</span></div>
           <div><Sparkles/><span><strong>No obligation</strong>The waitlist is not enrollment and does not reserve or guarantee an appointment.</span></div>
         </div>
@@ -162,9 +190,24 @@ export default function Waitlist(){
         <div className="field-row"><label>First name<input required name="firstName" value={data.firstName} onChange={update} autoComplete="given-name"/></label><label>Last name<input required name="lastName" value={data.lastName} onChange={update} autoComplete="family-name"/></label></div>
         <label>Email<input required type="email" name="email" value={data.email} onChange={update} autoComplete="email"/></label>
 
-        <fieldset className="waitlist-fieldset"><legend>Which care path are you most interested in? <small>Optional</small></legend><div className="waitlist-options waitlist-options--paths">{[...carePaths.map(path=>path.value),'I am not sure yet'].map(option=><label className="waitlist-option" key={option}><input type="radio" name="carePath" value={option} checked={data.carePath===option} onChange={update}/><span>{option}</span></label>)}</div></fieldset>
+        <fieldset className="waitlist-fieldset">
+          <legend>Which care path are you most interested in? <small>Optional</small></legend>
+          <div className="waitlist-options waitlist-options--paths">
+            {[...carePaths.map(path=>path.value),'I am not sure yet'].map(option=><label className="waitlist-option" key={option}><input type="radio" name="carePath" value={option} checked={data.carePath===option} onChange={updateCarePath}/><span>{option}</span></label>)}
+          </div>
+        </fieldset>
 
-        {data.carePath==='Direct Primary Care membership'&&<label className="waitlist-consent waitlist-hsa-interest"><input type="checkbox" name="hsaUpdates" checked={data.hsaUpdates} onChange={update}/><span>Send me information about using an HSA if Prickly Pear Care’s final DPC membership structure qualifies.</span></label>}
+        {data.carePath==='Direct Primary Care membership'&&<div className="waitlist-dpc-household">
+          <span className="eyebrow">DPC membership interest</span>
+          <fieldset className="waitlist-fieldset">
+            <legend>Who would likely need the membership? <small>Optional</small></legend>
+            <p>This helps Jennifer plan household options and capacity. Final tier names, age rules, and pricing will be shown before enrollment.</p>
+            <div className="waitlist-options">
+              {dpcHouseholdOptions.map(option=><label className="waitlist-option" key={option}><input type="radio" name="dpcHousehold" value={option} checked={data.dpcHousehold===option} onChange={update}/><span>{option}</span></label>)}
+            </div>
+          </fieldset>
+          <label className="waitlist-consent waitlist-hsa-interest"><input type="checkbox" name="hsaUpdates" checked={data.hsaUpdates} onChange={update}/><span>Send me information about using an HSA if Prickly Pear Care’s final DPC membership structure qualifies.</span></label>
+        </div>}
 
         <details className="waitlist-planning-details">
           <summary>Optional: help Jennifer plan the practice</summary>
