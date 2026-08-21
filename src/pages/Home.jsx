@@ -78,7 +78,15 @@ export default function Home(){
 
     <section className="founder-note" data-reveal="split"><div className="shell founder-note__grid">
       <div className="founder-note__mark" aria-hidden="true"><PricklyPearBloom/><span>Care is personal here.</span><small>Rooted in Marana</small></div>
-      <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
+      <div>
+        <span className="eyebrow">Founder · CEO · Family Nurse Practitioner</span>
+        <h2>A provider you can know. A practice built with purpose.</h2>
+        <p className="large-copy">Prickly Pear Care is built around patient-led care, with your questions, priorities, and goals shaping the conversation.</p>
+        <Quote className="founder-note__quote-icon"/>
+        <blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote>
+        <div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div>
+        <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
+      </div>
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
