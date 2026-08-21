@@ -94,3 +94,26 @@ Turn the homepage, DPC page, and Waitlist into one coherent patient journey inst
 - The final secure Waitlist vendor may require its own field and confirmation-page updates to match this fallback experience.
 - Optional future-service interests must remain clearly labeled as planning signals, not service availability.
 - No pricing, access promises, telehealth promises, office facts, or membership inclusions may be invented to improve conversion.
+
+## 2026-08-21 · Homepage simplification and DPC question depth
+
+### Goal
+
+Reduce homepage friction, make the first scroll more meaningful, and move detailed DPC questions into the FAQ instead of forcing every visitor to process them on the homepage.
+
+### Changes
+
+- Removed the three-item homepage care-pledge strip because it duplicated ideas explained more clearly elsewhere.
+- Kept one compact Jennifer trust strip so the first proof point is experience and local continuity rather than generic values language.
+- Replaced the larger Patient-led journey block on the homepage with a concise DPC value explanation built around three patient questions: predictable monthly cost, starting by reaching out, and keeping insurance for services outside the membership.
+- Changed the homepage DPC bridge to offer two depth choices: **See how DPC works** and **DPC questions**.
+- Reframed the care-path section around three ways to access care: DPC membership, insurance-based primary care, and select cash-pay services.
+- Expanded the FAQ with practical questions about cost, insurance, cash pay, new symptoms, medication follow-up, imaging/referrals, membership boundaries, telehealth, HSA questions, and online scheduling.
+- Kept savings language deliberately qualified. DPC may reduce visit-by-visit financial friction, but the site does not claim it is always cheaper for every patient.
+
+### Guardrails
+
+- Do not bring back duplicate homepage value strips unless user testing shows they improve comprehension.
+- The homepage should answer only: who Jennifer is, what care feels like, why DPC may matter, what other care paths exist, and what to do next.
+- Detailed DPC mechanics belong on the DPC page or FAQ, not in the hero.
+- Do not promise remote prescribing, no-visit refills, unlimited messaging, imaging, referral behavior, HSA eligibility, or cost savings beyond what Jennifer has clinically and operationally confirmed.
