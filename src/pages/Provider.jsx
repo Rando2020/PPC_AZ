@@ -1,0 +1,45 @@
+import { Portrait } from '../components/Brand';
+import { CTA } from '../components/UI';
+import { practice } from '../config/practice';
+
+export default function Provider(){
+  return <>
+    <section className="section provider-profile">
+      <div className="shell">
+        <header className="provider-profile__header">
+          <span className="eyebrow">Meet Jennifer</span>
+          <h1>{practice.provider.name}</h1>
+          <p className="credential">{practice.provider.credentials}</p>
+        </header>
+        <div className="provider-profile__content">
+          <div className="provider-profile__visual">
+            <Portrait/>
+            <blockquote className="provider-profile__quote">“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote>
+          </div>
+          <div className="provider-bio provider-bio--side">
+            {practice.provider.bio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="section section--olive" aria-labelledby="provider-philosophy-title">
+      <div className="shell">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">Her approach to care</span>
+            <h2 id="provider-philosophy-title">Patient-led care, in practice.</h2>
+          </div>
+          <p>Jennifer brings the clinical expertise. You bring your story, priorities, questions, and goals. The plan should make sense to both of you.</p>
+        </div>
+        <div className="three-col">
+          <article><span>01</span><h3>Listen first</h3><p>Start with what is changing, what matters to you, and what you need from the visit.</p></article>
+          <article><span>02</span><h3>Make it clear</h3><p>Understand the clinical reasoning, options, tradeoffs, and next steps without unnecessary jargon.</p></article>
+          <article><span>03</span><h3>Decide together</h3><p>Leave with a practical plan shaped by medical evidence and your real life.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <CTA title="Start with what matters to you." href="#/waitlist" action="Join the Waitlist">Get opening and enrollment updates. There is no commitment.</CTA>
+  </>;
+}
