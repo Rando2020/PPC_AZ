@@ -32,6 +32,13 @@
 .waitlist-planning-details__body{padding:2px 18px 20px;display:grid;gap:18px}
 .waitlist-planning-details__body>p{color:var(--muted);font-size:.9rem;margin:0}
 .waitlist-hsa-interest{background:#eef0e8;border-left:3px solid var(--olive);padding:14px 16px}
+.waitlist-people-stepper{display:inline-grid;grid-template-columns:56px minmax(70px,96px) 56px;align-items:center;border:1px solid var(--line);background:var(--paper);margin:12px 0 6px}
+.waitlist-people-stepper button{appearance:none;border:0;background:transparent;color:var(--olive-dark);min-width:56px;min-height:54px;font-size:1.75rem;line-height:1;cursor:pointer;transition:background-color .18s ease,color .18s ease}
+.waitlist-people-stepper button:hover:not(:disabled){background:var(--cream);color:var(--berry)}
+.waitlist-people-stepper button:focus-visible{outline:3px solid #9b3f5d45;outline-offset:-3px}
+.waitlist-people-stepper button:disabled{cursor:not-allowed;color:#aaa69d;background:#f4f0e7}
+.waitlist-people-stepper__count{display:grid;place-items:center;min-height:54px;border-left:1px solid var(--line);border-right:1px solid var(--line);font:700 1.75rem/1 var(--serif);color:var(--olive-dark);font-variant-numeric:tabular-nums}
+.waitlist-people-stepper__label{margin:0;color:var(--muted);font-size:.88rem}
 @media(max-width:960px){
   .waitlist-framework__grid{grid-template-columns:1fr}
   .waitlist-path{min-height:0}
@@ -44,7 +51,9 @@
   .waitlist-path{padding:26px}
   .waitlist-onramp{padding:28px 24px}
   .waitlist-options--paths{grid-template-columns:1fr}
+  .waitlist-people-stepper{grid-template-columns:54px 76px 54px}
+  .waitlist-people-stepper button,.waitlist-people-stepper__count{min-height:52px}
 }
 @media(prefers-reduced-motion:reduce){
-  .waitlist-path,.waitlist-planning-details summary{transition:none!important}
+  .waitlist-path,.waitlist-planning-details summary,.waitlist-people-stepper button{transition:none!important}
 }
