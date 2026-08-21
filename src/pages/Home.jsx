@@ -2,7 +2,6 @@ import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Steth
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
-import { PatientLedJourney } from '../components/PatientLedJourney';
 import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 export default function Home(){
@@ -33,33 +32,32 @@ export default function Home(){
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
         <motion.p variants={heroItem}>Patient-led primary care with Jennifer Carlile, MSN, FNP-BC, built around careful listening, clear choices, and care that can grow with your needs.</motion.p>
         <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
-        <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details and DPC membership terms are being finalized.</motion.p>
+        <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
       <div className="hero-signature">Patient-led care in Southern Arizona</div>
     </section>
 
-    <section className="care-pledge" data-reveal="stagger"><div className="shell care-pledge__grid">
-      <div><HeartHandshake/><span><strong>Listen first</strong>Your story shapes the visit.</span></div>
-      <div><ShieldCheck/><span><strong>Care deeply</strong>Patience and respect at every visit.</span></div>
-      <div><Sprout/><span><strong>Practice excellently</strong>Evidence, clarity, and follow-through.</span></div>
-    </div></section>
-
-    <section className="founder-proof" aria-label="Jennifer Carlile experience"><div className="shell founder-proof__grid">
+    <section className="founder-proof" aria-label="Jennifer Carlile experience and local roots"><div className="shell founder-proof__grid">
       <div><strong>13+ years</strong><span>practicing as a Family Nurse Practitioner</span></div>
       <div><strong>9+ years</strong><span>serving Marana and Northwest Tucson</span></div>
-      <div><strong>FNP-BC</strong><span>founder-led care with Jennifer Carlile</span></div>
+      <div><strong>FNP-BC</strong><span>board-certified Family Nurse Practitioner</span></div>
       <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
     </div></section>
 
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
-      <div className="editorial-intro__kicker"><Stethoscope/><span><small>Patient-led care in practice</small>Your voice shapes the plan.</span></div>
+      <div className="editorial-intro__kicker"><Stethoscope/><span><small>Direct Primary Care, simply</small>Membership instead of visit-by-visit friction.</span></div>
       <div className="editorial-intro__body">
         <div className="editorial-intro__header">
-          <h2>A clearer path through care.</h2>
-          <p className="large-copy">Patient-led care means Jennifer starts with what matters to you, then adds clinical context so you can make informed choices and leave with a practical plan.</p>
+          <h2>Care you don’t have to think twice about using.</h2>
+          <p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make your relationship with Jennifer more predictable and less transactional.</p>
         </div>
-        <PatientLedJourney />
-        <div className="journey-bridge"><div><span className="eyebrow">Ready for the next question?</span><h3>See how patient-led care fits into Direct Primary Care.</h3></div><a className="button button--ghost" href="#/dpc">How DPC works <ArrowRight size={16}/></a></div>
+        <div className="values">
+          <div><ShieldCheck/><span><strong>Know the monthly cost</strong>One recurring membership for the primary-care services included in your plan.</span></div>
+          <div><HeartHandshake/><span><strong>Start by reaching out</strong>When something comes up, begin with your primary-care relationship instead of first deciding whether another visit fee is worth it.</span></div>
+          <div><Sprout/><span><strong>Keep insurance for the bigger stuff</strong>DPC works alongside health coverage for hospital care, specialists, imaging, and other services outside the membership.</span></div>
+        </div>
+        <p className="small">Final access, included services, and membership terms will be published before enrollment opens.</p>
+        <div className="button-row"><a className="button button--ghost" href="#/dpc">See how DPC works <ArrowRight size={16}/></a><a className="editorial-link editorial-link--dark" href="#/faq">DPC questions <ArrowRight size={15}/></a></div>
       </div>
     </div></section>
 
@@ -74,7 +72,7 @@ export default function Home(){
     </section>
 
     <section className="care-paths" data-reveal="up"><div className="shell">
-      <div className="care-paths__heading"><span className="eyebrow">Care that can grow</span><h2>DPC first. Focused programs as the practice expands.</h2><p>Direct Primary Care is the launch focus. Weight management, hormone support, and other focused programs are planned for later and will only be listed as available once Jennifer confirms the details.</p></div>
+      <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as final participation, pricing, and availability are confirmed.</p></div>
       <div className="care-paths__list">{serviceCategories.map((item,i)=><a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
     </div></section>
 
@@ -84,9 +82,9 @@ export default function Home(){
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
-      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
+      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, insurance participation, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
       <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy" decoding="async"/></figure>
     </div></section>
-    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening and DPC enrollment updates. There is no commitment.</CTA>
+    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening, care-option, and enrollment updates. There is no commitment.</CTA>
   </>;
 }
