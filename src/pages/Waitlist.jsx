@@ -33,15 +33,6 @@ const carePaths = [
   },
 ];
 
-const dpcHouseholdOptions = [
-  'Individual membership · 1 person',
-  'Household / family · 2 people',
-  'Household / family · 3 people',
-  'Household / family · 4 people',
-  'Household / family · 5+ people',
-  'I am not sure yet',
-];
-
 const interestOptions = ['Direct Primary Care', 'General primary care updates', 'Future weight management updates', 'Future hormone support updates', 'Other future services / not sure yet'];
 const consentVersion = 'waitlist-2026-08';
 const jotformId = (import.meta.env.VITE_JOTFORM_WAITLIST_FORM_ID || '').trim();
@@ -128,7 +119,7 @@ export default function Waitlist(){
     phone:'',
     zip:'',
     carePath:'',
-    dpcHousehold:'',
+    dpcPeopleCount:0,
     interests:[],
     hsaUpdates:false,
     consent:false,
@@ -138,9 +129,10 @@ export default function Waitlist(){
   const updateCarePath=e=>setData(current=>({
     ...current,
     carePath:e.target.value,
-    dpcHousehold:e.target.value==='Direct Primary Care membership'?current.dpcHousehold:'',
+    dpcPeopleCount:e.target.value==='Direct Primary Care membership'?current.dpcPeopleCount:0,
     hsaUpdates:e.target.value==='Direct Primary Care membership'?current.hsaUpdates:false,
   }));
+  const changeDpcPeopleCount=delta=>setData(current=>({...current,dpcPeopleCount:Math.max(0,current.dpcPeopleCount+delta)}));
   const toggleInterest=option=>setData(current=>({...current,interests:current.interests.includes(option)?current.interests.filter(item=>item!==option):[...current.interests,option]}));
 
   function submit(e){
@@ -155,7 +147,7 @@ export default function Waitlist(){
       `Phone: ${data.phone||'Not provided'}`,
       `ZIP code: ${data.zip||'Not provided'}`,
       `Care path interest: ${data.carePath||'Not provided'}`,
-      `DPC household interest: ${data.carePath==='Direct Primary Care membership'?(data.dpcHousehold||'Not provided'):'Not applicable'}`,
+      `People likely needing DPC membership: ${data.carePath==='Direct Primary Care membership'?(data.dpcPeopleCount||'Not provided'):'Not applicable'}`,
       `Interested in HSA information if the final DPC structure qualifies: ${data.hsaUpdates?'Yes':'No / not selected'}`,
       `Interested in updates about: ${data.interests.length?data.interests.join(', '):'Not provided'}`,
       `Website source: ${source}`,
@@ -200,11 +192,14 @@ export default function Waitlist(){
         {data.carePath==='Direct Primary Care membership'&&<div className="waitlist-dpc-household">
           <span className="eyebrow">DPC membership interest</span>
           <fieldset className="waitlist-fieldset">
-            <legend>Who would likely need the membership? <small>Optional</small></legend>
-            <p>This helps Jennifer plan household options and capacity. Final tier names, age rules, and pricing will be shown before enrollment.</p>
-            <div className="waitlist-options">
-              {dpcHouseholdOptions.map(option=><label className="waitlist-option" key={option}><input type="radio" name="dpcHousehold" value={option} checked={data.dpcHousehold===option} onChange={update}/><span>{option}</span></label>)}
+            <legend>How many people would likely need care? <small>Optional</small></legend>
+            <p>Use the buttons to estimate how many people may need a DPC membership. Leave it at 0 if you are not sure yet. Final household rules and pricing will be shown before enrollment.</p>
+            <div className="waitlist-people-stepper" role="group" aria-label="Number of people who may need DPC membership">
+              <button type="button" onClick={()=>changeDpcPeopleCount(-1)} disabled={data.dpcPeopleCount===0} aria-label="Decrease number of people">−</button>
+              <output className="waitlist-people-stepper__count" aria-live="polite" aria-atomic="true">{data.dpcPeopleCount}</output>
+              <button type="button" onClick={()=>changeDpcPeopleCount(1)} aria-label="Increase number of people">+</button>
             </div>
+            <p className="waitlist-people-stepper__label">{data.dpcPeopleCount===0?'Not specified yet':`${data.dpcPeopleCount} ${data.dpcPeopleCount===1?'person':'people'} likely needing care`}</p>
           </fieldset>
           <label className="waitlist-consent waitlist-hsa-interest"><input type="checkbox" name="hsaUpdates" checked={data.hsaUpdates} onChange={update}/><span>Send me information about using an HSA if Prickly Pear Care’s final DPC membership structure qualifies.</span></label>
         </div>}
