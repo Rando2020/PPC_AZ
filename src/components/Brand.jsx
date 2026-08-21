@@ -3,11 +3,11 @@ import logo from '../../logo-mark.webp';
 import providerPortrait from '../../provider-portrait.webp';
 
 export function Brand({ light = false }) {
-  return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Care home">
+  return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Primary Care PLLC home">
     <img className="brand__logo" src={logo} alt="" aria-hidden="true" decoding="async" />
     <span className="brand__wordmark">
       <strong>Prickly Pear</strong>
-      <small>Care</small>
+      <small>Primary Care <span className="brand__pllc">PLLC</span></small>
       <span className="brand__location">Marana, Arizona</span>
     </span>
   </a>;
