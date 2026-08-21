@@ -3,7 +3,7 @@ import { Layout } from './components/Layout';
 import Home from './pages/Home';
 import Booking from './pages/Booking';
 import Waitlist from './pages/Waitlist';
-import { Provider, About, DPC, Services, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
+import { Provider, About, DPCMembership, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
 
 const routeMeta = {
   home: {
@@ -13,7 +13,7 @@ const routeMeta = {
   },
   dpc: {
     title: 'Direct Primary Care in Marana, AZ | Prickly Pear Care',
-    description: 'Learn how Prickly Pear Care plans to use Direct Primary Care to support continuity, clear expectations, and patient-led primary care with Jennifer Carlile.',
+    description: 'Learn how Direct Primary Care membership can provide predictable, relationship-based primary care and how it works alongside health insurance.',
     announcement: 'Direct Primary Care page',
   },
   provider: {
@@ -22,8 +22,8 @@ const routeMeta = {
     announcement: 'Meet Jennifer page',
   },
   services: {
-    title: 'Care & Services | Prickly Pear Care',
-    description: 'See the current launch focus and planned future care pathways at Prickly Pear Care. Direct Primary Care is the launch focus.',
+    title: 'Compare Your Care Options | Prickly Pear Care',
+    description: 'Compare insurance-based primary care, Direct Primary Care membership, and select cash-pay services at Prickly Pear Primary Care.',
     announcement: 'Care and Services page',
   },
   'new-patients': {
@@ -87,10 +87,10 @@ function upsertMeta(selector, attribute, value){
 
 function pageForRoute(route){
   switch(route){
-    case 'dpc': return <DPC/>;
+    case 'dpc': return <DPCMembership/>;
     case 'provider': return <Provider/>;
     case 'about': return <About/>;
-    case 'services': return <Services/>;
+    case 'services': return <CareOptions/>;
     case 'new-patients': return <NewPatients/>;
     case 'booking': return <Booking/>;
     case 'waitlist': return <Waitlist/>;

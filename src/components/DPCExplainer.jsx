@@ -5,27 +5,27 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 const items = [
   {
     id: 'terms',
-    eyebrow: '01 · Start with the terms',
-    title: 'See the membership clearly before you enroll.',
-    body: 'Before enrollment opens, Prickly Pear Care will publish membership pricing, what is included, what is outside the membership, and the key enrollment terms.',
+    eyebrow: '01 · Predictable membership',
+    title: 'Pay a straightforward monthly fee.',
+    body: 'Instead of billing insurance for included primary-care visits, you pay Prickly Pear Primary Care directly. Final pricing, inclusions, and enrollment terms will be published before enrollment opens.',
     icon: CircleDollarSign,
-    note: 'No guessing. No hidden model assumptions.',
+    note: 'Clear terms before you make a decision.',
   },
   {
     id: 'relationship',
-    eyebrow: '02 · Build continuity',
-    title: 'Use DPC as your ongoing primary-care home.',
-    body: 'The model is designed around an ongoing primary-care relationship with Jennifer, so your questions, priorities, and story can carry forward over time.',
+    eyebrow: '02 · Ongoing relationship',
+    title: 'Build care around a provider who knows you.',
+    body: 'DPC is designed around continuity with Jennifer, so your medical history, questions, priorities, and goals can carry forward rather than restarting at every visit.',
     icon: HeartHandshake,
     note: 'The relationship is the center of the model.',
   },
   {
     id: 'boundaries',
-    eyebrow: '03 · Know the boundaries',
-    title: 'Understand what DPC does and does not replace.',
-    body: 'DPC membership is not health insurance. Final enrollment materials will explain how outside services such as labs, imaging, specialists, and medications may fit in.',
+    eyebrow: '03 · Keep insurance protection',
+    title: 'Use DPC alongside health insurance.',
+    body: 'DPC membership is not health insurance. Many people keep insurance for major or unexpected expenses while using DPC for their ongoing primary care.',
     icon: Route,
-    note: 'Primary care can be simpler without pretending everything is included.',
+    note: 'Two different tools serving different healthcare needs.',
   },
 ];
 
@@ -39,8 +39,8 @@ export function DPCExplainer() {
     <section className="dpc-explainer" aria-labelledby="dpc-explainer-title">
       <div className="dpc-explainer__intro">
         <span className="eyebrow">DPC, without the jargon</span>
-        <h2 id="dpc-explainer-title">Three things to understand before enrollment.</h2>
-        <p>Direct Primary Care changes how the primary-care relationship is structured. It does not erase the rest of the healthcare system, so the boundaries should be easy to understand before you sign up.</p>
+        <h2 id="dpc-explainer-title">A simpler structure for ongoing primary care.</h2>
+        <p>The monthly membership changes how included primary care is paid for and accessed. It does not erase the rest of the healthcare system, so both the benefits and boundaries should be clear before you enroll.</p>
       </div>
 
       <div className="dpc-explainer__grid">
