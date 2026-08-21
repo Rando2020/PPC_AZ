@@ -1,4 +1,4 @@
-import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, HeartHandshake, ShieldCheck, Quote, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
@@ -45,18 +45,18 @@ export default function Home(){
     </div></section>
 
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
-      <div className="editorial-intro__kicker"><Stethoscope/><span><small>Direct Primary Care, simply</small>Membership instead of visit-by-visit friction.</span></div>
+      <div className="editorial-intro__kicker"><Stethoscope/><span><small>DPC, in real life</small>Membership instead of visit-by-visit friction.</span></div>
       <div className="editorial-intro__body">
         <div className="editorial-intro__header">
           <h2>Care you don’t have to think twice about using.</h2>
-          <p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make your relationship with Jennifer more predictable and less transactional.</p>
+          <p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make it easier to start with your relationship with Jennifer instead of first deciding whether another visit charge is worth it.</p>
         </div>
         <div className="values">
-          <div><ShieldCheck/><span><strong>Know the monthly cost</strong>One recurring membership for the primary-care services included in your plan.</span></div>
-          <div><HeartHandshake/><span><strong>Start by reaching out</strong>When something comes up, begin with your primary-care relationship instead of first deciding whether another visit fee is worth it.</span></div>
-          <div><Sprout/><span><strong>Keep insurance for the bigger stuff</strong>DPC works alongside health coverage for hospital care, specialists, imaging, and other services outside the membership.</span></div>
+          <div><Stethoscope/><span><strong>“I woke up sick.”</strong>Start by reaching out. Jennifer can help determine whether the next step should be a message, visit, testing, treatment, or another level of care.</span></div>
+          <div><HeartHandshake/><span><strong>“I have a medication question.”</strong>Not every question automatically needs another separately billed visit. Jennifer decides when an exam, monitoring, or additional evaluation is clinically needed.</span></div>
+          <div><ShieldCheck/><span><strong>“I need imaging or a specialist.”</strong>Jennifer can evaluate the concern and coordinate an appropriate referral or test when clinically indicated. Outside services remain separate and may run through insurance.</span></div>
         </div>
-        <p className="small">Final access, included services, and membership terms will be published before enrollment opens.</p>
+        <p className="small"><strong>Individual DPC membership pricing begins at ${practice.dpcIndividualStartingPrice}/month.</strong> Household pricing, final inclusions, access standards, and enrollment terms will be shown before enrollment. DPC does not replace health insurance for major medical care.</p>
         <div className="button-row"><a className="button button--ghost" href="#/dpc">See how DPC works <ArrowRight size={16}/></a><a className="editorial-link editorial-link--dark" href="#/faq">DPC questions <ArrowRight size={15}/></a></div>
       </div>
     </div></section>
