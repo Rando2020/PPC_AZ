@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
 import Home from './pages/Home';
+import Provider from './pages/Provider';
 import Booking from './pages/Booking';
 import Waitlist from './pages/Waitlist';
-import { Provider, About, DPCMembership, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
+import { About, DPCMembership, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
 
 const routeMeta = {
   home: {
