@@ -1,6 +1,7 @@
 import { Portrait } from '../components/Brand';
 import { CTA } from '../components/UI';
 import { practice } from '../config/practice';
+import { siteMedia } from '../config/media';
 import './provider.css';
 
 const providerProof = [
@@ -12,7 +13,13 @@ const providerProof = [
 export default function Provider(){
   return <>
     <section className="provider-banner" aria-label="Southern Arizona landscape">
-      <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="Sonoran Desert landscape near Marana, Arizona at sunset" fetchPriority="high" decoding="async"/>
+      <img
+        src={siteMedia.provider.maranaBanner.src}
+        alt={siteMedia.provider.maranaBanner.alt}
+        style={{ objectPosition: siteMedia.provider.maranaBanner.position }}
+        fetchPriority="high"
+        decoding="async"
+      />
       <div className="provider-banner__shade"/>
       <div className="shell provider-banner__content">
         <span>Rooted in Southern Arizona</span>
