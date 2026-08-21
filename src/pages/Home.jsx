@@ -29,10 +29,10 @@ export default function Home(){
       />
       <div className="editorial-hero__veil"/>
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
-        <motion.span className="eyebrow" variants={heroItem}>Direct Primary Care · Marana, Arizona</motion.span>
+        <motion.span className="eyebrow" variants={heroItem}>Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
         <motion.p variants={heroItem}>Patient-led primary care with Jennifer Carlile, MSN, FNP-BC, built around careful listening, clear choices, and care that can grow with your needs.</motion.p>
-        <motion.div className="button-row" variants={heroItem}><a className="button" href="#/dpc">Explore Direct Primary Care <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
+        <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details and DPC membership terms are being finalized.</motion.p>
       </motion.div>
       <div className="hero-signature">Patient-led care in Southern Arizona</div>
