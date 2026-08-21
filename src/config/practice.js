@@ -25,38 +25,38 @@ export const practice = {
     license: 'Arizona AP5088',
     community: 'International medical missions with Hope Without Borders',
   },
-  availabilityNote: 'Prickly Pear Care plans to launch with Direct Primary Care (DPC) as the primary-care foundation. Final membership pricing, included services, eligibility, opening timing, and enrollment terms are still being finalized. Weight management, hormone support, and other focused programs are planned for future expansion and should not be treated as currently available until Jennifer confirms them.',
+  availabilityNote: 'Prickly Pear Primary Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. Final insurance participation, covered services, membership pricing and inclusions, cash-pay offerings, eligibility, and opening timing are still being finalized.',
 };
 
 export const serviceCategories = [
   {
     icon: 'heart',
-    title: 'Direct Primary Care',
-    description: 'A membership-based primary-care relationship designed around continuity, clearer communication, and patient-led decisions. Final membership details are coming soon.',
-    status: 'Launch focus',
-    href: '#/dpc',
-  },
-  {
-    icon: 'sparkle',
-    title: 'Weight management',
-    description: 'A future focused-care program intended to support individualized weight and metabolic health goals. Scope, eligibility, pricing, and launch timing are not yet final.',
-    status: 'Planned',
+    title: 'Insurance-Based Primary Care',
+    description: 'Use health insurance for covered primary-care services, subject to plan participation, coverage, copays, deductible, and coinsurance.',
+    status: 'Planned care pathway',
     href: '#/services',
   },
   {
+    icon: 'sparkle',
+    title: 'Direct Primary Care Membership',
+    description: 'A predictable monthly membership designed around continuity, more personal access, and an ongoing relationship with Jennifer.',
+    status: 'Relationship-focused option',
+    href: '#/dpc',
+  },
+  {
     icon: 'flower',
-    title: 'Hormone support',
-    description: 'A future focused-care pathway for individualized hormone evaluation and support. Scope, eligibility, pricing, and launch timing are not yet final.',
-    status: 'Planned',
+    title: 'Select Cash-Pay Services',
+    description: 'Specific services offered at transparent, upfront prices outside insurance coverage. The final service list and pricing are coming soon.',
+    status: 'Planned care pathway',
     href: '#/services',
   },
 ];
 
 export const faqs = [
   ['When will Prickly Pear Care open?', 'Launch timing is being finalized. Join the Waitlist to receive opening and DPC enrollment updates.'],
-  ['What is Direct Primary Care?', 'Prickly Pear Care plans to launch with a Direct Primary Care membership model for primary care. Final membership pricing, included services, eligibility, and enrollment terms will be published before enrollment opens.'],
-  ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance. Before enrollment opens, Prickly Pear Care will clearly explain what the membership includes and how outside services such as specialists, imaging, medications, labs, and insurance may fit into your overall care.'],
-  ['What services will be offered?', 'Direct Primary Care is the launch focus. Weight management, hormone support, and other focused services are planned for future expansion, but should not be considered available until they are formally announced.'],
+  ['What is Direct Primary Care?', 'Direct Primary Care is a primary-care membership paid directly to the practice rather than billed to insurance for included services. Final membership pricing, included services, eligibility, and enrollment terms will be published before enrollment opens.'],
+  ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance and is not health insurance. Many people maintain coverage for major or unexpected medical expenses while using DPC for ongoing primary care.'],
+  ['What care options will be offered?', 'Prickly Pear Primary Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. Final plan participation, membership terms, service availability, and pricing will be published before care begins.'],
   ['Will telehealth be available?', 'Virtual care availability will be confirmed with the final service, membership, and licensing model.'],
   ['Can I book online?', 'Live patient scheduling is not open yet. The website is being built to support website-based booking and a future EHR scheduling connection once the practice is ready to open appointments.'],
   ['Is this form for urgent medical needs?', 'No. Do not use website forms for emergencies or urgent symptoms. Call 911 for an emergency.'],
