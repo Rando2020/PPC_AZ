@@ -39,6 +39,9 @@
 .waitlist-people-stepper button:disabled{cursor:not-allowed;color:#aaa69d;background:#f4f0e7}
 .waitlist-people-stepper__count{display:grid;place-items:center;min-height:54px;border-left:1px solid var(--line);border-right:1px solid var(--line);font:700 1.75rem/1 var(--serif);color:var(--olive-dark);font-variant-numeric:tabular-nums}
 .waitlist-people-stepper__label{margin:0;color:var(--muted);font-size:.88rem}
+.waitlist-membership-preview{display:grid;gap:4px;margin-top:14px;padding:16px 18px;background:var(--cream);border-left:3px solid var(--berry)}
+.waitlist-membership-preview strong{color:var(--olive-dark);font-size:1rem}
+.waitlist-membership-preview span{color:var(--muted);font-size:.88rem;line-height:1.5}
 @media(max-width:960px){
   .waitlist-framework__grid{grid-template-columns:1fr}
   .waitlist-path{min-height:0}
@@ -53,6 +56,7 @@
   .waitlist-options--paths{grid-template-columns:1fr}
   .waitlist-people-stepper{grid-template-columns:54px 76px 54px}
   .waitlist-people-stepper button,.waitlist-people-stepper__count{min-height:52px}
+  .waitlist-membership-preview{padding:14px 16px}
 }
 @media(prefers-reduced-motion:reduce){
   .waitlist-path,.waitlist-planning-details summary,.waitlist-people-stepper button{transition:none!important}
