@@ -14,7 +14,6 @@ export default function Provider(){
         <div className="provider-profile__content">
           <div className="provider-profile__visual">
             <Portrait/>
-            <blockquote className="provider-profile__quote">“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote>
           </div>
           <div className="provider-bio provider-bio--side">
             {practice.provider.bio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
