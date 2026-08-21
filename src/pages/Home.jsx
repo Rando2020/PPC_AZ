@@ -1,6 +1,7 @@
 import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Quote, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
+import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
 import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
@@ -19,8 +20,9 @@ export default function Home(){
     <section className="editorial-hero">
       <motion.img
         className="editorial-hero__image"
-        src={`${import.meta.env.BASE_URL}images/jennifer-hero.webp`}
-        alt="Jennifer Carlile seated in a warm, welcoming care setting"
+        src={siteMedia.home.hero.src}
+        alt={siteMedia.home.hero.alt}
+        style={{ objectPosition: siteMedia.home.hero.position }}
         fetchPriority="high"
         initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.015 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -62,7 +64,13 @@ export default function Home(){
     </div></section>
 
     <section className="marana-scene" aria-labelledby="marana-scene-title" data-reveal="scene">
-      <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="A saguaro and flowering prickly pear overlooking the Sonoran Desert at sunset" loading="lazy" decoding="async"/>
+      <img
+        src={siteMedia.home.maranaBanner.src}
+        alt={siteMedia.home.maranaBanner.alt}
+        style={{ objectPosition: siteMedia.home.maranaBanner.position }}
+        loading="lazy"
+        decoding="async"
+      />
       <div className="marana-scene__shade"/>
       <div className="shell marana-scene__content">
         <span className="eyebrow">Rooted in Marana</span>
@@ -106,7 +114,7 @@ export default function Home(){
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
       <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, insurance participation, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
-      <figure className="local-story__photo"><img src={`${import.meta.env.BASE_URL}images/prickly-pear-bloom.webp`} alt="Flowering prickly pear cactus in the Sonoran Desert at sunset" loading="lazy" decoding="async"/></figure>
+      <figure className="local-story__photo"><img src={siteMedia.home.pricklyPearDetail.src} alt={siteMedia.home.pricklyPearDetail.alt} style={{ objectPosition: siteMedia.home.pricklyPearDetail.position }} loading="lazy" decoding="async"/></figure>
     </div></section>
     <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening, care-option, and enrollment updates. There is no commitment.</CTA>
   </>;
