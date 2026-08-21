@@ -1,6 +1,5 @@
 import { ArrowRight, HeartHandshake, ShieldCheck, Sprout, Quote, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
-import providerPortrait from '../../provider-portrait.webp';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
 import { PatientLedJourney } from '../components/PatientLedJourney';
@@ -81,7 +80,7 @@ export default function Home(){
     </div></section>
 
     <section className="founder-note" data-reveal="split"><div className="shell founder-note__grid">
-      <figure className="founder-note__photo"><img src={providerPortrait} alt="Jennifer Carlile, MSN, FNP-BC" loading="lazy" decoding="async"/><figcaption>Care is personal here.</figcaption></figure>
+      <div className="founder-note__mark" aria-hidden="true"><PricklyPearBloom/><span>Care is personal here.</span><small>Rooted in Marana</small></div>
       <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
     </div></section>
 
