@@ -1,15 +1,34 @@
 import { Portrait } from '../components/Brand';
 import { CTA } from '../components/UI';
 import { practice } from '../config/practice';
+import './provider.css';
+
+const providerProof = [
+  ['13+ years', 'practicing as a Family Nurse Practitioner'],
+  ['9+ years', 'serving Marana and Northwest Tucson'],
+  ['FNP-BC', 'board-certified Family Nurse Practitioner'],
+];
 
 export default function Provider(){
   return <>
+    <section className="provider-banner" aria-label="Southern Arizona landscape">
+      <img src={`${import.meta.env.BASE_URL}images/marana-sunset.webp`} alt="Sonoran Desert landscape near Marana, Arizona at sunset" fetchPriority="high" decoding="async"/>
+      <div className="provider-banner__shade"/>
+      <div className="shell provider-banner__content">
+        <span>Rooted in Southern Arizona</span>
+        <strong>Marana · Northwest Tucson</strong>
+      </div>
+    </section>
+
     <section className="section provider-profile">
       <div className="shell">
         <header className="provider-profile__header">
           <span className="eyebrow">Meet Jennifer</span>
           <h1>{practice.provider.name}</h1>
           <p className="credential">{practice.provider.credentials}</p>
+          <div className="provider-proof" aria-label="Jennifer Carlile qualifications and experience">
+            {providerProof.map(([value,label])=><div key={value}><strong>{value}</strong><span>{label}</span></div>)}
+          </div>
         </header>
         <div className="provider-profile__content">
           <div className="provider-profile__visual">
