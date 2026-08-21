@@ -3,6 +3,7 @@ import { ArrowRight, BellRing, Check, CreditCard, HeartHandshake, LockKeyhole, M
 import { PageHero } from '../components/Layout';
 import { Notice } from '../components/UI';
 import { practice } from '../config/practice';
+import '../waitlist.css';
 
 const carePaths = [
   {
