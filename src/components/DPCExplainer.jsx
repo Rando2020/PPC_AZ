@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { ArrowRight, CircleDollarSign, HeartHandshake, Route } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { DPCMembershipOffer } from './DPCMembershipOffer';
 
 const items = [
   {
     id: 'terms',
     eyebrow: '01 · Predictable membership',
     title: 'Pay a straightforward monthly fee.',
-    body: 'Instead of billing insurance for included primary-care visits, you pay Prickly Pear Primary Care directly. Final pricing, inclusions, and enrollment terms will be published before enrollment opens.',
+    body: 'Instead of billing insurance for included primary-care visits, you pay Prickly Pear Primary Care directly. Membership options begin at $99 per month for an individual.',
     icon: CircleDollarSign,
     note: 'Clear terms before you make a decision.',
   },
@@ -36,7 +37,7 @@ export function DPCExplainer() {
   const ActiveIcon = active.icon;
 
   return (
-    <section className="dpc-explainer" aria-labelledby="dpc-explainer-title">
+    <><section className="dpc-explainer" aria-labelledby="dpc-explainer-title">
       <div className="dpc-explainer__intro">
         <span className="eyebrow">DPC, without the jargon</span>
         <h2 id="dpc-explainer-title">A simpler structure for ongoing primary care.</h2>
@@ -78,6 +79,6 @@ export function DPCExplainer() {
           </AnimatePresence>
         </div>
       </div>
-    </section>
+    </section><DPCMembershipOffer/></>
   );
 }

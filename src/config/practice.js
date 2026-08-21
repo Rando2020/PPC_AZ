@@ -25,7 +25,7 @@ export const practice = {
     license: 'Arizona AP5088',
     community: 'International medical missions with Hope Without Borders',
   },
-  availabilityNote: 'Prickly Pear Primary Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. Final insurance participation, covered services, membership pricing and inclusions, cash-pay offerings, eligibility, and opening timing are still being finalized.',
+  availabilityNote: 'Prickly Pear Primary Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. DPC pricing and intended inclusions are now available to review. Final insurance participation, enrollment terms, cash-pay offerings, eligibility, and opening timing are still being finalized.',
 };
 
 export const serviceCategories = [
@@ -54,10 +54,10 @@ export const serviceCategories = [
 
 export const faqs = [
   ['When will Prickly Pear Care open?', 'Launch timing is being finalized. Join the Waitlist to receive opening and DPC enrollment updates.'],
-  ['What is Direct Primary Care?', 'Direct Primary Care is a primary-care membership paid directly to the practice rather than billed to insurance for included services. Final membership pricing, included services, eligibility, and enrollment terms will be published before enrollment opens.'],
+  ['What is Direct Primary Care?', 'Direct Primary Care is a primary-care membership paid directly to the practice rather than billed to insurance for included services. Membership pricing begins at $99 per month for an individual. Final eligibility and enrollment terms will be published before enrollment opens.'],
   ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance and is not health insurance. Many people maintain coverage for major or unexpected medical expenses while using DPC for ongoing primary care.'],
   ['What care options will be offered?', 'Prickly Pear Primary Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. Final plan participation, membership terms, service availability, and pricing will be published before care begins.'],
-  ['Will telehealth be available?', 'Virtual care availability will be confirmed with the final service, membership, and licensing model.'],
+  ['Will telehealth be available?', 'Telemedicine is intended to be included with DPC membership when clinically appropriate. Final availability, communication standards, technology, and licensing terms will be confirmed before enrollment.'],
   ['Can I book online?', 'Live patient scheduling is not open yet. The website is being built to support website-based booking and a future EHR scheduling connection once the practice is ready to open appointments.'],
   ['Is this form for urgent medical needs?', 'No. Do not use website forms for emergencies or urgent symptoms. Call 911 for an emergency.'],
 ];
