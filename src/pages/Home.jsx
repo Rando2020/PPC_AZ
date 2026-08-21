@@ -4,7 +4,6 @@ import providerPortrait from '../../provider-portrait.webp';
 import { practice, serviceCategories } from '../config/practice';
 import { CTA } from '../components/UI';
 import { PatientLedJourney } from '../components/PatientLedJourney';
-import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 export default function Home(){
   const reduceMotion = useReducedMotion();
@@ -29,7 +28,6 @@ export default function Home(){
         transition={{ duration: reduceMotion ? 0.2 : 0.75, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="editorial-hero__veil"/>
-      <PricklyPearBloom className="editorial-hero__bloom" />
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Direct Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
