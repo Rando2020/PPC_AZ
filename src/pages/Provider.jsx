@@ -20,6 +20,9 @@ export default function Provider(){
         <div className="provider-profile__content">
           <div className="provider-profile__visual">
             <Portrait/>
+            <div className="provider-proof" aria-label="Jennifer Carlile qualifications and experience">
+              {providerProof.map(([value,label])=><div key={value}><strong>{value}</strong><span>{label}</span></div>)}
+            </div>
           </div>
           <div className="provider-bio provider-bio--side">
             <header className="provider-profile__header">
@@ -27,9 +30,6 @@ export default function Provider(){
               <p className="credential">{practice.provider.credentials}</p>
             </header>
             {professionalBio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
-            <div className="provider-proof" aria-label="Jennifer Carlile qualifications and experience">
-              {providerProof.map(([value,label])=><div key={value}><strong>{value}</strong><span>{label}</span></div>)}
-            </div>
           </div>
         </div>
       </div>
