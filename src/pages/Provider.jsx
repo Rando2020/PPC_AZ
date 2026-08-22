@@ -1,7 +1,6 @@
 import { Portrait } from '../components/Brand';
 import { CTA } from '../components/UI';
 import { practice } from '../config/practice';
-import { siteMedia } from '../config/media';
 import './provider.css';
 
 const providerProof = [
@@ -39,16 +38,12 @@ export default function Provider(){
     </section>
 
     <section className="section provider-local-story" aria-labelledby="provider-local-story-title">
-      <div className="shell provider-local-story__grid">
-        <figure className="provider-local-story__photo">
-          <img
-            src={siteMedia.library.pricklyPearFruit.src}
-            alt={siteMedia.library.pricklyPearFruit.alt}
-            style={{ objectPosition: siteMedia.library.pricklyPearFruit.position }}
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
+      <div className="shell provider-local-story__frame">
+        <div className="provider-local-story__marker" aria-hidden="true">
+          <span>Rooted here</span>
+          <strong>9+</strong>
+          <small>years serving<br/>Marana + NW Tucson</small>
+        </div>
         <div className="provider-local-story__copy">
           <span className="eyebrow">Rooted in the community</span>
           <h2 id="provider-local-story-title">A provider who already knows Marana.</h2>
