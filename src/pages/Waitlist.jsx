@@ -11,7 +11,7 @@ const carePaths = [
     eyebrow: 'Launch focus',
     title: 'DPC Membership',
     description: 'One recurring monthly membership for the primary-care services included in the plan, built around an ongoing relationship with Jennifer.',
-    note: `Individual pricing begins at $${practice.dpcIndividualStartingPrice}/month. Household pricing, final inclusions, access terms, and HSA information will be published before enrollment opens.`,
+    note: `Individual membership is $${practice.dpcIndividualStartingPrice}/month. A family of four is $${practice.dpcFamilyFourPrice}/month, with each additional child $${practice.dpcAdditionalChildPrice}/month. Final inclusions, access terms, and HSA information will be published before enrollment opens.`,
     icon: HeartHandshake,
     featured: true,
   },
@@ -70,11 +70,11 @@ function DPCWaitlistFramework(){
         <div className="waitlist-onramp__intro">
           <span className="eyebrow">The DPC on-ramp</span>
           <h2>Think membership, not another visit-by-visit transaction.</h2>
-          <p>Joining the waitlist simply keeps you close to the decisions that matter before you enroll. You will see the exact household price and terms before making a commitment.</p>
+          <p>Joining the waitlist keeps you close to launch and enrollment updates. Current DPC pricing is shown now, and the final service inclusions, access expectations, and enrollment terms will be available before you make a commitment.</p>
         </div>
         <ol>
           <li><span>01</span><div><strong>Join the waitlist</strong><p>Share only the contact information needed for launch updates. No payment today.</p></div></li>
-          <li><span>02</span><div><strong>Review the exact membership</strong><p>See the monthly price, household options, what is included, what is outside the membership, access expectations, and HSA information if the final structure qualifies.</p></div></li>
+          <li><span>02</span><div><strong>Review the exact membership</strong><p>See the published price, what is included, what is outside the membership, access expectations, and HSA information if the final structure qualifies.</p></div></li>
           <li><span>03</span><div><strong>Choose and enroll securely</strong><p>When enrollment opens, decide whether DPC, insurance-based care, or a cash-pay service fits you best. Clinical onboarding happens after that choice.</p></div></li>
         </ol>
         <p className="waitlist-onramp__note"><CreditCard aria-hidden="true"/> Joining the waitlist does not create a membership, charge a card, establish a patient relationship, or reserve an appointment.</p>
@@ -169,9 +169,9 @@ export default function Waitlist(){
       <div className="waitlist-copy">
         <span className="eyebrow">A simple first step</span>
         <h2>Stay close to what comes next.</h2>
-        <p className="large-copy">Your name and email are enough to join. The goal is to make the final care options easy to compare before you decide what to enroll in.</p>
+        <p className="large-copy">Your name and email are enough to join. The goal is to make the care options easy to compare before you decide what to enroll in.</p>
         <div className="waitlist-points">
-          <div><BellRing/><span><strong>Get the important details</strong>Hear when opening, DPC pricing and household options, insurance participation, or scheduling information is ready.</span></div>
+          <div><BellRing/><span><strong>Get the important details</strong>Hear when opening, enrollment, insurance participation, or scheduling information is ready.</span></div>
           <div><MapPin/><span><strong>Help shape the launch</strong>Optional preferences can help Jennifer understand local demand without asking for medical information.</span></div>
           <div><Sparkles/><span><strong>No obligation</strong>The waitlist is not enrollment and does not reserve or guarantee an appointment.</span></div>
         </div>
@@ -193,7 +193,7 @@ export default function Waitlist(){
           <span className="eyebrow">DPC membership interest</span>
           <fieldset className="waitlist-fieldset">
             <legend>How many people would likely need care? <small>Optional</small></legend>
-            <p>Use the buttons to estimate how many people may need a DPC membership. Leave it at 0 if you are not sure yet.</p>
+            <p>Use the buttons to estimate how many people may need DPC membership. Leave it at 0 if you are not sure yet.</p>
             <div className="waitlist-people-stepper" role="group" aria-label="Number of people who may need DPC membership">
               <button type="button" onClick={()=>changeDpcPeopleCount(-1)} disabled={data.dpcPeopleCount===0} aria-label="Decrease number of people">−</button>
               <output className="waitlist-people-stepper__count" aria-live="polite" aria-atomic="true">{data.dpcPeopleCount}</output>
@@ -201,9 +201,11 @@ export default function Waitlist(){
             </div>
             <p className="waitlist-people-stepper__label">{data.dpcPeopleCount===0?'Not specified yet':`${data.dpcPeopleCount} ${data.dpcPeopleCount===1?'person':'people'} likely needing care`}</p>
             <div className="waitlist-membership-preview" aria-live="polite">
-              {data.dpcPeopleCount===0&&<><strong>Individual DPC pricing starts at ${practice.dpcIndividualStartingPrice}/month.</strong><span>Use + if you want to tell us how many people may need care. Household pricing will be published before enrollment.</span></>}
-              {data.dpcPeopleCount===1&&<><strong>1 person · starting at ${practice.dpcIndividualStartingPrice}/month</strong><span>Final inclusions, access standards, and enrollment terms will be shown before you decide to enroll.</span></>}
-              {data.dpcPeopleCount>1&&<><strong>{data.dpcPeopleCount}-person household</strong><span>Household pricing is being finalized. We will show the exact monthly amount, who is covered, and the final terms before enrollment.</span></>}
+              {data.dpcPeopleCount===0&&<><strong>Individual ${practice.dpcIndividualStartingPrice}/month · Family of four ${practice.dpcFamilyFourPrice}/month</strong><span>Each additional child is +${practice.dpcAdditionalChildPrice}/month.</span></>}
+              {data.dpcPeopleCount===1&&<><strong>1 person · ${practice.dpcIndividualStartingPrice}/month</strong><span>Individual DPC membership.</span></>}
+              {data.dpcPeopleCount>1&&data.dpcPeopleCount<4&&<><strong>{data.dpcPeopleCount}-person household</strong><span>Individual membership is ${practice.dpcIndividualStartingPrice}/month. Family-of-four membership is ${practice.dpcFamilyFourPrice}/month. The practice can confirm which published membership structure fits your household before enrollment.</span></>}
+              {data.dpcPeopleCount===4&&<><strong>Family of four · ${practice.dpcFamilyFourPrice}/month</strong><span>Published family membership price.</span></>}
+              {data.dpcPeopleCount>4&&<><strong>Family of four · ${practice.dpcFamilyFourPrice}/month</strong><span>Each additional child is +${practice.dpcAdditionalChildPrice}/month. Because this counter records total people rather than adult/child makeup, the exact total depends on how many people beyond four are additional children.</span></>}
             </div>
           </fieldset>
           <label className="waitlist-consent waitlist-hsa-interest"><input type="checkbox" name="hsaUpdates" checked={data.hsaUpdates} onChange={update}/><span>Send me information about using an HSA if Prickly Pear Care’s final DPC membership structure qualifies.</span></label>
