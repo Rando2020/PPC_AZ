@@ -31,3 +31,14 @@
 
 @media(max-width:900px){.dpc-offer__heading,.dpc-calculator__layout{grid-template-columns:1fr}.dpc-pricing-grid{grid-template-columns:1fr 1fr}.dpc-price-card--additional{grid-column:1/-1}.dpc-includes ul{grid-template-columns:1fr 1fr}.dpc-calculator__result{min-height:0}}
 @media(max-width:620px){.dpc-offer{margin-top:56px;padding-top:54px}.dpc-pricing-grid{grid-template-columns:1fr;margin-top:34px}.dpc-price-card--additional{grid-column:auto;display:block}.dpc-price-card--additional h3{margin:8px 0}.dpc-price-card--additional strong{margin:20px 0 8px}.dpc-includes,.dpc-calculator{margin-top:56px;padding:30px 20px}.dpc-includes ul{grid-template-columns:1fr}.dpc-includes__boundary{grid-template-columns:1fr;gap:12px}.dpc-calculator__heading{grid-template-columns:1fr}.dpc-calculator__icon{width:48px;height:48px}.dpc-calculator__controls{padding:22px 18px}.dpc-calculator__plans{grid-template-columns:1fr}.dpc-calculator__plans span{min-height:62px}.dpc-calculator__field>span{align-items:flex-start}.dpc-hsa-note{padding:19px 17px}}
+
+
+/* Shared fluid heading proportions for wide screens */
+@media(min-width:1200px){
+  .care-options-heading,.dpc-offer__heading{grid-template-columns:minmax(0,1.1fr) minmax(400px,.9fr);gap:clamp(44px,6vw,112px)}
+  .care-options-heading h2,.dpc-offer__heading h2{max-width:none}
+  .care-options-heading p,.dpc-offer__heading>p{max-width:640px;justify-self:end}
+  .care-paths__heading{grid-template-columns:minmax(0,1.1fr) minmax(400px,.9fr);column-gap:clamp(44px,6vw,112px)}
+  .care-paths__heading h2{max-width:none}
+  .care-paths__heading>p{max-width:640px;justify-self:end}
+}
