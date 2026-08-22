@@ -1,0 +1,48 @@
+.page-hero--with-media{padding:0;overflow:hidden}
+.page-hero__media-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:58px;align-items:stretch;min-height:500px}
+.page-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:92px 0 88px;min-width:0}
+.page-hero__copy h1{font-size:clamp(3rem,5.8vw,5.8rem);max-width:760px;margin-bottom:1.35rem}
+.page-hero__copy .lead{max-width:640px}
+.page-hero__local-note{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--olive);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.page-hero__local-note:before{content:'';width:28px;height:1px;background:var(--berry)}
+.page-hero__photo{position:relative;margin:34px 0;min-height:430px;border-radius:30px 30px 8px 30px;overflow:hidden;background:var(--sand)}
+.page-hero__photo:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(42,45,37,.45));pointer-events:none}
+.page-hero__photo img{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.01)}
+.page-hero__photo figcaption{position:absolute;z-index:1;left:26px;bottom:22px;color:#fff;font:1.05rem var(--serif);letter-spacing:.01em;max-width:80%}
+
+.page-hero--route-services .page-hero__photo img{object-position:center 48%!important}
+.page-hero--route-new-patients .page-hero__photo img{object-position:center 58%!important}
+.page-hero--route-about .page-hero__photo{border-radius:8px 30px 30px 8px}
+.page-hero--route-about .page-hero__photo img{object-position:center 52%!important}
+.page-hero--route-contact .page-hero__photo img{object-position:center 42%!important}
+.page-hero--route-dpc .page-hero__photo img{object-position:center 54%!important}
+
+.page-services .section--cream,.page-new-patients>.section:first-of-type,.page-about>.section:first-of-type,.page-contact>.section:first-of-type{position:relative}
+.page-services .card,.page-new-patients .steps article,.page-contact .form{box-shadow:0 14px 36px rgba(63,73,52,.055)}
+.page-services .card{border-color:rgba(89,98,71,.18)}
+.page-new-patients .steps article{background:rgba(255,253,248,.72);border:1px solid rgba(89,98,71,.14);border-top:3px solid var(--olive);border-radius:8px}
+.page-new-patients .steps{gap:18px}
+.page-new-patients .step-num{color:var(--berry)}
+.page-about .split{align-items:center}
+.page-contact .contact-grid{align-items:start}
+
+@media(max-width:960px){
+  .page-hero__media-grid{grid-template-columns:1fr;gap:0;padding-bottom:44px}
+  .page-hero__copy{padding:72px 0 36px}
+  .page-hero__photo{margin:0;min-height:330px;border-radius:24px}
+  .page-hero--route-about .page-hero__photo{border-radius:24px}
+}
+
+@media(max-width:620px){
+  .page-hero__media-grid{padding-bottom:28px}
+  .page-hero__copy{padding:58px 0 30px}
+  .page-hero__copy h1{font-size:clamp(2.8rem,14vw,4.2rem)}
+  .page-hero__photo{min-height:250px;border-radius:18px}
+  .page-hero__photo figcaption{left:18px;bottom:16px;font-size:.95rem}
+  .page-hero__local-note{margin-top:22px;font-size:.65rem}
+}
+
+@media(prefers-reduced-motion:no-preference){
+  .page-hero__photo img{transition:transform .7s ease}
+  .page-hero--with-media:hover .page-hero__photo img{transform:scale(1.025)}
+}
