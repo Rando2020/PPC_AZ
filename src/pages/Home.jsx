@@ -1,8 +1,10 @@
-import { ArrowRight, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, HandCoins, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
+
+const carePathIcons = { heart: ShieldCheck, sparkle: HeartHandshake, flower: HandCoins };
 
 export default function Home(){
   const reduceMotion = useReducedMotion();
@@ -77,9 +79,9 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="care-paths" data-reveal="up"><div className="shell">
+    <section className="care-paths" data-reveal="up"><div className="shell care-paths__layout">
       <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as participation and availability are confirmed.</p></div>
-      <div className="care-paths__list">{serviceCategories.map((item,i)=><a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
+      <div className="care-paths__list">{serviceCategories.map((item)=>{const Icon=carePathIcons[item.icon]||Stethoscope;return <a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number"><Icon aria-hidden="true"/></span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p><b>{item.linkLabel || 'View care details'}</b></div><ArrowRight aria-hidden="true"/></a>})}</div>
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">

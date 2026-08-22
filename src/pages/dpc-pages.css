@@ -5,9 +5,9 @@
 .dpc-subnav a:hover,.dpc-subnav a:focus-visible,.dpc-subnav a.active{color:var(--olive-dark);background:rgba(89,98,71,.09)}
 
 .dpc-simple-hero{background:var(--cream);padding:clamp(54px,8vw,104px) 0 clamp(46px,7vw,86px);border-bottom:1px solid var(--line)}
-.dpc-simple-hero h1{max-width:860px;margin:.45rem auto 1.1rem;text-align:center}
+.dpc-simple-hero h1{max-width:none;font-size:clamp(3.4rem,6vw,6.4rem);margin:.45rem auto 1.1rem;text-align:center}
 .dpc-simple-hero .eyebrow,.dpc-simple-hero .lead{display:block;text-align:center}
-.dpc-simple-hero .lead{max-width:720px;margin:0 auto}
+.dpc-simple-hero .lead{max-width:940px;margin:0 auto}
 
 .dpc-start{padding-top:72px}
 .dpc-start__heading{max-width:780px;margin-bottom:34px}
