@@ -38,6 +38,7 @@ export const serviceCategories = [
     description: 'Use health insurance for covered primary-care services, subject to plan participation, coverage, copays, deductible, and coinsurance.',
     status: 'Planned care pathway',
     href: '#/services',
+    linkLabel: 'Compare insurance-based care',
   },
   {
     icon: 'sparkle',
@@ -45,6 +46,7 @@ export const serviceCategories = [
     description: 'A predictable monthly membership designed around continuity, more personal access, and an ongoing relationship with Jennifer.',
     status: 'Relationship-focused option',
     href: '#/dpc',
+    linkLabel: 'Explore DPC membership',
   },
   {
     icon: 'flower',
@@ -52,6 +54,7 @@ export const serviceCategories = [
     description: 'Specific services offered at transparent, upfront prices outside insurance coverage. The final service list and pricing are coming soon.',
     status: 'Planned care pathway',
     href: '#/services',
+    linkLabel: 'Explore cash-pay services',
   },
 ];
 
