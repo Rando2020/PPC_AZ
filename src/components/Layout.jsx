@@ -131,23 +131,60 @@ export function Layout({ route, children }) {
   return <><Header route={route}/><main id="main" className={`page-${routeClass}`}>{children}</main><Footer/><a className="mobile-book" href="#/waitlist" aria-label="Join the Prickly Pear Care Waitlist">Join Waitlist</a></>;
 }
 
+function ValidatedHeroImage({ media, fallbackSrc }) {
+  const [heroSrc,setHeroSrc] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const candidates = [media.src,fallbackSrc].filter((src,index,list)=>src && list.indexOf(src)===index);
+
+    const tryCandidate = index => {
+      if (index >= candidates.length) return;
+
+      const image = new Image();
+      image.onload = async () => {
+        try {
+          if (typeof image.decode === 'function') await image.decode();
+          if (!cancelled) setHeroSrc(candidates[index]);
+        } catch {
+          tryCandidate(index + 1);
+        }
+      };
+      image.onerror = () => tryCandidate(index + 1);
+      image.src = candidates[index];
+    };
+
+    tryCandidate(0);
+    return () => { cancelled = true; };
+  }, [media,fallbackSrc]);
+
+  if (!heroSrc) return null;
+
+  return <img
+    src={heroSrc}
+    alt=""
+    style={{objectPosition:heroSrc===media.src?media.position:siteMedia.home.maranaBanner.position}}
+    decoding="async"
+    fetchPriority="high"
+    onError={()=>{
+      if (heroSrc!==fallbackSrc && fallbackSrc) setHeroSrc(fallbackSrc);
+      else setHeroSrc(null);
+    }}
+  />;
+}
+
 export function PageHero({ eyebrow, title, children, tone='cream' }) {
   const route = routeFromHash();
   const media = pageHeroMedia[route];
+  const fallbackSrc = route==='dpc' ? siteMedia.home.maranaBanner.src : null;
 
   if (!media) {
     return <section className={`page-hero page-hero--${tone}`}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
   }
 
   return <section className={`page-hero page-hero--${tone} page-hero--with-media page-hero--route-${route}`}>
-    <figure className="page-hero__photo" aria-hidden="true">
-      <img
-        src={media.src}
-        alt=""
-        style={{objectPosition:media.position}}
-        decoding="async"
-        fetchPriority="high"
-      />
+    <figure className="page-hero__photo page-hero__photo--fallback" aria-hidden="true">
+      <ValidatedHeroImage key={`${route}-${media.src}`} media={media} fallbackSrc={fallbackSrc}/>
     </figure>
     <div className="page-hero__veil"/>
     <div className="shell page-hero__media-shell">
