@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { Brand } from './Brand';
 import { practice } from '../config/practice';
 import { siteMedia } from '../config/media';
 import '../marana-pages.css';
 
-const nav = [['Direct Primary Care','dpc'],['Meet Jennifer','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about']];
+const nav = [['Meet Jennifer','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about']];
+
+const dpcNav = [
+  ['Overview','dpc'],
+  ['Pricing','dpc/pricing'],
+  ['Calculator','dpc/calculator'],
+  ['Real-life examples','dpc/examples'],
+  ['FAQ','faq'],
+];
 
 const pageHeroMedia = {
   dpc: siteMedia.pages.dpc,
@@ -72,8 +80,20 @@ export function Header({ route }) {
           aria-label={open?'Close main menu':'Open main menu'}
         >{open?<X/>:<Menu/>}</button>
         <nav id="main-navigation" className={open?'nav nav--open':'nav'} aria-label="Main navigation">
+          <div className={route==='dpc' || route?.startsWith('dpc/') ? 'nav-dropdown active' : 'nav-dropdown'}>
+            <a className="nav-primary" aria-current={route==='dpc'?'page':undefined} href="#/dpc">
+              Direct Primary Care <ChevronDown size={15} aria-hidden="true"/>
+            </a>
+            <div className="nav-dropdown__panel" aria-label="Direct Primary Care pages">
+              <span className="nav-dropdown__eyebrow">Explore DPC</span>
+              {dpcNav.map(([label,path])=>{
+                const active = route===path;
+                return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
+              })}
+            </div>
+          </div>
           {nav.map(([label,path])=>{
-            const active = route===path || (path==='dpc' && route?.startsWith('dpc/'));
+            const active = route===path;
             return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
           })}
           <a className="text-link" href="#/portal">Patient Portal</a>
