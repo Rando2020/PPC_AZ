@@ -2,8 +2,38 @@ import { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Brand } from './Brand';
 import { practice } from '../config/practice';
+import { siteMedia } from '../config/media';
+import '../marana-pages.css';
 
 const nav = [['Direct Primary Care','dpc'],['Meet Jennifer','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about']];
+
+const pageHeroMedia = {
+  dpc: {
+    ...siteMedia.library.gatesPassSunset,
+    label: 'Primary care rooted in Southern Arizona',
+  },
+  services: {
+    ...siteMedia.library.pricklyPearBloom,
+    label: 'Care that grows with you',
+  },
+  'new-patients': {
+    ...siteMedia.library.saguaroGoldenHour,
+    label: 'A clear path to care',
+  },
+  about: {
+    ...siteMedia.library.gatesPassSunset,
+    label: 'Rooted in Southern Arizona',
+  },
+  contact: {
+    ...siteMedia.library.pricklyPearFruit,
+    label: 'Close to home in Marana',
+  },
+};
+
+function routeFromHash(){
+  if (typeof window === 'undefined') return '';
+  return window.location.hash.replace(/^#\/?/,'').split('/')[0] || '';
+}
 
 export function Header({ route }) {
   const [open,setOpen] = useState(false);
@@ -110,9 +140,35 @@ export function Layout({ route, children }) {
     return () => observer.disconnect();
   }, [route]);
 
-  return <><Header route={route}/><main id="main">{children}</main><Footer/><a className="mobile-book" href="#/waitlist" aria-label="Join the Prickly Pear Care Waitlist">Join Waitlist</a></>;
+  return <><Header route={route}/><main id="main" className={`page-${route || 'home'}`}>{children}</main><Footer/><a className="mobile-book" href="#/waitlist" aria-label="Join the Prickly Pear Care Waitlist">Join Waitlist</a></>;
 }
 
 export function PageHero({ eyebrow, title, children, tone='cream' }) {
-  return <section className={`page-hero page-hero--${tone}`}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
+  const route = routeFromHash();
+  const media = pageHeroMedia[route];
+
+  if (!media) {
+    return <section className={`page-hero page-hero--${tone}`}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
+  }
+
+  return <section className={`page-hero page-hero--${tone} page-hero--with-media page-hero--route-${route}`}>
+    <div className="shell page-hero__media-grid">
+      <div className="page-hero__copy">
+        <span className="eyebrow">{eyebrow}</span>
+        <h1>{title}</h1>
+        {children&&<p className="lead">{children}</p>}
+        <span className="page-hero__local-note">Marana · Northwest Tucson</span>
+      </div>
+      <figure className="page-hero__photo">
+        <img
+          src={media.src}
+          alt={media.alt}
+          style={{objectPosition:media.position}}
+          decoding="async"
+          fetchPriority="high"
+        />
+        <figcaption>{media.label}</figcaption>
+      </figure>
+    </div>
+  </section>;
 }
