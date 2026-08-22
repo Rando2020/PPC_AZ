@@ -326,3 +326,19 @@
   .editorial-intro .values>div{align-items:flex-start;padding-top:24px;border-top:1px solid var(--line)}
   .editorial-intro .values span{max-width:520px}
 }
+
+/* Full-width editorial headers with supporting content below */
+.section-heading.section-heading--stacked{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.section-heading--stacked>div,.section-heading--stacked h2{width:100%;max-width:none}
+.section-heading--stacked .editorial-link{align-self:flex-start}
+
+.about-symbol{display:block}
+.about-symbol__heading,.about-symbol__heading h2{width:100%;max-width:none}
+.about-symbol__copy{max-width:1400px;margin-top:clamp(26px,3vw,44px)}
+.about-symbol__copy .large-copy{max-width:1320px;margin-bottom:18px}
+.about-symbol__copy>p:last-child{max-width:1220px;margin-bottom:0}
+
+@media(max-width:620px){
+  .section-heading.section-heading--stacked{gap:12px}
+  .about-symbol__copy{margin-top:24px}
+}
