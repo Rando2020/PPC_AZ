@@ -92,7 +92,7 @@ export function DPCOverview(){
     </div></section>
 
     <section className="section dpc-scenarios-preview"><div className="shell">
-      <header className="section-heading"><div><span className="eyebrow">Picture it in real life</span><h2>Different households can value DPC for different reasons.</h2></div><a className="editorial-link editorial-link--dark" href="#/dpc/examples">See all examples <ArrowRight size={15}/></a></header>
+      <header className="section-heading section-heading--stacked"><div><span className="eyebrow">Picture it in real life</span><h2>Different households can value DPC for different reasons.</h2></div><a className="editorial-link editorial-link--dark" href="#/dpc/examples">See all examples <ArrowRight size={15}/></a></header>
       <div className="dpc-scenario-grid">{scenarioCards.map(({label,icon:Icon,title,copy})=><article key={label}><div><Icon/><span>{label}</span></div><h3>{title}</h3><p>{copy}</p></article>)}</div>
       <p className="dpc-example-note">These examples are illustrative, not patient testimonials. What can be handled through DPC always depends on the clinical situation and the final membership agreement.</p>
     </div></section>
