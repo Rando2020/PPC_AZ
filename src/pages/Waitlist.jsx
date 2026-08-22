@@ -11,7 +11,7 @@ const carePaths = [
     eyebrow: 'Launch focus',
     title: 'DPC Membership',
     description: 'One recurring monthly membership for the primary-care services included in the plan, built around an ongoing relationship with Jennifer.',
-    note: 'Final price, inclusions, access terms, and HSA information will be published before enrollment opens.',
+    note: `Individual pricing begins at $${practice.dpcIndividualStartingPrice}/month. Household pricing, final inclusions, access terms, and HSA information will be published before enrollment opens.`,
     icon: HeartHandshake,
     featured: true,
   },
@@ -70,7 +70,7 @@ function DPCWaitlistFramework(){
         <div className="waitlist-onramp__intro">
           <span className="eyebrow">The DPC on-ramp</span>
           <h2>Think membership, not another visit-by-visit transaction.</h2>
-          <p>The exact membership is still being finalized. Joining the waitlist simply keeps you close to the decisions that matter before you enroll.</p>
+          <p>Joining the waitlist simply keeps you close to the decisions that matter before you enroll. You will see the exact household price and terms before making a commitment.</p>
         </div>
         <ol>
           <li><span>01</span><div><strong>Join the waitlist</strong><p>Share only the contact information needed for launch updates. No payment today.</p></div></li>
@@ -193,13 +193,18 @@ export default function Waitlist(){
           <span className="eyebrow">DPC membership interest</span>
           <fieldset className="waitlist-fieldset">
             <legend>How many people would likely need care? <small>Optional</small></legend>
-            <p>Use the buttons to estimate how many people may need a DPC membership. Leave it at 0 if you are not sure yet. Final household rules and pricing will be shown before enrollment.</p>
+            <p>Use the buttons to estimate how many people may need a DPC membership. Leave it at 0 if you are not sure yet.</p>
             <div className="waitlist-people-stepper" role="group" aria-label="Number of people who may need DPC membership">
               <button type="button" onClick={()=>changeDpcPeopleCount(-1)} disabled={data.dpcPeopleCount===0} aria-label="Decrease number of people">−</button>
               <output className="waitlist-people-stepper__count" aria-live="polite" aria-atomic="true">{data.dpcPeopleCount}</output>
               <button type="button" onClick={()=>changeDpcPeopleCount(1)} aria-label="Increase number of people">+</button>
             </div>
             <p className="waitlist-people-stepper__label">{data.dpcPeopleCount===0?'Not specified yet':`${data.dpcPeopleCount} ${data.dpcPeopleCount===1?'person':'people'} likely needing care`}</p>
+            <div className="waitlist-membership-preview" aria-live="polite">
+              {data.dpcPeopleCount===0&&<><strong>Individual DPC pricing starts at ${practice.dpcIndividualStartingPrice}/month.</strong><span>Use + if you want to tell us how many people may need care. Household pricing will be published before enrollment.</span></>}
+              {data.dpcPeopleCount===1&&<><strong>1 person · starting at ${practice.dpcIndividualStartingPrice}/month</strong><span>Final inclusions, access standards, and enrollment terms will be shown before you decide to enroll.</span></>}
+              {data.dpcPeopleCount>1&&<><strong>{data.dpcPeopleCount}-person household</strong><span>Household pricing is being finalized. We will show the exact monthly amount, who is covered, and the final terms before enrollment.</span></>}
+            </div>
           </fieldset>
           <label className="waitlist-consent waitlist-hsa-interest"><input type="checkbox" name="hsaUpdates" checked={data.hsaUpdates} onChange={update}/><span>Send me information about using an HSA if Prickly Pear Care’s final DPC membership structure qualifies.</span></label>
         </div>}
