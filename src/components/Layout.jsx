@@ -8,22 +8,10 @@ import '../marana-pages.css';
 const nav = [['Direct Primary Care','dpc'],['Meet Jennifer','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about']];
 
 const pageHeroMedia = {
-  dpc: {
-    ...siteMedia.pages.dpc,
-    label: null,
-  },
-  services: {
-    ...siteMedia.pages.services,
-    label: 'Care that grows with you',
-  },
-  'new-patients': {
-    ...siteMedia.pages.newPatients,
-    label: 'A clear path to care',
-  },
-  about: {
-    ...siteMedia.pages.about,
-    label: 'Rooted in Southern Arizona',
-  },
+  dpc: siteMedia.pages.dpc,
+  services: siteMedia.pages.services,
+  'new-patients': siteMedia.pages.newPatients,
+  about: siteMedia.pages.about,
 };
 
 function routeFromHash(){
@@ -84,7 +72,10 @@ export function Header({ route }) {
           aria-label={open?'Close main menu':'Open main menu'}
         >{open?<X/>:<Menu/>}</button>
         <nav id="main-navigation" className={open?'nav nav--open':'nav'} aria-label="Main navigation">
-          {nav.map(([label,path])=><a key={path} className={route===path?'active':''} aria-current={route===path?'page':undefined} href={`#/${path}`}>{label}</a>)}
+          {nav.map(([label,path])=>{
+            const active = route===path || (path==='dpc' && route?.startsWith('dpc/'));
+            return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
+          })}
           <a className="text-link" href="#/portal">Patient Portal</a>
           <a className="button button--small" aria-current={route==='waitlist'?'page':undefined} href="#/waitlist">Join the Waitlist</a>
         </nav>
@@ -95,8 +86,8 @@ export function Header({ route }) {
 
 export function Footer() {
   return <footer className="footer"><div className="shell footer-grid">
-    <div className="footer-brand"><a className="footer-brand__name" href="#/">Prickly Pear Care</a><p>{practice.description}</p><p className="small">{practice.serviceArea}</p></div>
-    <div><h3>Explore</h3><a href="#/dpc">Direct Primary Care</a><a href="#/provider">Meet Jennifer</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/resources">Resources</a><a href="#/faq">FAQ</a></div>
+    <div className="footer-brand"><a className="footer-brand__name" href="#/">Prickly Pear Care</a><p>{practice.description}</p><p className="small">{practice.serviceArea}</p><p className="small">Featured desert photography from Marana, Arizona.</p></div>
+    <div><h3>Explore</h3><a href="#/dpc">Direct Primary Care</a><a href="#/dpc/pricing">DPC pricing</a><a href="#/dpc/calculator">DPC calculator</a><a href="#/provider">Meet Jennifer</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/resources">Resources</a><a href="#/faq">FAQ</a></div>
     <div><h3>Connect</h3>{practice.phoneHref?<a href={`tel:${practice.phoneHref}`}>{practice.phone}</a>:<span className="small">Phone coming soon</span>}<a href={`mailto:${practice.email}`}>{practice.email}</a><a href="#/contact">Contact us <ArrowRight size={14}/></a></div>
     <div><h3>Patient-led care</h3><a href="#/waitlist">Join the Waitlist</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
   </div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} {practice.legalName}. All rights reserved.</span><span>Website forms are not for emergencies. Call 911.</span></div></footer>;
@@ -136,7 +127,8 @@ export function Layout({ route, children }) {
     return () => observer.disconnect();
   }, [route]);
 
-  return <><Header route={route}/><main id="main" className={`page-${route || 'home'}`}>{children}</main><Footer/><a className="mobile-book" href="#/waitlist" aria-label="Join the Prickly Pear Care Waitlist">Join Waitlist</a></>;
+  const routeClass = (route || 'home').replace(/\//g,'-');
+  return <><Header route={route}/><main id="main" className={`page-${routeClass}`}>{children}</main><Footer/><a className="mobile-book" href="#/waitlist" aria-label="Join the Prickly Pear Care Waitlist">Join Waitlist</a></>;
 }
 
 export function PageHero({ eyebrow, title, children, tone='cream' }) {
@@ -163,9 +155,7 @@ export function PageHero({ eyebrow, title, children, tone='cream' }) {
         <span className="eyebrow">{eyebrow}</span>
         <h1>{title}</h1>
         {children&&<p className="lead">{children}</p>}
-        <span className="page-hero__local-note">Marana · Northwest Tucson</span>
       </div>
-      {media.label&&<span className="page-hero__caption">{media.label}</span>}
     </div>
   </section>;
 }
