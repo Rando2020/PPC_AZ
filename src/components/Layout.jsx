@@ -134,20 +134,73 @@ export function Layout({ route, children }) {
 export function PageHero({ eyebrow, title, children, tone='cream' }) {
   const route = routeFromHash();
   const media = pageHeroMedia[route];
+  const fallbackSrc = route==='dpc' ? siteMedia.home.maranaBanner.src : null;
+  const [heroSrc,setHeroSrc] = useState(null);
+  const [heroReady,setHeroReady] = useState(false);
+
+  useEffect(() => {
+    if (!media) {
+      setHeroSrc(null);
+      setHeroReady(false);
+      return undefined;
+    }
+
+    let cancelled = false;
+    const candidates = [media.src,fallbackSrc].filter((src,index,list)=>src && list.indexOf(src)===index);
+
+    const tryCandidate = index => {
+      if (index >= candidates.length) {
+        if (!cancelled) {
+          setHeroSrc(null);
+          setHeroReady(false);
+        }
+        return;
+      }
+
+      const image = new Image();
+      image.onload = async () => {
+        try {
+          if (typeof image.decode === 'function') await image.decode();
+          if (!cancelled) {
+            setHeroSrc(candidates[index]);
+            setHeroReady(true);
+          }
+        } catch {
+          tryCandidate(index + 1);
+        }
+      };
+      image.onerror = () => tryCandidate(index + 1);
+      image.src = candidates[index];
+    };
+
+    setHeroReady(false);
+    setHeroSrc(null);
+    tryCandidate(0);
+    return () => { cancelled = true; };
+  }, [media?.src,fallbackSrc]);
 
   if (!media) {
     return <section className={`page-hero page-hero--${tone}`}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
   }
 
   return <section className={`page-hero page-hero--${tone} page-hero--with-media page-hero--route-${route}`}>
-    <figure className="page-hero__photo" aria-hidden="true">
-      <img
-        src={media.src}
+    <figure className={`page-hero__photo ${heroReady?'page-hero__photo--ready':'page-hero__photo--fallback'}`} aria-hidden="true">
+      {heroReady&&heroSrc&&<img
+        src={heroSrc}
         alt=""
-        style={{objectPosition:media.position}}
+        style={{objectPosition:heroSrc===media.src?media.position:siteMedia.home.maranaBanner.position}}
         decoding="async"
         fetchPriority="high"
-      />
+        onError={()=>{
+          if (heroSrc!==fallbackSrc && fallbackSrc) {
+            setHeroSrc(fallbackSrc);
+            setHeroReady(true);
+          } else {
+            setHeroSrc(null);
+            setHeroReady(false);
+          }
+        }}
+      />}
     </figure>
     <div className="page-hero__veil"/>
     <div className="shell page-hero__media-shell">
