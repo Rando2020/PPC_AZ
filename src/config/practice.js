@@ -6,6 +6,8 @@ export const practice = {
   description: 'Patient-led care built on careful listening, clear answers, kindness, and strong clinical standards.',
   serviceArea: 'Proudly serving Marana, Tucson, and surrounding communities.',
   dpcIndividualStartingPrice: 99,
+  dpcFamilyFourPrice: 200,
+  dpcAdditionalChildPrice: 25,
   phone: 'Coming soon',
   phoneHref: '',
   email: 'jcarlile@pricklypearcareaz.com',
@@ -26,7 +28,7 @@ export const practice = {
     license: 'Arizona AP5088',
     community: 'International medical missions with Hope Without Borders',
   },
-  availabilityNote: 'Prickly Pear Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. DPC pricing and intended inclusions are now available to review. Final insurance participation, enrollment terms, cash-pay offerings, eligibility, and opening timing are still being finalized.',
+  availabilityNote: 'Prickly Pear Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. DPC pricing is available to review. Final insurance participation, enrollment terms, cash-pay offerings, eligibility, and opening timing are still being finalized.',
 };
 
 export const serviceCategories = [
@@ -55,10 +57,10 @@ export const serviceCategories = [
 
 export const faqs = [
   ['When will Prickly Pear Care open?', 'Launch timing is being finalized. Join the Waitlist to receive opening and enrollment updates.'],
-  ['What is Direct Primary Care?', 'Direct Primary Care is a primary-care membership paid directly to the practice rather than billed to insurance for the primary-care services included in the membership. Membership pricing begins at $99 per month for an individual. Final eligibility, access, and enrollment terms will be published before enrollment opens.'],
-  ['How much will DPC membership cost?', 'Individual DPC membership pricing begins at $99 per month. Household pricing and final membership terms are still being finalized and will be shown clearly before enrollment.'],
+  ['What is Direct Primary Care?', 'Direct Primary Care is a primary-care membership paid directly to the practice rather than billed to insurance for the primary-care services included in the membership. Individual membership is $99 per month. A family of four is $200 per month, with each additional child $25 per month. Final eligibility, access, and enrollment terms will be published before enrollment opens.'],
+  ['How much will DPC membership cost?', 'Individual DPC membership is $99 per month. A family of four is $200 per month, and each additional child is $25 per month.'],
   ['Why would someone choose DPC?', 'DPC is designed to make primary care more predictable and less transactional. Instead of starting with another visit charge every time something comes up, members can begin with their ongoing primary-care relationship, subject to the final access and inclusion terms.'],
-  ['Is DPC always cheaper?', 'Not for everyone. DPC can make primary-care costs more predictable and may reduce visit-by-visit out-of-pocket friction, but whether it lowers your total healthcare spending depends on how often you use care, what your insurance covers, and what is included in the final membership.'],
+  ['Is DPC always cheaper?', 'Not for everyone. DPC can make primary-care costs more predictable and may reduce visit-by-visit out-of-pocket friction, but whether it lowers your total healthcare spending depends on how often you use care, what your insurance covers, and what is included in the membership.'],
   ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance and is not health insurance. Many people maintain coverage for hospital care, specialists, imaging, medications, emergencies, and other services outside the DPC membership.'],
   ['Can my small business help pay for DPC for employees?', 'Prickly Pear Care is exploring employer-sponsored DPC arrangements for local small businesses. An employer may be able to contribute toward or sponsor a defined primary-care membership for eligible employees while employees continue to use major medical insurance for care outside the DPC membership. Final employer pricing, participation requirements, eligibility, tax or benefit treatment, and enrollment terms are still being developed and should be reviewed with the appropriate benefits and tax professionals.'],
   ['Will Prickly Pear Care still offer insurance-based care?', 'That is the plan. Prickly Pear Care intends to offer insurance-based primary care in addition to DPC membership. Final participating plans and billing details will be published before care begins.'],
@@ -67,7 +69,7 @@ export const faqs = [
   ['Will every prescription question require another appointment?', 'Not necessarily. Some medication questions or follow-up needs may be handled without another separately billed office visit when that is clinically appropriate. Jennifer will still recommend a visit whenever an exam, monitoring, or additional evaluation is needed.'],
   ['Can Jennifer order imaging or refer me to a specialist?', 'Yes, primary-care clinicians can coordinate referrals and order appropriate testing when clinically indicated. Imaging, specialist care, and other outside services are generally separate from the DPC membership and may be billed by the outside facility or clinician.'],
   ['What is usually outside a DPC membership?', 'Hospital care, emergency care, specialist visits, advanced imaging, many medications, and services performed by outside organizations are typically separate from a primary-care membership. Prickly Pear Care will publish its exact inclusions and exclusions before enrollment.'],
-  ['What happens after I join the waitlist?', 'The waitlist is not enrollment. You will receive opening updates and, when enrollment is ready, the exact monthly price, household options, included services, exclusions, access expectations, and any applicable HSA information before deciding whether to join. Clinical onboarding and scheduling happen after enrollment.'],
+  ['What happens after I join the waitlist?', 'The waitlist is not enrollment. You will receive opening updates and, when enrollment is ready, the included services, exclusions, access expectations, and any applicable HSA information before deciding whether to join. Clinical onboarding and scheduling happen after enrollment.'],
   ['Can I use an HSA to pay for DPC?', 'Federal HSA rules for qualifying Direct Primary Care arrangements changed in 2026. Prickly Pear Care will confirm whether its final membership structure qualifies before advertising HSA payment as available. Individual HSA eligibility can vary, so patients should verify their own benefits and tax situation.'],
   ['Will telehealth be available?', 'Telemedicine is intended to be included with DPC membership when clinically appropriate. Final availability, communication standards, technology, and licensing terms will be confirmed before enrollment.'],
   ['Can I book online?', 'Live patient scheduling is not open yet. The website is being built to support website-based booking and a future EHR scheduling connection once the practice is ready to open appointments.'],
