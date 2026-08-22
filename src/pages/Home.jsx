@@ -1,9 +1,8 @@
-import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Quote, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
-import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 export default function Home(){
   const reduceMotion = useReducedMotion();
@@ -96,19 +95,6 @@ export default function Home(){
         <div><HeartHandshake/><span><strong>A benefit employees can actually use</strong>Help employees start with primary care when questions come up instead of waiting until a problem feels urgent.</span></div>
         <div><ShieldCheck/><span><strong>Works alongside health coverage</strong>DPC is primary care, not health insurance. Employees can still use major medical coverage for care outside the membership.</span></div>
         <div><Building2/><span><strong>Built around your team</strong>Prickly Pear can explore an employer contribution or sponsored membership structure once business terms and capacity are finalized.</span></div>
-      </div>
-    </div></section>
-
-    <section className="founder-note" data-reveal="split"><div className="shell founder-note__grid">
-      <div className="founder-note__mark" aria-hidden="true"><PricklyPearBloom/><span>Care is personal here.</span><small>Rooted in Marana</small></div>
-      <div>
-        <span className="eyebrow">Founder · CEO · Family Nurse Practitioner</span>
-        <h2>A provider you can know. A practice built with purpose.</h2>
-        <p className="large-copy">Prickly Pear Care is built around patient-led care, with your questions, priorities, and goals shaping the conversation.</p>
-        <Quote className="founder-note__quote-icon"/>
-        <blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote>
-        <div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div>
-        <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
     </div></section>
 
