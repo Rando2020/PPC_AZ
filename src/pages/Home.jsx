@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
@@ -80,21 +80,6 @@ export default function Home(){
     <section className="care-paths" data-reveal="up"><div className="shell">
       <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as participation and availability are confirmed.</p></div>
       <div className="care-paths__list">{serviceCategories.map((item,i)=><a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
-    </div></section>
-
-    <section className="section section--cream" data-reveal="up"><div className="shell split">
-      <div>
-        <span className="eyebrow">For local small businesses</span>
-        <h2>Want to make primary care easier for your team?</h2>
-        <p className="large-copy">Prickly Pear Care is exploring employer-sponsored DPC memberships for small businesses that want to help employees access relationship-based primary care through a predictable monthly benefit.</p>
-        <p>This would sit alongside, not replace, major medical insurance. Final employer pricing, participation requirements, eligibility, and benefit structure are still being developed.</p>
-        <div className="button-row"><a className="button" href="#/contact">Ask about employee DPC <ArrowRight size={16}/></a><a className="editorial-link editorial-link--dark" href="#/faq">Employer DPC questions <ArrowRight size={15}/></a></div>
-      </div>
-      <div className="values">
-        <div><HeartHandshake/><span><strong>A benefit employees can actually use</strong>Help employees start with primary care when questions come up instead of waiting until a problem feels urgent.</span></div>
-        <div><ShieldCheck/><span><strong>Works alongside health coverage</strong>DPC is primary care, not health insurance. Employees can still use major medical coverage for care outside the membership.</span></div>
-        <div><Building2/><span><strong>Built around your team</strong>Prickly Pear can explore an employer contribution or sponsored membership structure once business terms and capacity are finalized.</span></div>
-      </div>
     </div></section>
 
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">

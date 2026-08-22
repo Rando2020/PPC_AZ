@@ -5,7 +5,13 @@ import { practice } from '../config/practice';
 import { siteMedia } from '../config/media';
 import '../marana-pages.css';
 
-const nav = [['Meet Jennifer','provider'],['Care & Services','services'],['New Patients','new-patients'],['About','about']];
+const navBeforeNewPatients = [['Meet Jennifer','provider'],['Care & Services','services']];
+const navAfterNewPatients = [['About','about']];
+
+const newPatientsNav = [
+  ['New patient guide','new-patients'],
+  ['Community & employer groups','new-patients/community-groups'],
+];
 
 const dpcNav = [
   ['Overview','dpc'],
@@ -92,7 +98,23 @@ export function Header({ route }) {
               })}
             </div>
           </div>
-          {nav.map(([label,path])=>{
+          {navBeforeNewPatients.map(([label,path])=>{
+            const active = route===path;
+            return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
+          })}
+          <div className={route==='new-patients' || route?.startsWith('new-patients/') ? 'nav-dropdown active' : 'nav-dropdown'}>
+            <a className="nav-primary" aria-current={route==='new-patients'?'page':undefined} href="#/new-patients">
+              New Patients <ChevronDown size={15} aria-hidden="true"/>
+            </a>
+            <div className="nav-dropdown__panel" aria-label="New patient pages">
+              <span className="nav-dropdown__eyebrow">New patient resources</span>
+              {newPatientsNav.map(([label,path])=>{
+                const active = route===path;
+                return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
+              })}
+            </div>
+          </div>
+          {navAfterNewPatients.map(([label,path])=>{
             const active = route===path;
             return <a key={path} className={active?'active':''} aria-current={active?'page':undefined} href={`#/${path}`}>{label}</a>;
           })}
@@ -107,7 +129,7 @@ export function Header({ route }) {
 export function Footer() {
   return <footer className="footer"><div className="shell footer-grid">
     <div className="footer-brand"><a className="footer-brand__name" href="#/">Prickly Pear Care</a><p>{practice.description}</p><p className="small">{practice.serviceArea}</p><p className="small">Featured desert photography from Marana, Arizona.</p></div>
-    <div><h3>Explore</h3><a href="#/dpc">Direct Primary Care</a><a href="#/dpc/pricing">DPC pricing</a><a href="#/dpc/calculator">DPC calculator</a><a href="#/provider">Meet Jennifer</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/resources">Resources</a><a href="#/faq">FAQ</a></div>
+    <div><h3>Explore</h3><a href="#/dpc">Direct Primary Care</a><a href="#/dpc/pricing">DPC pricing</a><a href="#/dpc/calculator">DPC calculator</a><a href="#/provider">Meet Jennifer</a><a href="#/services">Care & services</a><a href="#/new-patients">New patients</a><a href="#/new-patients/community-groups">Community & employer groups</a><a href="#/resources">Resources</a><a href="#/faq">FAQ</a></div>
     <div><h3>Connect</h3>{practice.phoneHref?<a href={`tel:${practice.phoneHref}`}>{practice.phone}</a>:<span className="small">Phone coming soon</span>}<a href={`mailto:${practice.email}`}>{practice.email}</a><a href="#/contact">Contact us <ArrowRight size={14}/></a></div>
     <div><h3>Patient-led care</h3><a href="#/waitlist">Join the Waitlist</a><a href="#/portal">Patient portal</a><a href="#/legal/privacy">Privacy</a><a href="#/legal/terms">Terms & accessibility</a></div>
   </div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} {practice.legalName}. All rights reserved.</span><span>Website forms are not for emergencies. Call 911.</span></div></footer>;
