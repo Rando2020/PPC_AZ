@@ -1,9 +1,8 @@
-import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Quote, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, Building2, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
-import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 export default function Home(){
   const reduceMotion = useReducedMotion();
@@ -36,7 +35,6 @@ export default function Home(){
         <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
-      <div className="hero-signature">Patient-led care in Southern Arizona</div>
     </section>
 
     <section className="founder-proof" aria-label="Jennifer Carlile experience and local roots"><div className="shell founder-proof__grid">
@@ -58,8 +56,8 @@ export default function Home(){
           <div><HeartHandshake/><span><strong>“I have a medication question.”</strong>Not every question automatically needs another separately billed visit. Jennifer decides when an exam, monitoring, or additional evaluation is clinically needed.</span></div>
           <div><ShieldCheck/><span><strong>“I need imaging or a specialist.”</strong>Jennifer can evaluate the concern and coordinate an appropriate referral or test when clinically indicated. Outside services remain separate and may run through insurance.</span></div>
         </div>
-        <p className="small"><strong>Individual DPC membership pricing begins at ${practice.dpcIndividualStartingPrice}/month.</strong> Household pricing, final inclusions, access standards, and enrollment terms will be shown before enrollment. DPC does not replace health insurance for major medical care.</p>
-        <div className="button-row"><a className="button button--ghost" href="#/dpc">See how DPC works <ArrowRight size={16}/></a><a className="editorial-link editorial-link--dark" href="#/faq">DPC questions <ArrowRight size={15}/></a></div>
+        <p className="small"><strong>Individual DPC membership is ${practice.dpcIndividualStartingPrice}/month. A family of four is ${practice.dpcFamilyFourPrice}/month, plus ${practice.dpcAdditionalChildPrice} for each additional child.</strong> DPC does not replace health insurance for major medical care.</p>
+        <div className="button-row"><a className="button button--ghost" href="#/dpc">See how DPC works <ArrowRight size={16}/></a><a className="editorial-link editorial-link--dark" href="#/dpc/pricing">See membership pricing <ArrowRight size={15}/></a></div>
       </div>
     </div></section>
 
@@ -73,14 +71,14 @@ export default function Home(){
       />
       <div className="marana-scene__shade"/>
       <div className="shell marana-scene__content">
-        <span className="eyebrow">Rooted in Marana</span>
+        <span className="eyebrow">Local roots</span>
         <h2 id="marana-scene-title">Local care, shaped by the community.</h2>
-        <p>Jennifer has spent more than nine years caring for patients across Marana and Northwest Tucson.</p>
+        <p>Jennifer has spent more than nine years caring for patients across the community.</p>
       </div>
     </section>
 
     <section className="care-paths" data-reveal="up"><div className="shell">
-      <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as final participation, pricing, and availability are confirmed.</p></div>
+      <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as participation and availability are confirmed.</p></div>
       <div className="care-paths__list">{serviceCategories.map((item,i)=><a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
     </div></section>
 
@@ -99,21 +97,8 @@ export default function Home(){
       </div>
     </div></section>
 
-    <section className="founder-note" data-reveal="split"><div className="shell founder-note__grid">
-      <div className="founder-note__mark" aria-hidden="true"><PricklyPearBloom/><span>Care is personal here.</span><small>Rooted in Marana</small></div>
-      <div>
-        <span className="eyebrow">Founder · CEO · Family Nurse Practitioner</span>
-        <h2>A provider you can know. A practice built with purpose.</h2>
-        <p className="large-copy">Prickly Pear Care is built around patient-led care, with your questions, priorities, and goals shaping the conversation.</p>
-        <Quote className="founder-note__quote-icon"/>
-        <blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote>
-        <div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div>
-        <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
-      </div>
-    </div></section>
-
     <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
-      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">{practice.serviceArea}</p><p>Practice location, membership details, insurance participation, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
+      <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">Prickly Pear Care is being built for the community Jennifer already serves.</p><p>Practice location, insurance participation, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
       <figure className="local-story__photo"><img src={siteMedia.home.pricklyPearDetail.src} alt={siteMedia.home.pricklyPearDetail.alt} style={{ objectPosition: siteMedia.home.pricklyPearDetail.position }} loading="lazy" decoding="async"/></figure>
     </div></section>
     <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening, care-option, and enrollment updates. There is no commitment.</CTA>
