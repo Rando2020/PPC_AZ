@@ -17,16 +17,15 @@ export default function Provider(){
   return <>
     <section className="section provider-profile">
       <div className="shell">
-        <header className="provider-profile__header">
-          <h1>{practice.provider.name}</h1>
-          <p className="credential">{practice.provider.credentials}</p>
-        </header>
-
         <div className="provider-profile__content">
           <div className="provider-profile__visual">
             <Portrait/>
           </div>
           <div className="provider-bio provider-bio--side">
+            <header className="provider-profile__header">
+              <h1>{practice.provider.name}</h1>
+              <p className="credential">{practice.provider.credentials}</p>
+            </header>
             {professionalBio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
             <div className="provider-proof" aria-label="Jennifer Carlile qualifications and experience">
               {providerProof.map(([value,label])=><div key={value}><strong>{value}</strong><span>{label}</span></div>)}
@@ -38,11 +37,9 @@ export default function Provider(){
 
     <section className="section provider-local-story" aria-labelledby="provider-local-story-title">
       <div className="shell provider-local-story__frame">
-        <div className="provider-local-story__marker" aria-hidden="true">
-          <span>Rooted here</span>
-          <strong>9+</strong>
-          <small>years serving<br/>Marana + NW Tucson</small>
-        </div>
+        <figure className="provider-local-story__image">
+          <img src={`${import.meta.env.BASE_URL}images/marana-local-story.webp`} alt="A desert trail winding through saguaro cacti at sunset near Marana, Arizona" loading="lazy" decoding="async"/>
+        </figure>
         <div className="provider-local-story__copy">
           <span className="eyebrow">Rooted in the community</span>
           <h2 id="provider-local-story-title">A provider who already knows Marana.</h2>
