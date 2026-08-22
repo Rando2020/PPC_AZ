@@ -23,7 +23,7 @@ function DPCNav({ active }) {
 
 function SimpleHero({ eyebrow, title, children }) {
   return <section className="dpc-simple-hero">
-    <div className="shell narrow">
+    <div className="shell">
       <span className="eyebrow">{eyebrow}</span>
       <h1>{title}</h1>
       {children&&<p className="lead">{children}</p>}
