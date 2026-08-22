@@ -152,23 +152,24 @@ export function PageHero({ eyebrow, title, children, tone='cream' }) {
   }
 
   return <section className={`page-hero page-hero--${tone} page-hero--with-media page-hero--route-${route}`}>
-    <div className="shell page-hero__media-grid">
+    <figure className="page-hero__photo" aria-hidden="true">
+      <img
+        src={media.src}
+        alt=""
+        style={{objectPosition:media.position}}
+        decoding="async"
+        fetchPriority="high"
+      />
+    </figure>
+    <div className="page-hero__veil"/>
+    <div className="shell page-hero__media-shell">
       <div className="page-hero__copy">
         <span className="eyebrow">{eyebrow}</span>
         <h1>{title}</h1>
         {children&&<p className="lead">{children}</p>}
         <span className="page-hero__local-note">Marana · Northwest Tucson</span>
       </div>
-      <figure className="page-hero__photo">
-        <img
-          src={media.src}
-          alt={media.alt}
-          style={{objectPosition:media.position}}
-          decoding="async"
-          fetchPriority="high"
-        />
-        <figcaption>{media.label}</figcaption>
-      </figure>
+      <span className="page-hero__caption">{media.label}</span>
     </div>
   </section>;
 }
