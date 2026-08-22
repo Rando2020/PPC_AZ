@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 620" role="img" aria-labelledby="title desc">
+  <title id="title">Prickly Pear Primary Care mark</title>
+  <desc id="desc">A flowering prickly pear cactus forming a stethoscope with a heart at its center.</desc>
+  <defs>
+    <linearGradient id="olive" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a9b985"/><stop offset="1" stop-color="#7f9661"/></linearGradient>
+    <linearGradient id="oliveDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#526a2f"/><stop offset="1" stop-color="#304719"/></linearGradient>
+    <linearGradient id="berry" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ae1764"/><stop offset="1" stop-color="#82104d"/></linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#oliveDark)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M312 526C240 571 152 551 125 470C113 434 112 380 111 337" stroke-width="18"/>
+    <path d="M328 526C402 568 493 549 521 467C531 437 536 404 541 373" stroke-width="18"/>
+    <path d="M110 339C76 336 55 307 55 268V181C55 131 85 101 120 101" stroke-width="15"/>
+    <path d="M111 339C145 337 168 306 168 267V181C168 131 140 102 121 102" stroke-width="15"/>
+    <circle cx="542" cy="343" r="48" stroke-width="16"/>
+    <circle cx="542" cy="343" r="25" stroke-width="10"/>
+  </g>
+  <circle cx="64" cy="99" r="16" fill="#405722"/><circle cx="122" cy="99" r="16" fill="#405722"/>
+  <g fill="url(#olive)" stroke="#f8f6ef" stroke-width="7">
+    <path d="M250 429C218 381 215 306 232 255C249 204 282 178 321 181C361 184 391 219 405 271C420 327 408 390 375 435C357 459 337 477 318 490C294 472 269 455 250 429Z"/>
+    <path d="M263 185C232 145 228 91 249 54C270 18 310 6 341 25C374 46 380 94 360 139C347 168 333 185 316 197C296 191 278 190 263 185Z"/>
+    <path d="M398 272C397 226 418 188 451 172C483 156 520 169 534 202C550 239 527 286 489 315C462 335 438 343 413 345C411 317 407 293 398 272Z"/>
+  </g>
+  <g fill="url(#berry)" stroke="#f8f6ef" stroke-width="6">
+    <path d="M257 55C232 39 220 11 232-11C245-34 274-32 287-10C300 12 286 42 257 55Z" transform="translate(0 19)"/>
+    <path d="M310 31C290 9 290-23 310-41C332-60 359-46 361-18C363 8 342 29 310 31Z" transform="translate(0 19)"/>
+    <path d="M357 55C339 31 344 2 365-12C388-27 412-10 409 17C407 42 383 58 357 55Z" transform="translate(0 19)"/>
+    <path d="M448 175C426 152 429 120 450 104C473 87 499 102 498 130C497 156 476 176 448 175Z"/>
+    <path d="M493 187C476 164 483 136 504 125C525 114 546 131 541 156C536 179 517 191 493 187Z"/>
+  </g>
+  <g fill="#fff">
+    <ellipse cx="250" cy="36" rx="10" ry="5" transform="rotate(-24 250 36)"/><ellipse cx="329" cy="-5" rx="11" ry="5"/><ellipse cx="386" cy="29" rx="10" ry="5" transform="rotate(25 386 29)"/>
+    <ellipse cx="466" cy="125" rx="10" ry="5" transform="rotate(18 466 125)"/><ellipse cx="523" cy="148" rx="9" ry="5" transform="rotate(30 523 148)"/>
+  </g>
+  <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round">
+    <path d="M281 73l2 18M257 113l12 16M337 113l-7 17M283 148l8 15M321 141v19M358 139l-10 15"/>
+    <path d="M273 286l5 17M321 273v18M363 286l-7 17M257 340l9 14M320 332v19M377 338l-9 14M291 390l7 16M352 389l-7 16"/>
+    <path d="M451 211l-2 17M492 221l-10 15M438 263l-10 14M487 273l-13 11"/>
+  </g>
+  <path d="M318 515C289 493 266 469 266 438C266 411 286 393 310 393C325 393 338 401 347 414C356 401 369 393 384 393C408 393 428 411 428 438C428 470 393 499 347 532C336 525 327 520 318 515Z" fill="url(#berry)" stroke="#f8f6ef" stroke-width="8"/>
+</svg>

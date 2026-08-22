@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 470" role="img" aria-labelledby="title">
+  <title id="title">Prickly Pear Primary Care, Marana Arizona</title>
+  <rect width="1500" height="470" fill="none"/>
+  <g transform="translate(18 -8) scale(.72)">
+    <image href="prickly-pear-mark.svg" width="640" height="620"/>
+  </g>
+  <g transform="translate(480 0)">
+    <text x="0" y="195" fill="#3f5328" font-family="Georgia, 'Times New Roman', serif" font-size="105" letter-spacing="12">PRICKLY PEAR</text>
+    <line x1="3" y1="251" x2="116" y2="251" stroke="#3f5328" stroke-width="5"/>
+    <text x="145" y="270" fill="#981455" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="13">PRIMARY CARE</text>
+    <line x1="672" y1="251" x2="790" y2="251" stroke="#3f5328" stroke-width="5"/>
+    <circle cx="401" cy="322" r="8" fill="#981455"/>
+    <text x="87" y="390" fill="#3f5328" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="16">MARANA, ARIZONA</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Prickly Pear Primary Care">
+  <defs><linearGradient id="o" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a9b985"/><stop offset="1" stop-color="#7f9661"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ae1764"/><stop offset="1" stop-color="#82104d"/></linearGradient></defs>
+  <rect width="512" height="512" rx="108" fill="#f7f1e6"/>
+  <g fill="url(#o)" stroke="#fffdf8" stroke-width="8">
+    <path d="M166 376C139 335 139 271 154 228C170 184 200 163 235 166C270 169 295 198 307 243C321 291 311 344 282 382C266 402 250 417 234 428C213 413 182 398 166 376Z"/>
+    <path d="M177 170C152 136 150 92 167 62C185 32 218 23 244 39C271 56 277 96 260 133C250 157 239 170 225 180C208 175 190 174 177 170Z"/>
+    <path d="M304 275C303 235 321 203 349 190C376 177 408 188 420 217C433 248 414 288 381 312C358 329 338 336 317 337C315 314 312 293 304 275Z"/>
+  </g>
+  <g fill="url(#b)" stroke="#fffdf8" stroke-width="7">
+    <ellipse cx="176" cy="49" rx="21" ry="31" transform="rotate(-22 176 49)"/><ellipse cx="225" cy="37" rx="23" ry="34"/><ellipse cx="270" cy="52" rx="21" ry="31" transform="rotate(22 270 52)"/>
+    <ellipse cx="358" cy="181" rx="21" ry="31" transform="rotate(12 358 181)"/><ellipse cx="401" cy="199" rx="19" ry="28" transform="rotate(25 401 199)"/>
+    <path d="M206 415C183 397 164 378 164 353C164 331 181 316 200 316C212 316 223 323 230 333C238 323 248 316 261 316C280 316 296 331 296 353C296 379 268 402 230 429C222 423 214 419 206 415Z"/>
+  </g>
+  <g fill="none" stroke="#fffdf8" stroke-width="7" stroke-linecap="round"><path d="M197 82l2 15M179 116l10 13M234 111l-6 14M190 264l4 15M234 252v16M272 264l-6 15M344 231l-4 14M385 243l-10 12"/></g>
+</svg>
