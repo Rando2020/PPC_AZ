@@ -7,23 +7,23 @@ This directory is the production media library for the website. Keep local Maran
 | File | Primary use | Notes |
 | --- | --- | --- |
 | `jennifer-hero.webp` | Homepage hero | Provider-forward image. Preserve a text-safe area on the left at desktop widths. |
-| `marana-gates-pass-sunset-wide.webp` | Homepage Marana banner | Wide, text-safe sunset composition. Current `Rooted in Marana` scene. |
-| `marana-prickly-pear-bloom-close.webp` | Homepage local-story detail | Brand-forward bloom and fruit image. Keep copy outside the image. |
-| `marana-prickly-pear-fruit-close.webp` | Editorial / future service detail | Original local prickly pear fruit photography. Registered for future modules. |
-| `marana-saguaro-trail-golden-hour.webp` | Local landscape accent | Warm saguaro landscape. Registered for future page headers or local storytelling. |
-| `marana-sunset.webp` | Provider banner / fallback wide landscape | Existing landscape image retained as a secondary banner. |
-| `prickly-pear-bloom.webp` | Legacy local-story / detail image | Retained as a fallback while the new bloom asset is evaluated across breakpoints. |
+| `marana-sunset.webp` | Wide Marana banner, provider banner | Landscape image. Favor open sky / low-detail space where white copy can sit. |
+| `prickly-pear-bloom.webp` | Local story / detail image | Close or medium prickly pear crop. Works best without text layered directly on it. |
 | `consultation-detail.webp` | Care / relationship detail | Use for patient-care storytelling rather than location branding. |
 
 Production pages reference these files through `src/config/media.js`. Update the registry instead of scattering raw image paths through page components.
 
-## Marana asset naming
+## New Marana asset naming
 
 Use descriptive, stable filenames. Do not name assets `final`, `new`, `image1`, or by generation date alone.
 
-Useful names for future additions:
+Recommended names for the new photo set:
 
+- `marana-gates-pass-sunset-wide.webp`
 - `marana-prickly-pear-fruit-wide.webp`
+- `marana-prickly-pear-fruit-close.webp`
+- `marana-prickly-pear-bloom-close.webp`
+- `marana-saguaro-trail-golden-hour.webp`
 - `marana-sonoran-ridge-golden-hour.webp`
 - `marana-sunset-sky-texture.webp`
 - `marana-desert-lake-sunset.webp`

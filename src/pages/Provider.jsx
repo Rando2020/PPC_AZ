@@ -11,11 +11,22 @@ const providerProof = [
 ];
 
 export default function Provider(){
-  const professionalBio = practice.provider.bio.slice(0,3);
-  const personalBio = practice.provider.bio[3];
-  const closingBio = practice.provider.bio[4];
-
   return <>
+    <section className="provider-banner" aria-label="Southern Arizona landscape">
+      <img
+        src={siteMedia.provider.maranaBanner.src}
+        alt={siteMedia.provider.maranaBanner.alt}
+        style={{ objectPosition: siteMedia.provider.maranaBanner.position }}
+        fetchPriority="high"
+        decoding="async"
+      />
+      <div className="provider-banner__shade"/>
+      <div className="shell provider-banner__content">
+        <span>Rooted in Southern Arizona</span>
+        <strong>Marana · Northwest Tucson</strong>
+      </div>
+    </section>
+
     <section className="section provider-profile">
       <div className="shell">
         <header className="provider-profile__header">
@@ -26,37 +37,12 @@ export default function Provider(){
             {providerProof.map(([value,label])=><div key={value}><strong>{value}</strong><span>{label}</span></div>)}
           </div>
         </header>
-
         <div className="provider-profile__content">
           <div className="provider-profile__visual">
             <Portrait/>
           </div>
           <div className="provider-bio provider-bio--side">
-            {professionalBio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="section provider-local-story" aria-labelledby="provider-local-story-title">
-      <div className="shell provider-local-story__grid">
-        <figure className="provider-local-story__photo">
-          <img
-            src={siteMedia.library.pricklyPearFruit.src}
-            alt={siteMedia.library.pricklyPearFruit.alt}
-            style={{ objectPosition: siteMedia.library.pricklyPearFruit.position }}
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div className="provider-local-story__copy">
-          <span className="eyebrow">Rooted in the community</span>
-          <h2 id="provider-local-story-title">A provider who already knows Marana.</h2>
-          <p className="large-copy">Jennifer has spent more than nine years caring for patients in Marana and Northwest Tucson. Prickly Pear Care is a more personal next chapter in that same community.</p>
-          <p>{closingBio}</p>
-          <div className="provider-local-story__personal">
-            <span>Outside the office</span>
-            <p>{personalBio}</p>
+            {practice.provider.bio.map((paragraph,i)=><p className={i===0?'provider-bio__lead':''} key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
       </div>
