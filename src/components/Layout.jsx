@@ -221,7 +221,7 @@ export function PageHero({ eyebrow, title, children, tone='cream' }) {
   const fallbackSrc = route==='dpc' ? siteMedia.home.maranaBanner.src : null;
 
   if (!media) {
-    return <section className={`page-hero page-hero--${tone}`}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
+    return <section className={`page-hero page-hero--${tone}`}><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1>{children&&<p className="lead">{children}</p>}</div></section>;
   }
 
   return <section className={`page-hero page-hero--${tone} page-hero--with-media page-hero--route-${route}`}>
