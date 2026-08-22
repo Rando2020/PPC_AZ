@@ -5,7 +5,7 @@ import Provider from './pages/Provider';
 import Booking from './pages/Booking';
 import Waitlist from './pages/Waitlist';
 import { DPCOverview, DPCPricing, DPCCalculator, DPCExamples } from './pages/DPCPages';
-import { About, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
+import { About, CareOptions, CommunityGroups, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
 
 const routeMeta = {
   home: {
@@ -47,6 +47,11 @@ const routeMeta = {
     title: 'New Patients | Prickly Pear Care',
     description: 'Learn what to expect as Prickly Pear Care prepares to open enrollment and live patient care in Marana, Arizona.',
     announcement: 'New Patients page',
+  },
+  'new-patients/community-groups': {
+    title: 'Community and Employer DPC | Prickly Pear Care',
+    description: 'Learn how Prickly Pear Care is exploring DPC arrangements for local businesses, first responders, teachers, and public servants in Marana and Northwest Tucson.',
+    announcement: 'Community and employer Direct Primary Care page',
   },
   about: {
     title: 'About Prickly Pear Care | Marana, AZ',
@@ -112,6 +117,7 @@ function pageForRoute(route){
     case 'about': return <About/>;
     case 'services': return <CareOptions/>;
     case 'new-patients': return <NewPatients/>;
+    case 'new-patients/community-groups': return <CommunityGroups/>;
     case 'booking': return <Booking/>;
     case 'waitlist': return <Waitlist/>;
     case 'contact': return <Contact/>;
