@@ -9,8 +9,8 @@
 .provider-proof strong{font:1.45rem var(--serif);color:var(--olive-dark);font-weight:400}
 .provider-proof span{font-size:.78rem;color:var(--muted);line-height:1.45}
 
-.provider-profile__content{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(430px,.88fr);gap:clamp(48px,6vw,96px);align-items:start}
-.provider-profile__visual{min-width:0}
+.provider-profile__content{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(430px,.88fr);gap:clamp(48px,6vw,96px);align-items:start;max-width:none;margin:0}
+.provider-profile__visual{width:100%;min-width:0;max-width:none;margin:0}
 .provider-profile__visual .portrait-wrap{width:100%;min-height:clamp(720px,55vw,860px);height:clamp(720px,55vw,860px);max-width:none;margin:0}
 .provider-profile__visual .portrait,.provider-profile__visual .portrait-placeholder{height:clamp(720px,55vw,860px);min-height:clamp(720px,55vw,860px)}
 .provider-profile__visual .portrait-caption{right:-18px;bottom:30px}
