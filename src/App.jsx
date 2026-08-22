@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import Provider from './pages/Provider';
 import Booking from './pages/Booking';
 import Waitlist from './pages/Waitlist';
-import { About, DPCMembership, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
+import { DPCOverview, DPCPricing, DPCCalculator, DPCExamples } from './pages/DPCPages';
+import { About, CareOptions, NewPatients, Resources, FAQ, Contact, Portal, Legal } from './pages/ContentPages';
 
 const routeMeta = {
   home: {
@@ -13,9 +14,24 @@ const routeMeta = {
     announcement: 'Prickly Pear Care home page',
   },
   dpc: {
-    title: 'Direct Primary Care in Marana, AZ | Prickly Pear Care',
-    description: 'Learn how Direct Primary Care membership can provide predictable, relationship-based primary care and how it works alongside health insurance.',
-    announcement: 'Direct Primary Care page',
+    title: 'Direct Primary Care | Prickly Pear Care',
+    description: 'See how Direct Primary Care membership works, review pricing, try the cost calculator, and explore real-life examples.',
+    announcement: 'Direct Primary Care overview page',
+  },
+  'dpc/pricing': {
+    title: 'DPC Membership Pricing | Prickly Pear Care',
+    description: 'Review published Prickly Pear Care Direct Primary Care membership pricing for individuals and families.',
+    announcement: 'Direct Primary Care pricing page',
+  },
+  'dpc/calculator': {
+    title: 'DPC Cost Calculator | Prickly Pear Care',
+    description: 'Compare Prickly Pear Care DPC membership fees with the primary-care out-of-pocket costs you enter.',
+    announcement: 'Direct Primary Care calculator page',
+  },
+  'dpc/examples': {
+    title: 'DPC Examples for Individuals, Couples, and Families | Prickly Pear Care',
+    description: 'See simple examples of how individuals, couples, and families may use Direct Primary Care.',
+    announcement: 'Direct Primary Care examples page',
   },
   provider: {
     title: 'Meet Jennifer Carlile, MSN, FNP-BC | Prickly Pear Care',
@@ -88,7 +104,10 @@ function upsertMeta(selector, attribute, value){
 
 function pageForRoute(route){
   switch(route){
-    case 'dpc': return <DPCMembership/>;
+    case 'dpc': return <DPCOverview/>;
+    case 'dpc/pricing': return <DPCPricing/>;
+    case 'dpc/calculator': return <DPCCalculator/>;
+    case 'dpc/examples': return <DPCExamples/>;
     case 'provider': return <Provider/>;
     case 'about': return <About/>;
     case 'services': return <CareOptions/>;
@@ -126,7 +145,8 @@ export default function App(){
       const heading = document.querySelector('#main h1');
       if (heading) {
         heading.setAttribute('tabindex','-1');
-        heading.focus({preventScroll:true});
+        try { heading.focus({preventScroll:true}); }
+        catch { heading.focus(); }
       }
     });
     return()=>cancelAnimationFrame(frame);
