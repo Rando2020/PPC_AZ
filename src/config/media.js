@@ -5,25 +5,28 @@ const publicImage = (filename, alt, options = {}) => ({
   usage: options.usage || 'editorial',
 });
 
+// IMPORTANT: only reference image files that have been validated as complete browser-decodable assets.
+// The Marana photo files added in PR #31 were truncated during upload, so these entries temporarily
+// fall back to the previously validated site assets until the original photos are re-uploaded safely.
 const maranaLibrary = Object.freeze({
   gatesPassSunset: publicImage(
-    'marana-gates-pass-sunset-wide.webp',
-    'Sunset over the Sonoran Desert with saguaros and prickly pear near Marana, Arizona',
+    'marana-sunset.webp',
+    'Sonoran Desert landscape near Marana, Arizona at sunset',
     { position: 'center 55%', usage: 'wide location banner' },
   ),
   pricklyPearBloom: publicImage(
-    'marana-prickly-pear-bloom-close.webp',
-    'Pink prickly pear blossoms and fruit in warm Sonoran Desert light',
+    'prickly-pear-bloom.webp',
+    'Prickly pear cactus in warm Sonoran Desert light',
     { position: 'center', usage: 'brand detail' },
   ),
   pricklyPearFruit: publicImage(
-    'marana-prickly-pear-fruit-close.webp',
-    'Prickly pear cactus with magenta fruit in the Marana desert',
+    'prickly-pear-bloom.webp',
+    'Prickly pear cactus in the Sonoran Desert near Marana, Arizona',
     { position: 'center 42%', usage: 'editorial detail' },
   ),
   saguaroGoldenHour: publicImage(
-    'marana-saguaro-trail-golden-hour.webp',
-    'Saguaro-filled Sonoran Desert landscape in warm golden-hour light',
+    'marana-sunset.webp',
+    'Sonoran Desert landscape near Marana, Arizona in warm light',
     { position: 'center 55%', usage: 'local landscape accent' },
   ),
 });
