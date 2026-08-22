@@ -1,6 +1,7 @@
 import { Flower2 } from 'lucide-react';
-import logo from '../../logo-mark.webp';
 import providerPortrait from '../../provider-portrait.webp';
+
+const logo = `${import.meta.env.BASE_URL}brand/prickly-pear-mark.svg`;
 
 export function Brand({ light = false }) {
   return <a className={`brand ${light ? 'brand--light' : ''}`} href="#/" aria-label="Prickly Pear Primary Care PLLC home">
