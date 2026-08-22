@@ -9,24 +9,20 @@ const nav = [['Direct Primary Care','dpc'],['Meet Jennifer','provider'],['Care &
 
 const pageHeroMedia = {
   dpc: {
-    ...siteMedia.library.gatesPassSunset,
+    ...siteMedia.pages.dpc,
     label: 'Primary care rooted in Southern Arizona',
   },
   services: {
-    ...siteMedia.library.pricklyPearBloom,
+    ...siteMedia.pages.services,
     label: 'Care that grows with you',
   },
   'new-patients': {
-    ...siteMedia.library.saguaroGoldenHour,
+    ...siteMedia.pages.newPatients,
     label: 'A clear path to care',
   },
   about: {
-    ...siteMedia.library.gatesPassSunset,
+    ...siteMedia.pages.about,
     label: 'Rooted in Southern Arizona',
-  },
-  contact: {
-    ...siteMedia.library.pricklyPearFruit,
-    label: 'Close to home in Marana',
   },
 };
 
