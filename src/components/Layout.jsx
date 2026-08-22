@@ -10,7 +10,7 @@ const nav = [['Direct Primary Care','dpc'],['Meet Jennifer','provider'],['Care &
 const pageHeroMedia = {
   dpc: {
     ...siteMedia.pages.dpc,
-    label: 'Primary care rooted in Southern Arizona',
+    label: null,
   },
   services: {
     ...siteMedia.pages.services,
@@ -165,7 +165,7 @@ export function PageHero({ eyebrow, title, children, tone='cream' }) {
         {children&&<p className="lead">{children}</p>}
         <span className="page-hero__local-note">Marana · Northwest Tucson</span>
       </div>
-      <span className="page-hero__caption">{media.label}</span>
+      {media.label&&<span className="page-hero__caption">{media.label}</span>}
     </div>
   </section>;
 }
