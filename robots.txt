@@ -1,0 +1,9 @@
+# https://pricklypearcareaz.org/robots.txt
+
+User-agent: *
+Allow: /
+
+# The site currently uses hash routing (/#/dpc, /#/waitlist), so every route
+# resolves to the single URL below. Once the app moves to path-based routing,
+# expand sitemap.xml with one <url> entry per route.
+Sitemap: https://pricklypearcareaz.org/sitemap.xml

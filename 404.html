@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#596247" />
+<title>Page not found | Prickly Pear Care</title>
+<style>
+  :root{
+    --olive:#596247; --olive-dark:#3f4934; --berry:#9b3f5d; --berry-dark:#773047;
+    --cream:#f7f1e6; --paper:#fffdf8; --charcoal:#2e302b; --muted:#696b63; --line:#d9d4ca;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; background:var(--cream); color:var(--charcoal);
+    font-family:'DM Sans',Arial,Helvetica,sans-serif; line-height:1.65;
+    display:grid; place-items:center; padding:40px 24px;
+  }
+  main{width:min(620px,100%)}
+  .eyebrow{
+    text-transform:uppercase; color:var(--berry); font-size:.72rem;
+    letter-spacing:.2em; font-weight:600; display:block; margin-bottom:18px;
+  }
+  h1{
+    font-family:Georgia,'Times New Roman',serif; font-weight:400;
+    font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.08; letter-spacing:-.02em;
+    margin:0 0 1rem;
+  }
+  p{color:#55584f; margin:0 0 1.4rem; max-width:46ch}
+  .rule{height:4px;width:74px;background:linear-gradient(90deg,var(--olive) 60%,var(--berry) 60%);margin:0 0 30px}
+  ul{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:2px}
+  li a{
+    display:block; padding:13px 2px; color:var(--charcoal); text-decoration:none;
+    font-weight:600; font-size:.95rem; border-bottom:1px solid var(--line);
+  }
+  li a:hover,li a:focus{color:var(--berry)}
+  .button{
+    display:inline-flex; align-items:center; gap:9px; margin-top:6px;
+    background:var(--berry); border:1px solid var(--berry); color:#fff;
+    padding:14px 22px; border-radius:4px; font-weight:600; text-decoration:none;
+  }
+  .button:hover,.button:focus{background:var(--berry-dark)}
+  small{display:block;margin-top:34px;color:var(--muted);font-size:.8rem}
+</style>
+<script>
+/*
+ * The site runs on hash routing, so real paths like /dpc or /waitlist never
+ * reach the router — GitHub Pages serves this file instead. Anything that maps
+ * to a known route gets forwarded to its hash equivalent; anything else falls
+ * through to the styled not-found page below.
+ *
+ * replace() rather than assign() so the dead URL doesn't land in history and
+ * trap people on the back button.
+ */
+(function () {
+  var routes = [
+    'dpc','provider','services','new-patients','about',
+    'portal','waitlist','faq','contact','resources',
+    'legal/privacy','legal/terms'
+  ];
+
+  // Plausible URLs someone might type, guess, or have linked from elsewhere.
+  var aliases = {
+    'direct-primary-care':'dpc',
+    'directprimarycare':'dpc',
+    'membership':'dpc',
+    'meet-jennifer':'provider',
+    'jennifer':'provider',
+    'meet-the-provider':'provider',
+    'care-services':'services',
+    'care-and-services':'services',
+    'new-patient':'new-patients',
+    'patient-portal':'portal',
+    'join':'waitlist',
+    'join-the-waitlist':'waitlist',
+    'sign-up':'waitlist',
+    'faqs':'faq',
+    'questions':'faq',
+    'contact-us':'contact',
+    'privacy':'legal/privacy',
+    'privacy-policy':'legal/privacy',
+    'terms':'legal/terms',
+    'accessibility':'legal/terms'
+  };
+
+  var path = window.location.pathname
+    .replace(/^\/+/, '')
+    .replace(/\/+$/, '')
+    .replace(/\.html?$/i, '')
+    .toLowerCase();
+
+  if (!path) {
+    window.location.replace('/');
+    return;
+  }
+
+  var target = null;
+  if (routes.indexOf(path) !== -1) target = path;
+  else if (Object.prototype.hasOwnProperty.call(aliases, path)) target = aliases[path];
+
+  if (target) {
+    window.location.replace('/' + window.location.search + '#/' + target);
+  }
+  // No match: let the not-found page render.
+})();
+</script>
+</head>
+<body>
+  <main>
+    <span class="eyebrow">Prickly Pear Care</span>
+    <div class="rule"></div>
+    <h1>We couldn&rsquo;t find that page.</h1>
+    <p>
+      The link may be out of date, or the address may have a typo. Here&rsquo;s
+      where most people are headed:
+    </p>
+    <a class="button" href="/#/waitlist">Join the Waitlist &rarr;</a>
+    <ul>
+      <li><a href="/#/">Home</a></li>
+      <li><a href="/#/dpc">Direct Primary Care</a></li>
+      <li><a href="/#/provider">Meet Jennifer</a></li>
+      <li><a href="/#/services">Care &amp; services</a></li>
+      <li><a href="/#/new-patients">New patients</a></li>
+      <li><a href="/#/faq">Frequently asked questions</a></li>
+      <li><a href="/#/contact">Contact the practice</a></li>
+    </ul>
+    <small>
+      This page is not monitored for emergencies. If you are having a medical
+      emergency, call 911.
+    </small>
+  </main>
+</body>
+</html>

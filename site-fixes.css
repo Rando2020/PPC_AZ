@@ -1,0 +1,114 @@
+/**
+ * site-fixes.css
+ *
+ * Late-cascade corrections. Imported LAST in main.jsx so it wins on source
+ * order, but every rule here is also written with higher specificity than the
+ * rule it corrects, so it stays correct even if the import order shifts.
+ *
+ * Each block records what it fixes and what the original rule was, so this file
+ * can be emptied once the fixes are folded back into the source stylesheets.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. FOOTER GRID — restore responsive collapse
+ *
+ * Bug: src/styles.css line 214 declares
+ *        .footer-grid{grid-template-columns:1.35fr repeat(3,1fr)}
+ *      at the top level, AFTER the responsive overrides in the media queries on
+ *      lines 3 and 4. Equal specificity (0,1,0), later source order, so the
+ *      four-column desktop track list won every viewport.
+ *
+ * Symptom: at 390px the footer computed to `98px 70px 203px 81px`, giving the
+ *      document a 647px scrollWidth inside a 390px viewport. Every page on the
+ *      site scrolled sideways, and the fourth column (Patient-led care, Join the
+ *      Waitlist, Patient portal, Privacy, Terms) sat entirely offscreen.
+ *
+ * Fix: re-declare the same desktop intent at `.footer .footer-grid` (0,2,0) and
+ *      restate the breakpoints at that specificity so they can't be clobbered.
+ * ------------------------------------------------------------------------- */
+
+.footer .footer-grid {
+  grid-template-columns: 1.35fr repeat(3, 1fr);
+  gap: 60px;
+}
+
+@media (max-width: 960px) {
+  .footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 44px 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * 1b. HORIZONTAL OVERFLOW CONTAINMENT
+ *
+ * With the footer fixed, a smaller residual sideways scroll remains on first
+ * load: the [data-reveal="split"] entrance animations start at
+ * translateX(±22–24px) (styles.css lines 180–181, 192–193), which pokes past
+ * the viewport until the section scrolls into view and .is-visible lands.
+ * Self-correcting, but visible as a ~9px jiggle before you reach it.
+ *
+ * `overflow-x: clip` — NOT `hidden` — is what's wanted here. `hidden` creates a
+ * scroll container and would break the sticky .site-header; `clip` does not.
+ * It also has to sit on #root rather than html/body: overflow set on body
+ * propagates up to the viewport instead of clipping, so it has no effect there.
+ *
+ * Verified against the live build at 390px: scrollWidth drops 399 -> 390, the
+ * header still reports position:sticky at top:0 after scrolling, and the
+ * reveal animations still fire.
+ * ------------------------------------------------------------------------- */
+
+#root {
+  overflow-x: clip;
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. EYEBROW CONTRAST on dark olive sections — WCAG 2 AA (1.4.3)
+ *
+ * Bug: .eyebrow inherits color:var(--berry) (#9b3f5d). Inside .section--olive
+ *      the background is var(--olive-dark) (#3f4934), giving 1.47:1 against a
+ *      4.5:1 requirement at 11.5px. Effectively invisible.
+ *
+ * Affected: /dpc ("Patient-led care in practice"), /provider ("Her approach to
+ *      care"), /about ("What guides us") — the only three axe violations on the
+ *      site.
+ *
+ * Fix: reuse the light-pink token already used for the same situation in
+ *      .marana-scene__content .eyebrow and .cta .eyebrow. #f2c6d3 on #3f4934
+ *      measures 6.23:1.
+ *
+ * Note the :not() guard — it leaves the intentional gold eyebrow inside
+ *      .dpc-includes__intro (#d8bd77, 5.18:1, already passing) alone.
+ * ------------------------------------------------------------------------- */
+
+.section--olive .eyebrow:not(.dpc-includes__intro .eyebrow) {
+  color: #f2c6d3;
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. CTA EYEBROW contrast — WCAG 2 AA (1.4.3)
+ *
+ * .cta .eyebrow (styles.css) sets #f3ced9 on the .cta background of
+ * var(--berry) / #9b3f5d. That measures 4.487:1 against a 4.5:1 requirement —
+ * failing by 0.013.
+ *
+ * Worth knowing why this is easy to miss: [data-reveal] elements start at
+ * opacity:0, so an automated scan on a freshly loaded page skips this element
+ * entirely. It only becomes testable under prefers-reduced-motion, where
+ * styles.css line 5 forces opacity:1. So the one group of users guaranteed to
+ * see this text is the accessibility-sensitive group.
+ *
+ * #f7dae3 is the nearest tint that clears the bar (4.93:1) while staying
+ * visually indistinguishable from the original.
+ * ------------------------------------------------------------------------- */
+
+.cta .eyebrow {
+  color: #f7dae3;
+}
