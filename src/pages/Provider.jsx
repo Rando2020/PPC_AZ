@@ -18,7 +18,6 @@ export default function Provider(){
     <section className="section provider-profile">
       <div className="shell">
         <header className="provider-profile__header">
-          <span className="eyebrow">Meet Jennifer</span>
           <h1>{practice.provider.name}</h1>
           <p className="credential">{practice.provider.credentials}</p>
         </header>
