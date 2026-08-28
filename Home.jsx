@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, HeartHandshake, ShieldPlus, MapPin, Quote, Sparkles, MessageCircle, ClipboardCheck, Clock, KeyRound, Wallet, UserCheck } from 'lucide-react';
+import { ArrowRight, Phone, HeartHandshake, ShieldPlus, MapPin, Sparkles, Clock, KeyRound, Wallet, UserCheck } from 'lucide-react';
 import { practice, serviceCategories, dpc } from '../config/practice';
 import { CTA } from '../components/UI';
 
@@ -30,17 +30,23 @@ export default function Home(){return <>
     </div>
   </section>
 
-  <section className="section editorial-intro"><div className="shell editorial-intro__grid">
-    <div className="editorial-intro__kicker"><HeartHandshake/><span><small>Patient-led care</small>You lead. We listen.</span></div>
-    <div className="editorial-intro__body">
-      <h2>You know your body. We build the visit around that.</h2>
-      <div className="editorial-intro__copy"><p className="large-copy">Most visits start with a clinician’s checklist. Ours starts with your list — what is worrying you, what changed, what you want to fix first.</p><p>Jennifer explains your options in plain language, tells you honestly what she would do, and builds the plan with you rather than handing it to you.</p></div>
-      <div className="editorial-intro__points reveal-group">
-        <div><MessageCircle/><span><strong>Bring your whole list</strong>No one-problem-per-visit rule.</span></div>
-        <div><ClipboardCheck/><span><strong>A plan you agreed to</strong>Not one handed to you on the way out.</span></div>
+  <section className="mission-story">
+    <div className="shell mission-story__grid">
+      <div className="mission-story__left">
+        <h2>A mission rooted in personal care.</h2>
+        <p>Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story.</p>
+        <p>I believe there is something incredibly valuable about having a provider who takes the time to listen, understands your history, and is invested in your health for the long term. <strong>That belief inspired me to create Prickly Pear Care.</strong></p>
+      </div>
+      <div className="mission-story__right">
+        <h3>My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system.</h3>
+        <p className="mission-story__goal">My goal is simple: <strong>for every patient to feel heard, valued, and confident in their care.</strong></p>
+        <div className="mission-story__divider" aria-hidden="true"><span>♥</span></div>
+        <p>From preventive care and annual physicals to sick visits, chronic disease management, women’s health, weight management, and ongoing wellness, Prickly Pear Primary Care provides personalized care designed around <strong>you—not a one-size-fits-all approach.</strong></p>
+        <p className="mission-story__statement">See the same provider. Build a relationship. Take charge of your health.</p>
+        <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
     </div>
-  </div></section>
+  </section>
 
   <section className="dpc-band" id="membership">
     <div className="shell dpc-band__grid">
@@ -62,11 +68,6 @@ export default function Home(){return <>
   <section className="care-paths"><div className="shell">
     <div className="care-paths__heading"><span className="eyebrow">Ways to access care</span><h2>Choose the arrangement that fits your life.</h2><p>Direct Primary Care membership and traditional insurance-based visits are planned care pathways. Select cash-pay services are coming soon, with no launch date set.</p></div>
     <div className="care-paths__list reveal-group">{serviceCategories.map((item,i)=><a href="#/services" className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
-  </div></section>
-
-  <section className="founder-note"><div className="shell founder-note__grid">
-    <figure className="founder-note__photo reveal"><img src={`${import.meta.env.BASE_URL}images/consultation-detail.webp`} alt="A nurse practitioner listening during a patient conversation"/><figcaption>Care is personal here.</figcaption></figure>
-    <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
   </div></section>
 
   <section className="marana-band">
