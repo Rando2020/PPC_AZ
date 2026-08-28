@@ -23,7 +23,7 @@ Pushes to `main` deploy automatically through GitHub Pages at `https://pricklype
 - The founder story section uses `public/images/consultation-detail.webp`, a separate consultation detail that avoids repeating Jennifer's portrait.
 - The supplied logo artwork is retained at `public/images/logo-original.png`; the site uses its original mark with a responsive horizontal “Prickly Pear Primary Care” lockup in the header and a larger version in the footer.
 - Jennifer’s name, practice email, biography, and founder portrait are populated. The phone number and location remain launch placeholders.
-- Medical weight-loss care and hormone therapy are identified as cash-pay services. Insurance plans, other covered services, eligibility, and prices remain intentionally uncommitted.
+- Select cash-pay services are labeled **Coming soon** with no launch date. The service mix, eligibility, and prices remain intentionally uncommitted.
 
 ## Booking architecture
 

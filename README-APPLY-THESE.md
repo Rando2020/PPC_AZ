@@ -151,9 +151,7 @@ from the repo. It needs a 301 at the registrar or in Wix, pointing `.com` at
 without redirecting. Repo **Settings → Pages → Enforce HTTPS**. If the checkbox
 is greyed out, the certificate is still provisioning — check back in a few hours.
 
-## One thing to double-check
+## Provider credential
 
-The site says **FNP-BC** throughout — in the H1, the stats band, the page titles,
-and the JSON-LD. Earlier the credential was **FNP-C**. Those are different
-certifying bodies (ANCC vs AANP), so it's worth confirming which is correct
-before more of the site hardcodes it. Not something I can verify from outside.
+Jennifer’s confirmed credential is **FNP-BC**. The H1, experience bands, page
+titles, metadata, and structured data should use that credential consistently.

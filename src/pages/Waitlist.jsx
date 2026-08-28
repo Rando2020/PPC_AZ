@@ -25,10 +25,10 @@ const carePaths = [
   },
   {
     value: 'Select cash-pay services',
-    eyebrow: 'Pay for a specific service',
-    title: 'Cash-Pay Services',
-    description: 'Pay a transparent price directly for select services offered outside a membership or insurance billing pathway.',
-    note: 'Available services and prices will be published as they are finalized.',
+    eyebrow: 'Coming soon',
+    title: 'Cash-Pay Services · Coming Soon',
+    description: 'Select services may be offered later at transparent prices outside a membership or insurance billing pathway.',
+    note: 'The service list, pricing, and launch date have not been finalized.',
     icon: WalletCards,
   },
 ];
@@ -48,7 +48,7 @@ function DPCWaitlistFramework(){
       <header className="waitlist-framework__heading">
         <span className="eyebrow">One practice. Three ways to access care.</span>
         <h2 id="waitlist-framework-title">You do not have to choose today.</h2>
-        <p className="large-copy">The waitlist is the on-ramp. DPC is the relationship-focused membership option, while insurance-based primary care and select cash-pay services remain part of the broader Prickly Pear Care model.</p>
+        <p className="large-copy">The waitlist is the on-ramp. DPC is the relationship-focused membership option, while insurance-based primary care is another planned pathway. Select cash-pay services are coming soon, with no launch date set.</p>
       </header>
 
       <div className="waitlist-framework__grid">
@@ -75,7 +75,7 @@ function DPCWaitlistFramework(){
         <ol>
           <li><span>01</span><div><strong>Join the waitlist</strong><p>Share only the contact information needed for launch updates. No payment today.</p></div></li>
           <li><span>02</span><div><strong>Review the exact membership</strong><p>See the published price, what is included, what is outside the membership, access expectations, and HSA information if the final structure qualifies.</p></div></li>
-          <li><span>03</span><div><strong>Choose and enroll securely</strong><p>When enrollment opens, decide whether DPC, insurance-based care, or a cash-pay service fits you best. Clinical onboarding happens after that choice.</p></div></li>
+          <li><span>03</span><div><strong>Choose and enroll securely</strong><p>When enrollment opens, decide whether DPC or available insurance-based care fits you best. Cash-pay services can be considered after they are announced.</p></div></li>
         </ol>
         <p className="waitlist-onramp__note"><CreditCard aria-hidden="true"/> Joining the waitlist does not create a membership, charge a card, establish a patient relationship, or reserve an appointment.</p>
       </div>
@@ -163,7 +163,7 @@ export default function Waitlist(){
   if(!jotformId&&done)return <><PageHero eyebrow="Join the Waitlist" title="Almost there.">Your email app should open with your registration ready to review.</PageHero><section className="section"><div className="shell narrow centered"><div className="success-mark"><Check/></div><h2>Send the prepared email to complete your registration.</h2><p>After you press Send, Prickly Pear Care can use your contact information for opening and enrollment updates. Joining the waitlist does not create a membership, guarantee enrollment, or reserve an appointment.</p><div className="waitlist-next"><span className="eyebrow">While you’re here</span><div className="button-row centered-row"><a className="button" href="#/provider">Meet Jennifer</a><a className="button button--ghost" href="#/dpc">Understand DPC</a></div></div></div></section></>;
 
   return <>
-    <PageHero eyebrow="Join the Waitlist" title="Your on-ramp to Prickly Pear Care.">Get opening updates for DPC membership, insurance-based primary care, and select cash-pay services. DPC is the launch focus, but you do not need to choose a care path or pay anything today.</PageHero>
+    <PageHero eyebrow="Join the Waitlist" title="Your on-ramp to Prickly Pear Care.">Get opening updates for DPC membership and insurance-based primary care, plus announcements about cash-pay services coming soon. DPC is the launch focus, but you do not need to choose a care path or pay anything today.</PageHero>
     <DPCWaitlistFramework/>
     <section className="section waitlist-section"><div className="shell waitlist-layout">
       <div className="waitlist-copy">

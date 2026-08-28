@@ -5,7 +5,7 @@ import './provider.css';
 
 const providerProof = [
   ['13+ years', 'practicing as a Family Nurse Practitioner'],
-  ['9+ years', 'serving Marana and Northwest Tucson'],
+  ['10+ years', 'serving Marana and Northwest Tucson'],
   ['FNP-BC', 'board-certified Family Nurse Practitioner'],
 ];
 
@@ -43,7 +43,7 @@ export default function Provider(){
         <div className="provider-local-story__copy">
           <span className="eyebrow">Rooted in the community</span>
           <h2 id="provider-local-story-title">A provider who already knows Marana.</h2>
-          <p className="large-copy">Jennifer has spent more than nine years caring for patients in Marana and Northwest Tucson. Prickly Pear Care is a more personal next chapter in that same community.</p>
+          <p className="large-copy">Jennifer has spent more than 10 years caring for patients in Marana and Northwest Tucson. Prickly Pear Care is a more personal next chapter in that same community.</p>
           <p>{closingBio}</p>
           <div className="provider-local-story__personal">
             <span>Outside the office</span>

@@ -35,12 +35,12 @@ const routeMeta = {
   },
   provider: {
     title: 'Meet Jennifer Carlile, MSN, FNP-BC | Prickly Pear Care',
-    description: 'Meet Jennifer Carlile, MSN, FNP-BC, founder of Prickly Pear Care and a Family Nurse Practitioner who has served Marana and Northwest Tucson for more than nine years.',
+    description: 'Meet Jennifer Carlile, MSN, FNP-BC, founder of Prickly Pear Care and a Family Nurse Practitioner who has served Marana and Northwest Tucson for more than 10 years.',
     announcement: 'Meet Jennifer page',
   },
   services: {
     title: 'Compare Your Care Options | Prickly Pear Care',
-    description: 'Compare insurance-based primary care, Direct Primary Care membership, and select cash-pay services at Prickly Pear Primary Care.',
+    description: 'Compare insurance-based primary care and Direct Primary Care membership, and learn about select cash-pay services coming soon to Prickly Pear Care.',
     announcement: 'Care and Services page',
   },
   'new-patients': {

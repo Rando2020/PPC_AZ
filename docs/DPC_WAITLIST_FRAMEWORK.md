@@ -8,7 +8,7 @@ The waitlist should act as the low-friction on-ramp to Prickly Pear Care rather 
 
 1. Join the waitlist with minimal contact information.
 2. Learn the exact Direct Primary Care membership price, inclusions, exclusions, access expectations, and HSA information if the final structure qualifies.
-3. Choose DPC membership, insurance-based primary care, or a select cash-pay service when care opens.
+3. Choose DPC membership or available insurance-based primary care when care opens. Select cash-pay services are coming soon, with no launch date set.
 4. Complete secure clinical onboarding only after choosing a care path.
 
 ## Guardrails

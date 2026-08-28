@@ -5,7 +5,7 @@ import { CTA } from '../components/UI';
 export default function Home(){return <>
   <section className="editorial-hero">
     <div className="shell editorial-hero__content">
-      <span className="eyebrow">Jennifer Carlile · MSN, FNP-C</span>
+      <span className="eyebrow">Jennifer Carlile · MSN, FNP-BC</span>
       <h1>Care that<br/><em>grows with you.</em></h1>
       <p>Primary care in Marana where you set the agenda — and your provider has the time to{'\u00A0'}follow it.</p>
       <div className="button-row">
@@ -60,13 +60,13 @@ export default function Home(){return <>
   </section>
 
   <section className="care-paths"><div className="shell">
-    <div className="care-paths__heading"><span className="eyebrow">Three ways to be seen</span><h2>Choose the arrangement that fits your life.</h2><p>A direct primary care membership, traditional insurance-based visits, or focused cash-pay programs. Pricing and plan participation are being finalized now.</p></div>
+    <div className="care-paths__heading"><span className="eyebrow">Ways to access care</span><h2>Choose the arrangement that fits your life.</h2><p>Direct Primary Care membership and traditional insurance-based visits are planned care pathways. Select cash-pay services are coming soon, with no launch date set.</p></div>
     <div className="care-paths__list reveal-group">{serviceCategories.map((item,i)=><a href="#/services" className="care-path" key={item.title}><span className="care-path__number">0{i+1}</span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p></div><ArrowRight/></a>)}</div>
   </div></section>
 
   <section className="founder-note"><div className="shell founder-note__grid">
     <figure className="founder-note__photo reveal"><img src={`${import.meta.env.BASE_URL}images/consultation-detail.webp`} alt="A nurse practitioner listening during a patient conversation"/><figcaption>Care is personal here.</figcaption></figure>
-    <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-C</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
+    <div><Quote className="founder-note__quote-icon"/><blockquote>“My goal is to create the kind of care experience where you feel comfortable asking questions, supported in your choices, and confident in what comes next.”</blockquote><div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder & Family Nurse Practitioner</p></div><a className="editorial-link editorial-link--dark" href="#/provider">Read Jennifer’s story <ArrowRight size={15}/></a></div>
   </div></section>
 
   <section className="marana-band">

@@ -17,7 +17,7 @@ export const practice = {
     name: 'Jennifer Carlile',
     credentials: 'MSN, FNP-BC · Founder, CEO & Family Nurse Practitioner',
     bio: [
-      'I’m Jennifer Carlile, FNP-BC, and I’ve been practicing as a Family Nurse Practitioner for over 13 years, with more than 9 years serving patients in the Marana and Northwest Tucson communities.',
+      'I’m Jennifer Carlile, FNP-BC, and I’ve been practicing as a Family Nurse Practitioner for over 13 years, with more than 10 years serving patients in the Marana and Northwest Tucson communities.',
       'Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story. I believe there is something incredibly valuable about having a provider who takes the time to listen, knows your history, and is invested in your health for the long term. That belief is what inspired me to create Prickly Pear Care.',
       'My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system. My goal is for every patient to feel heard, valued, and confident in their care.',
       'Outside of the office, I’m happily married and a proud mom to my daughter. I enjoy reading, crafting, spending time outdoors and trying new foods.',
@@ -28,7 +28,7 @@ export const practice = {
     license: 'Arizona AP5088',
     community: 'International medical missions with Hope Without Borders',
   },
-  availabilityNote: 'Prickly Pear Care plans to offer insurance-based primary care, Direct Primary Care membership, and select cash-pay services. DPC pricing is available to review. Final insurance participation, enrollment terms, cash-pay offerings, eligibility, and opening timing are still being finalized.',
+  availabilityNote: 'Prickly Pear Care plans to offer insurance-based primary care and Direct Primary Care membership. Select cash-pay services are coming soon, but no launch date has been set. DPC pricing is available to review. Final insurance participation and enrollment terms are still being finalized.',
 };
 
 export const serviceCategories = [
@@ -51,10 +51,10 @@ export const serviceCategories = [
   {
     icon: 'flower',
     title: 'Select Cash-Pay Services',
-    description: 'Specific services offered at transparent, upfront prices outside insurance coverage. The final service list and pricing are coming soon.',
-    status: 'Planned care pathway',
+    description: 'Specific services may be offered at transparent, upfront prices outside insurance coverage. The service list, pricing, and timing have not been finalized.',
+    status: 'Coming soon',
     href: '#/services',
-    linkLabel: 'Explore cash-pay services',
+    linkLabel: 'See what is coming soon',
   },
 ];
 
@@ -67,7 +67,7 @@ export const faqs = [
   ['Does DPC replace health insurance?', 'No. Direct Primary Care membership is separate from health insurance and is not health insurance. Many people maintain coverage for hospital care, specialists, imaging, medications, emergencies, and other services outside the DPC membership.'],
   ['Can my small business help pay for DPC for employees?', 'Prickly Pear Care is exploring employer-sponsored DPC arrangements for local small businesses. An employer may be able to contribute toward or sponsor a defined primary-care membership for eligible employees while employees continue to use major medical insurance for care outside the DPC membership. Final employer pricing, participation requirements, eligibility, tax or benefit treatment, and enrollment terms are still being developed and should be reviewed with the appropriate benefits and tax professionals.'],
   ['Will Prickly Pear Care still offer insurance-based care?', 'That is the plan. Prickly Pear Care intends to offer insurance-based primary care in addition to DPC membership. Final participating plans and billing details will be published before care begins.'],
-  ['Will cash-pay care be available?', 'Select cash-pay services are planned so patients can access certain services at transparent prices without using insurance. The final service list and pricing are still being developed.'],
+  ['Will cash-pay care be available?', 'Select cash-pay services are coming soon, but no launch date has been set. The final service list, eligibility, and pricing are still being developed.'],
   ['What if I wake up sick or have a new concern?', 'DPC is intended to make it easier to start by contacting your primary-care practice. Jennifer can help determine whether the next step should be a message, a visit, testing, treatment, or another level of care. Final communication and response standards will be published before enrollment.'],
   ['Will every prescription question require another appointment?', 'Not necessarily. Some medication questions or follow-up needs may be handled without another separately billed office visit when that is clinically appropriate. Jennifer will still recommend a visit whenever an exam, monitoring, or additional evaluation is needed.'],
   ['Can Jennifer order imaging or refer me to a specialist?', 'Yes, primary-care clinicians can coordinate referrals and order appropriate testing when clinically indicated. Imaging, specialist care, and other outside services are generally separate from the DPC membership and may be billed by the outside facility or clinician.'],

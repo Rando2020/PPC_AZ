@@ -12,14 +12,14 @@ export const practice = {
   hours: ['Monday–Thursday · 8:00 AM–5:00 PM', 'Friday · By appointment'],
   provider: {
     name: 'Jennifer Carlile',
-    credentials: 'MSN, FNP-C · Founder & Family Nurse Practitioner',
+    credentials: 'MSN, FNP-BC · Founder & Family Nurse Practitioner',
     bio: 'Jennifer Carlile is a board-certified Family Nurse Practitioner with more than 13 years of clinical experience across primary care, preventive health, and chronic-condition management. She opened Prickly Pear because she wanted to practice the way she believes care should work: you decide what the visit is about, and she has the time to actually get there. Born in Kenya, Jennifer has also served on international medical mission trips with Hope Without Borders.',
     portrait: '/images/provider-portrait.webp',
     npi: '1609217256',
     license: 'Arizona AP5088',
     community: 'International medical missions with Hope Without Borders',
   },
-  availabilityNote: 'Prickly Pear is building toward a direct primary care membership alongside insurance-based visits and focused cash-pay programs. Membership pricing, insurance participation, and covered services are still being finalized.',
+  availabilityNote: 'Prickly Pear is building toward a direct primary care membership alongside insurance-based visits. Select cash-pay services are coming soon, with no launch date set. Membership pricing, insurance participation, and covered services are still being finalized.',
 };
 
 /* Direct primary care in Arizona is governed by A.R.S. §§ 44-1799.91–.96.
@@ -43,7 +43,7 @@ export const dpc = {
 export const serviceCategories = [
   { icon: 'heart', title: 'Direct primary care membership', description: 'A flat monthly fee for unhurried visits and direct access to your provider. Membership terms and pricing are being finalized now.', status: 'In development' },
   { icon: 'sparkle', title: 'Insurance-based visits', description: 'Traditional covered primary care for patients who prefer to use their health plan. Participating plans will be published once confirmed.', status: 'Planned' },
-  { icon: 'flower', title: 'Weight management & hormone therapy', description: 'Clinician-guided programs offered outside insurance through transparent cash-pay pricing. Eligibility requires a clinical assessment.', status: 'Cash pay' },
+  { icon: 'flower', title: 'Select cash-pay services', description: 'Potential future services offered outside insurance through transparent cash-pay pricing. The service mix and timing have not been finalized.', status: 'Coming soon' },
 ];
 
 export const faqs = [

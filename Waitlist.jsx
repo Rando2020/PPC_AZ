@@ -7,7 +7,7 @@ import { waitlistAdapter } from '../lib/waitlistAdapter';
 const INTERESTS = [
   ['membership', 'Direct primary care membership', 'A flat monthly fee, unhurried visits, direct access.'],
   ['insurance', 'Insurance-based visits', 'Traditional covered primary care.'],
-  ['programs', 'Weight management or hormone therapy', 'Cash-pay programs outside insurance.'],
+  ['programs', 'Future cash-pay service updates', 'Coming soon, with no launch date set.'],
   ['undecided', "I'm not sure yet", 'Tell me more when you open.'],
 ];
 
