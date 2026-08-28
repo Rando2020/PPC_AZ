@@ -18,7 +18,7 @@ Current repository facts to preserve unless Jennifer updates them:
 - Credentials displayed: MSN, FNP-BC.
 - Role: Founder, CEO & Family Nurse Practitioner.
 - Experience statement: over 13 years practicing as a Family Nurse Practitioner.
-- Local experience statement: more than 9 years serving patients in Marana and Northwest Tucson.
+- Local experience statement: more than 10 years serving patients in Marana and Northwest Tucson.
 - NPI currently stored in `src/config/practice.js`: 1609217256.
 - Arizona license currently stored in `src/config/practice.js`: AP5088.
 - Community item currently stored: international medical missions with Hope Without Borders.
@@ -41,7 +41,7 @@ The following are planned expansion areas, not automatically launch-ready servic
 - Hormone support.
 - Other focused care programs Jennifer may add later.
 
-Until Jennifer confirms scope, pricing, eligibility, workflow, and launch date, these should be labeled **Planned** or equivalent and never described as currently available.
+Until Jennifer confirms scope, pricing, eligibility, workflow, and launch date, cash-pay services should be labeled **Coming soon**, with no launch date implied, and never described as currently available.
 
 ## Unknown / pending
 

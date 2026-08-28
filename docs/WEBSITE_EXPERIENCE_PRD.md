@@ -135,7 +135,7 @@ Secondary actions can still be:
 The homepage now surfaces the strongest proof earlier:
 
 - 13+ years practicing as a Family Nurse Practitioner
-- 9+ years serving Marana and Northwest Tucson
+- 10+ years serving Marana and Northwest Tucson
 - FNP-BC
 - founder-led care with Jennifer Carlile
 

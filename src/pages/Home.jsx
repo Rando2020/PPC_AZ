@@ -41,7 +41,7 @@ export default function Home(){
 
     <section className="founder-proof" aria-label="Jennifer Carlile experience and local roots"><div className="shell founder-proof__grid">
       <div><strong>13+ years</strong><span>practicing as a Family Nurse Practitioner</span></div>
-      <div><strong>9+ years</strong><span>serving Marana and Northwest Tucson</span></div>
+      <div><strong>10+ years</strong><span>serving Marana and Northwest Tucson</span></div>
       <div><strong>FNP-BC</strong><span>board-certified Family Nurse Practitioner</span></div>
       <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
     </div></section>
@@ -75,12 +75,12 @@ export default function Home(){
       <div className="shell marana-scene__content">
         <span className="eyebrow">Local roots</span>
         <h2 id="marana-scene-title">Local care, shaped by the community.</h2>
-        <p>Jennifer has spent more than nine years caring for patients across the community.</p>
+        <p>Jennifer has spent more than 10 years caring for patients across the community.</p>
       </div>
     </section>
 
     <section className="care-paths" data-reveal="up"><div className="shell care-paths__layout">
-      <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care and select cash-pay services give patients additional ways to access care as participation and availability are confirmed.</p></div>
+      <div className="care-paths__heading"><span className="eyebrow">Three ways to access care</span><h2>Choose the care path that fits you.</h2><p>DPC is the relationship-focused membership option. Insurance-based primary care is also planned, while select cash-pay services are coming soon with no launch date set.</p></div>
       <div className="care-paths__list">{serviceCategories.map((item)=>{const Icon=carePathIcons[item.icon]||Stethoscope;return <a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number"><Icon aria-hidden="true"/></span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p><b>{item.linkLabel || 'View care details'}</b></div><ArrowRight aria-hidden="true"/></a>})}</div>
     </div></section>
 

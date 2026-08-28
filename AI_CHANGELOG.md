@@ -75,7 +75,7 @@ Turn the homepage, DPC page, and Waitlist into one coherent patient journey inst
 
 ### Changes
 
-- Added an early Jennifer trust strip with 13+ years as an FNP, 9+ years serving Marana and Northwest Tucson, and FNP-BC.
+- Added an early Jennifer trust strip with 13+ years as an FNP, 10+ years serving Marana and Northwest Tucson, and FNP-BC.
 - Added a bridge from the Patient-led care journey directly into the DPC explanation.
 - Added a careful "Why people consider DPC" comparison section that describes recognizable frustrations without attacking conventional primary care.
 - Added a Jennifer trust bridge inside the DPC page with the line: **DPC is the structure. Jennifer is the relationship.**
