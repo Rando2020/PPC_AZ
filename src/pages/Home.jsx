@@ -34,7 +34,11 @@ export default function Home(){
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
-        <motion.p variants={heroItem}>Personal primary care, built on listening, continuity, and lasting relationships that grow with your needs.</motion.p>
+        <motion.div variants={heroItem} className="hero-copy">
+          <p><strong>Personalized primary care. One provider. A relationship built around you.</strong></p>
+          <p>At Prickly Pear Primary Care, I believe healthcare works better when you have a provider who knows you, listens to you, and is invested in your health for the long term.</p>
+          <p><strong>Primary care for your everyday health, your changing needs, and everything in between.</strong></p>
+        </motion.div>
         <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
