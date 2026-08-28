@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
-import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 const carePathIcons = { heart: ShieldCheck, sparkle: HeartHandshake, flower: HandCoins };
 
@@ -20,16 +19,7 @@ export default function Home(){
 
   return <>
     <section className="editorial-hero">
-      <motion.img
-        className="editorial-hero__image"
-        src={siteMedia.home.hero.src}
-        alt={siteMedia.home.hero.alt}
-        style={{ objectPosition: siteMedia.home.hero.position }}
-        fetchPriority="high"
-        initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.015 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: reduceMotion ? 0.2 : 0.75, ease: [0.22, 1, 0.36, 1] }}
-      />
+      <motion.img className="editorial-hero__image" src={siteMedia.home.hero.src} alt={siteMedia.home.hero.alt} style={{ objectPosition: siteMedia.home.hero.position }} fetchPriority="high" initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.015 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: reduceMotion ? 0.2 : 0.75, ease: [0.22, 1, 0.36, 1] }}/>
       <div className="editorial-hero__veil"/>
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Primary Care · Marana, Arizona</motion.span>
@@ -45,18 +35,19 @@ export default function Home(){
     </section>
 
     <section className="founder-note" data-reveal="split" aria-labelledby="founder-mission-title"><div className="shell founder-note__grid">
-      <div className="founder-note__mark" aria-hidden="true">
-        <PricklyPearBloom/>
-        <span>Why I created<br/>Prickly Pear Care</span>
-        <small>Jennifer’s mission</small>
+      <div className="founder-note__mark founder-note__mission">
+        <span className="eyebrow">Why I created Prickly Pear</span>
+        <h2 id="founder-mission-title">A mission rooted in personal care.</h2>
+        <p className="large-copy">Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story.</p>
+        <p>I believe there is something incredibly valuable about having a provider who takes the time to listen, understands your history, and is invested in your health for the long term. <strong>That belief inspired me to create Prickly Pear Care.</strong></p>
       </div>
       <div>
-        <span className="eyebrow">A note from Jennifer</span>
-        <h2 id="founder-mission-title">Primary care should feel personal.</h2>
-        <p className="large-copy">Over the years, I have seen how difficult it can be to receive truly personalized care when you do not have the opportunity to see the same provider who knows you and your story.</p>
-        <p>There is something incredibly valuable about having a provider who listens, understands your history, and remains invested in your long-term health. That belief inspired me to create Prickly Pear Care.</p>
-        <blockquote>“My goal is simple: for every patient to feel heard, valued, and confident in their care.”</blockquote>
-        <div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder and Family Nurse Practitioner</p></div>
+        <span className="eyebrow">Primary care for every stage of life</span>
+        <p className="large-copy">My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system.</p>
+        <p>My goal is simple: <strong>for every patient to feel heard, valued, and confident in their care.</strong></p>
+        <h3>Primary care for every stage of life</h3>
+        <p>From preventive care and annual physicals to sick visits, chronic disease management, women's health, weight management, and ongoing wellness, Prickly Pear Primary Care provides personalized care designed around <strong>you—not a one-size-fits-all approach.</strong></p>
+        <blockquote>See the same provider. Build a relationship. Take charge of your health.</blockquote>
         <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
     </div></section>
@@ -76,10 +67,7 @@ export default function Home(){
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
       <div className="editorial-intro__kicker"><Stethoscope/><span><small>DPC, in real life</small>Membership instead of visit-by-visit friction.</span></div>
       <div className="editorial-intro__body">
-        <div className="editorial-intro__header">
-          <h2>Care you don’t have to think twice about using.</h2>
-          <p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make it easier to start with your relationship with Jennifer instead of first deciding whether another visit charge is worth it.</p>
-        </div>
+        <div className="editorial-intro__header"><h2>Care you don’t have to think twice about using.</h2><p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make it easier to start with your relationship with Jennifer instead of first deciding whether another visit charge is worth it.</p></div>
         <div className="values">
           <div><Stethoscope/><span><strong>“I woke up sick.”</strong>Start by reaching out. Jennifer can help determine whether the next step should be a message, visit, testing, treatment, or another level of care.</span></div>
           <div><HeartHandshake/><span><strong>“I have a medication question.”</strong>Not every question automatically needs another separately billed visit. Jennifer decides when an exam, monitoring, or additional evaluation is clinically needed.</span></div>
@@ -91,19 +79,9 @@ export default function Home(){
     </div></section>
 
     <section className="marana-scene" aria-labelledby="marana-scene-title" data-reveal="scene">
-      <img
-        src={siteMedia.home.maranaBanner.src}
-        alt={siteMedia.home.maranaBanner.alt}
-        style={{ objectPosition: siteMedia.home.maranaBanner.position }}
-        loading="lazy"
-        decoding="async"
-      />
+      <img src={siteMedia.home.maranaBanner.src} alt={siteMedia.home.maranaBanner.alt} style={{ objectPosition: siteMedia.home.maranaBanner.position }} loading="lazy" decoding="async"/>
       <div className="marana-scene__shade"/>
-      <div className="shell marana-scene__content">
-        <span className="eyebrow">Local roots</span>
-        <h2 id="marana-scene-title">Local care, shaped by the community.</h2>
-        <p>Jennifer has spent more than 10 years caring for patients across the community.</p>
-      </div>
+      <div className="shell marana-scene__content"><span className="eyebrow">Local roots</span><h2 id="marana-scene-title">Local care, shaped by the community.</h2><p>Jennifer has spent more than 10 years caring for patients across the community.</p></div>
     </section>
 
     <section className="care-paths" data-reveal="up"><div className="shell care-paths__layout">
