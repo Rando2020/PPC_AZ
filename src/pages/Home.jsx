@@ -42,10 +42,8 @@ export default function Home(){
         <p>I believe there is something incredibly valuable about having a provider who takes the time to listen, understands your history, and is invested in your health for the long term. <strong>That belief inspired me to create Prickly Pear Care.</strong></p>
       </div>
       <div>
-        <span className="eyebrow">Primary care for every stage of life</span>
         <p className="large-copy">My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system.</p>
         <p>My goal is simple: <strong>for every patient to feel heard, valued, and confident in their care.</strong></p>
-        <h3>Primary care for every stage of life</h3>
         <p>From preventive care and annual physicals to sick visits, chronic disease management, women's health, weight management, and ongoing wellness, Prickly Pear Primary Care provides personalized care designed around <strong>you—not a one-size-fits-all approach.</strong></p>
         <blockquote>See the same provider. Build a relationship. Take charge of your health.</blockquote>
         <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
