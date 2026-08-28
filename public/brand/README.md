@@ -19,6 +19,16 @@
 - `logo-stacked-1000.png`: transparent stacked lockup.
 - `og-brand-card.png`: social sharing preview.
 
+## Archived references
+
+- `archive/prickly-pear-primary-care-original-reference-2026-08-24.png`: preserved reference copy of the original full stacked logo supplied before future artwork corrections. Keep this file unchanged so later logo edits can always be compared against the prior approved direction.
+
+Source reference details:
+- Uploaded source filename: `Logo(2).png`
+- Source dimensions: 1254 x 1254
+- Source SHA-256: `d050b63de1a08da39a25082248d1ae56c47f02c1c27c748e4524176a3bd7d8ba`
+- The archived repository copy is intentionally reference-sized for version history. The uploaded source remains the fidelity reference for any future redraw or vector correction.
+
 ## Brand colors
 
 - Olive: `#596247`
