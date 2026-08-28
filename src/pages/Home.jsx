@@ -44,13 +44,6 @@ export default function Home(){
       </motion.div>
     </section>
 
-    <section className="founder-proof" aria-label="Jennifer Carlile experience and local roots"><div className="shell founder-proof__grid">
-      <div><strong>13+ years</strong><span>practicing as a Family Nurse Practitioner</span></div>
-      <div><strong>10+ years</strong><span>serving Marana and Northwest Tucson</span></div>
-      <div><strong>FNP-BC</strong><span>board-certified Family Nurse Practitioner</span></div>
-      <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
-    </div></section>
-
     <section className="founder-note" data-reveal="split" aria-labelledby="founder-mission-title"><div className="shell founder-note__grid">
       <div className="founder-note__mark" aria-hidden="true">
         <PricklyPearBloom/>
