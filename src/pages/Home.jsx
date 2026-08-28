@@ -38,7 +38,6 @@ export default function Home(){
     <div className="mission-story__wash mission-story__wash--top" aria-hidden="true"/>
     <div className="mission-story__wash mission-story__wash--bottom" aria-hidden="true"/>
     <div className="mission-story__line" aria-hidden="true"/>
-    <img className="mission-story__cactus" src={`${import.meta.env.BASE_URL}images/watercolor-prickly-pear.png`} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
     <div className="mission-story__inner">
       <div className="mission-story__left">
         <div className="mission-story__ornament" aria-hidden="true"><span/><Sprout/><span/></div>
@@ -55,6 +54,7 @@ export default function Home(){
         <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
     </div>
+    <img className="mission-story__cactus" src={`${import.meta.env.BASE_URL}images/watercolor-prickly-pear.png`} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
     </section>
 
     <section className="section section--olive" aria-labelledby="care-scope-title" data-reveal="up"><div className="shell">
