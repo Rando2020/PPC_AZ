@@ -1,4 +1,4 @@
-import { ArrowRight, HandCoins, HeartHandshake, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react';
+import { ArrowRight, HandCoins, Heart, HeartHandshake, ShieldCheck, Sparkles, Sprout, Stethoscope } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
@@ -34,21 +34,28 @@ export default function Home(){
       </motion.div>
     </section>
 
-    <section className="founder-note" data-reveal="split" aria-labelledby="founder-mission-title"><div className="shell founder-note__grid">
-      <div className="founder-note__mark founder-note__mission">
-        <span className="eyebrow">Why I created Prickly Pear</span>
+    <section className="mission-story" data-reveal="split" aria-labelledby="founder-mission-title">
+    <div className="mission-story__wash mission-story__wash--top" aria-hidden="true"/>
+    <div className="mission-story__wash mission-story__wash--bottom" aria-hidden="true"/>
+    <div className="mission-story__line" aria-hidden="true"/>
+    <img className="mission-story__cactus" src={`${import.meta.env.BASE_URL}images/watercolor-prickly-pear.png`} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+    <div className="mission-story__inner">
+      <div className="mission-story__left">
+        <div className="mission-story__ornament" aria-hidden="true"><span/><Sprout/><span/></div>
         <h2 id="founder-mission-title">A mission rooted in personal care.</h2>
-        <p className="large-copy">Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story.</p>
+        <p>Over the years, I’ve seen how difficult it can be to receive truly personalized care when you don’t have the opportunity to see the same provider who knows you and your story.</p>
         <p>I believe there is something incredibly valuable about having a provider who takes the time to listen, understands your history, and is invested in your health for the long term. <strong>That belief inspired me to create Prickly Pear Care.</strong></p>
       </div>
-      <div>
-        <p className="large-copy">My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system.</p>
+      <div className="mission-story__right">
+        <p className="mission-story__lead">My favorite part of primary care is building lasting relationships with my patients and helping them navigate the healthcare system.</p>
         <p>My goal is simple: <strong>for every patient to feel heard, valued, and confident in their care.</strong></p>
-        <p>From preventive care and annual physicals to sick visits, chronic disease management, women's health, weight management, and ongoing wellness, Prickly Pear Primary Care provides personalized care designed around <strong>you—not a one-size-fits-all approach.</strong></p>
-        <blockquote>See the same provider. Build a relationship. Take charge of your health.</blockquote>
+        <div className="mission-story__divider" aria-hidden="true"><span/><Heart/><span/></div>
+        <p>From preventive care and annual physicals to sick visits, chronic disease management, women’s health, weight management, and ongoing wellness, Prickly Pear Primary Care provides personalized care designed around <strong>you, not a one-size-fits-all approach.</strong></p>
+        <p className="mission-story__promise">See the same provider. Build a relationship.<br/>Take charge of your health.</p>
         <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
-    </div></section>
+    </div>
+    </section>
 
     <section className="section section--olive" aria-labelledby="care-scope-title" data-reveal="up"><div className="shell">
       <header className="section-heading">
