@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
+import { PricklyPearBloom } from '../components/PricklyPearBloom';
 
 const carePathIcons = { heart: ShieldCheck, sparkle: HeartHandshake, flower: HandCoins };
 
@@ -33,7 +34,7 @@ export default function Home(){
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
-        <motion.p variants={heroItem}>Patient-led primary care with Jennifer Carlile, MSN, FNP-BC, built around careful listening, clear choices, and care that can grow with your needs.</motion.p>
+        <motion.p variants={heroItem}>Personal primary care, built on listening, continuity, and lasting relationships that grow with your needs.</motion.p>
         <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
@@ -44,6 +45,35 @@ export default function Home(){
       <div><strong>9+ years</strong><span>serving Marana and Northwest Tucson</span></div>
       <div><strong>FNP-BC</strong><span>board-certified Family Nurse Practitioner</span></div>
       <a href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
+    </div></section>
+
+    <section className="founder-note" data-reveal="split" aria-labelledby="founder-mission-title"><div className="shell founder-note__grid">
+      <div className="founder-note__mark" aria-hidden="true">
+        <PricklyPearBloom/>
+        <span>Why I created<br/>Prickly Pear Care</span>
+        <small>Jennifer’s mission</small>
+      </div>
+      <div>
+        <span className="eyebrow">A note from Jennifer</span>
+        <h2 id="founder-mission-title">Primary care should feel personal.</h2>
+        <p className="large-copy">Over the years, I have seen how difficult it can be to receive truly personalized care when you do not have the opportunity to see the same provider who knows you and your story.</p>
+        <p>There is something incredibly valuable about having a provider who listens, understands your history, and remains invested in your long-term health. That belief inspired me to create Prickly Pear Care.</p>
+        <blockquote>“My goal is simple: for every patient to feel heard, valued, and confident in their care.”</blockquote>
+        <div className="founder-note__byline"><span/><p><strong>Jennifer Carlile, MSN, FNP-BC</strong>Founder and Family Nurse Practitioner</p></div>
+        <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
+      </div>
+    </div></section>
+
+    <section className="section section--olive" aria-labelledby="care-scope-title" data-reveal="up"><div className="shell">
+      <header className="section-heading">
+        <div><span className="eyebrow">Primary care for real life</span><h2 id="care-scope-title">Primary care through life’s changing seasons.</h2></div>
+        <p>From preventive care and annual visits to sick visits, chronic-condition management, women’s health, and ongoing wellness, Prickly Pear Care is being designed around you and your story. Select weight-management services are coming soon, with no launch date set.</p>
+      </header>
+      <div className="three-col">
+        <article><span>01</span><h3>See the same provider.</h3><p>Build continuity with someone who knows your history.</p></article>
+        <article><span>02</span><h3>Be known over time.</h3><p>Receive care shaped by your story, goals, and changing needs.</p></article>
+        <article><span>03</span><h3>Take charge of your health.</h3><p>Understand your options and make informed decisions with confidence.</p></article>
+      </div>
     </div></section>
 
     <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
