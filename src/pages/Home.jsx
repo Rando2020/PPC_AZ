@@ -33,7 +33,7 @@ export default function Home(){
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={heroItem}>Primary Care · Marana, Arizona</motion.span>
         <motion.h1 variants={heroItem}>Care that<br/><em>grows with you.</em></motion.h1>
-        <motion.p variants={heroItem}>Patient-led primary care with Jennifer Carlile, MSN, FNP-BC, built around careful listening, clear choices, and care that can grow with your needs.</motion.p>
+        <motion.p variants={heroItem}>Our mission is to provide patient-led primary care that listens first, explains clearly, and builds lasting relationships so every patient feels heard, informed, and confident in what comes next.</motion.p>
         <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
