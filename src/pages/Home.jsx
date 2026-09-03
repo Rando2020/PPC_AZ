@@ -3,6 +3,8 @@ import { motion, useReducedMotion } from 'motion/react';
 import { practice, serviceCategories } from '../config/practice';
 import { siteMedia } from '../config/media';
 import { CTA } from '../components/UI';
+import { DesertBloomButton, DesertMicroIcon, OrganicFrame, PaperWash, WatercolorDivider } from '../components/Crafted';
+import { craftedAssets, craftedSurfaceStyle } from '../config/craftedAssets';
 
 const carePathIcons = { heart: ShieldCheck, sparkle: HeartHandshake, flower: HandCoins };
 
@@ -19,6 +21,7 @@ export default function Home(){
 
   return <>
     <section className="editorial-hero">
+      <PaperWash tone="sand" position="left"/>
       <motion.img className="editorial-hero__image" src={siteMedia.home.hero.src} alt={siteMedia.home.hero.alt} style={{ objectPosition: siteMedia.home.hero.position }} fetchPriority="high" initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.015 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: reduceMotion ? 0.2 : 0.75, ease: [0.22, 1, 0.36, 1] }}/>
       <div className="editorial-hero__veil"/>
       <motion.div className="shell editorial-hero__content" variants={heroGroup} initial="hidden" animate="visible">
@@ -29,12 +32,12 @@ export default function Home(){
           <p>At Prickly Pear Primary Care, I believe healthcare works better when you have a provider who knows you, listens to you, and is invested in your health for the long term.</p>
           <p><strong>Primary care for your everyday health, your changing needs, and everything in between.</strong></p>
         </motion.div>
-        <motion.div className="button-row" variants={heroItem}><a className="button" href="#/services">Explore Care & Services <ArrowRight size={17}/></a><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
+        <motion.div className="button-row" variants={heroItem}><DesertBloomButton href="#/services">Explore Care & Services</DesertBloomButton><a className="editorial-link" href="#/waitlist">Join the Waitlist <ArrowRight size={15}/></a></motion.div>
         <motion.p className="hero-launch-note" variants={heroItem}><span/> Opening details, care options, and enrollment terms are being finalized.</motion.p>
       </motion.div>
     </section>
 
-    <section className="mission-story" data-reveal="split" aria-labelledby="founder-mission-title">
+    <section className="mission-story" style={craftedSurfaceStyle} data-reveal="split" aria-labelledby="founder-mission-title">
     <div className="mission-story__wash mission-story__wash--top" aria-hidden="true"/>
     <div className="mission-story__wash mission-story__wash--bottom" aria-hidden="true"/>
     <div className="mission-story__line" aria-hidden="true"/>
@@ -54,22 +57,23 @@ export default function Home(){
         <a className="editorial-link editorial-link--dark" href="#/provider">Meet Jennifer <ArrowRight size={15}/></a>
       </div>
     </div>
-    <img className="mission-story__cactus" src={`${import.meta.env.BASE_URL}images/watercolor-prickly-pear.png`} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+    <img className="mission-story__cactus" src={craftedAssets.bloomCorner.src} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
     </section>
 
-    <section className="section section--olive" aria-labelledby="care-scope-title" data-reveal="up"><div className="shell">
+    <WatercolorDivider illustrated className="homepage-divider"/>
+    <section className="section section--olive crafted-olive" style={craftedSurfaceStyle} aria-labelledby="care-scope-title" data-reveal="up"><div className="shell">
       <header className="section-heading">
         <div><span className="eyebrow">Primary care for real life</span><h2 id="care-scope-title">Primary care through life’s changing seasons.</h2></div>
         <p>From preventive care and annual visits to sick visits, chronic-condition management, women’s health, and ongoing wellness, Prickly Pear Care is being designed around you and your story. Select weight-management services are coming soon, with no launch date set.</p>
       </header>
-      <div className="three-col">
-        <article><span>01</span><h3>See the same provider.</h3><p>Build continuity with someone who knows your history.</p></article>
-        <article><span>02</span><h3>Be known over time.</h3><p>Receive care shaped by your story, goals, and changing needs.</p></article>
-        <article><span>03</span><h3>Take charge of your health.</h3><p>Understand your options and make informed decisions with confidence.</p></article>
+      <div className="three-col crafted-principles">
+        <article><DesertMicroIcon icon={Stethoscope}/><span>01</span><h3>See the same provider.</h3><p>Build continuity with someone who knows your history.</p></article>
+        <article><DesertMicroIcon icon={HeartHandshake}/><span>02</span><h3>Be known over time.</h3><p>Receive care shaped by your story, goals, and changing needs.</p></article>
+        <article><DesertMicroIcon icon={Sprout}/><span>03</span><h3>Take charge of your health.</h3><p>Understand your options and make informed decisions with confidence.</p></article>
       </div>
     </div></section>
 
-    <section className="section editorial-intro" data-reveal="up"><div className="shell editorial-intro__grid">
+    <section className="section editorial-intro" style={craftedSurfaceStyle} data-reveal="up"><div className="shell editorial-intro__grid">
       <div className="editorial-intro__kicker"><Stethoscope/><span><small>DPC, in real life</small>Membership instead of visit-by-visit friction.</span></div>
       <div className="editorial-intro__body">
         <div className="editorial-intro__header"><h2>Care you don’t have to think twice about using.</h2><p className="large-copy">Direct Primary Care is a monthly primary-care membership designed to make it easier to start with your relationship with Jennifer instead of first deciding whether another visit charge is worth it.</p></div>
@@ -94,10 +98,10 @@ export default function Home(){
       <div className="care-paths__list">{serviceCategories.map((item)=>{const Icon=carePathIcons[item.icon]||Stethoscope;return <a href={item.href || '#/services'} className="care-path" key={item.title}><span className="care-path__number"><Icon aria-hidden="true"/></span><div><small>{item.status}</small><h3>{item.title}</h3><p>{item.description}</p><b>{item.linkLabel || 'View care details'}</b></div><ArrowRight aria-hidden="true"/></a>})}</div>
     </div></section>
 
-    <section className="local-story" data-reveal="split"><div className="shell local-story__grid">
+    <section className="local-story" style={craftedSurfaceStyle} data-reveal="split"><div className="shell local-story__grid">
       <div className="local-story__copy"><Sparkles/><span className="eyebrow">Growing close to home</span><h2>Personal care for the place we call home.</h2><p className="large-copy">Prickly Pear Care is being built for the community Jennifer already serves.</p><p>Practice location, insurance participation, and opening information are coming soon. Join the Waitlist for updates as plans are finalized.</p><a className="editorial-link editorial-link--dark" href="#/waitlist">Join the Waitlist <ArrowRight size={14}/></a></div>
-      <figure className="local-story__photo"><img src={siteMedia.home.pricklyPearDetail.src} alt={siteMedia.home.pricklyPearDetail.alt} style={{ objectPosition: siteMedia.home.pricklyPearDetail.position }} loading="lazy" decoding="async"/></figure>
+      <OrganicFrame className="local-story__photo"><img src={siteMedia.home.pricklyPearDetail.src} alt={siteMedia.home.pricklyPearDetail.alt} style={{ objectPosition: siteMedia.home.pricklyPearDetail.position }} loading="lazy" decoding="async"/></OrganicFrame>
     </div></section>
-    <CTA title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening, care-option, and enrollment updates. There is no commitment.</CTA>
+    <CTA crafted title="Be part of what grows next." action="Join the Waitlist" href="#/waitlist">Get opening, care-option, and enrollment updates. There is no commitment.</CTA>
   </>;
 }
