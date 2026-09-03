@@ -26,7 +26,7 @@ The design sheet is an art-direction reference, not a production sprite sheet. P
 | Registry key | Production role | Native dimensions |
 | --- | --- | --- |
 | `bloomCorner` | Mission and quiet CTA botanical accent | 1024 × 1536 |
-| `desertDivider` | Full-width section transition | 3840 × 1396 |
+| `desertDivider` | Full-width section transition | 3840 × 420 |
 | `paperTexture` | Seamless surface texture | 640 × 640 |
 
 ## Adding the next asset
