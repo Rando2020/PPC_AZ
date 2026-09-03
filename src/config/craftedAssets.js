@@ -13,7 +13,7 @@ export const craftedAssets = {
     src: publicAsset('watercolor-desert-divider.webp'),
     role: 'decorative',
     focalPoint: 'center 62%',
-    nativeSize: '3840x1396',
+    nativeSize: '3840x420',
   },
   paperTexture: {
     src: paperTexture,
