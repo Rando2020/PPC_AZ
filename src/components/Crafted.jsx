@@ -9,7 +9,12 @@ export function DesertBloomButton({ children, href, tone = 'primary', className 
 }
 
 export function WatercolorDivider({ tone = 'berry', className = '', illustrated = false }) {
-  if (illustrated) return <div className={`watercolor-divider watercolor-divider--illustrated ${className}`.trim()} aria-hidden="true"><img src={craftedAssets.desertDivider.src} alt="" loading="lazy" decoding="async" style={{ objectPosition: craftedAssets.desertDivider.focalPoint }}/></div>;
+  if (illustrated) return <div className={`watercolor-divider watercolor-divider--illustrated ${className}`.trim()} aria-hidden="true">
+    <picture>
+      {craftedAssets.desertDivider.mobileSrc && <source media="(max-width: 800px)" srcSet={craftedAssets.desertDivider.mobileSrc}/>} 
+      <img src={craftedAssets.desertDivider.src} alt="" loading="lazy" decoding="async"/>
+    </picture>
+  </div>;
   return <div className={`watercolor-divider watercolor-divider--${tone} ${className}`.trim()} aria-hidden="true"><span/><Flower2/><span/></div>;
 }
 
