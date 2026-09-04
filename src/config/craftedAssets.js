@@ -10,10 +10,12 @@ export const craftedAssets = {
     nativeSize: '1024x1536',
   },
   desertDivider: {
-    src: publicAsset('watercolor-desert-divider.webp'),
+    src: publicAsset('desert-landscape-divider.svg'),
+    mobileSrc: publicAsset('desert-landscape-divider-mobile.svg'),
     role: 'decorative',
-    focalPoint: 'center 62%',
-    nativeSize: '3840x420',
+    focalPoint: 'center',
+    nativeSize: '1600x260',
+    mobileNativeSize: '800x260',
   },
   paperTexture: {
     src: paperTexture,
